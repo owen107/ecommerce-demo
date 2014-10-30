@@ -1,0 +1,10 @@
+{
+  "name": "djecommerce",
+  "version": "1.0.0",
+  "description": "A project to build an Ecommerce Website",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Owen Xu"
+}
