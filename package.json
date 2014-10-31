@@ -9,6 +9,7 @@
   "author": "Owen Xu",
   "devDependencies": {
     "gulp": "^3.8.9",
+    "gulp-concat": "^2.4.1",
     "gulp-util": "^3.0.1"
   }
 }

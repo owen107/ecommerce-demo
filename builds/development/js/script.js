@@ -1,0 +1,3 @@
+function weila() {
+	alert("weila");
+}
