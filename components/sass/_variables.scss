@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+@include border-box-sizing; //uses border box sizing like the old IE
+
+//Add Color Palette
+$drakblue: #234C6F;
+$darkblue2: #004877;
+$blue: #2C6A8D;
+$blue2: #006B9D;
+$lightblue: #33A3DC;
+$yellow: #D8CF90;
+$orange: #F58220;
+$grey: #F0F0E1;
+$red: #B83936;
+$dark: #000000;
+$light: #FFFFFF;
+
+$backgroundColor: $light;
+$typeDefault: $dark;
+
+//Font variables
+$fontfamily: Helvetica, Arial, sans-serif;
+
+$thin: 200;
+$normal: 400;
+$bold: 600;
+$heavy: 800;
+
+$headFont: $thin 1.5em/1.5em $fontfamily;
+$mainFont: $thin 1em/1.5em $fontfamily;

@@ -7,7 +7,9 @@ var gulp = require('gulp'),
 
 var jsSources = [
    'components/scripts/app.js',
-   "components/jquery-ui.js"
+   "components/scripts/jquery-ui.js",
+   "components/scripts/jquery.easy-ticker.js",
+   "components/scripts/megamenu.js"
 ];
 
 var sassSources = ['components/sass/style.scss'];
@@ -27,6 +29,7 @@ gulp.task('compass', function() {
       sass: 'components/sass',
       image: 'builds/development/images',
       style: 'expanded',
+      comments: true,
       require: ['susy', 'breakpoint']
     })
      .on('error', gutil.log))

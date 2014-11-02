@@ -1,0 +1,104 @@
+.wrapper {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.top_header {
+	@include background-image(linear-gradient(to bottom, $blue, lighten($blue, 20)));
+	@include clearfix;
+
+    .top_header_left {
+        float:left;
+	    width:10%;
+	    padding: 0.25em 0 0 0;
+
+	    ul li {
+	      display: inline-block;
+
+	      a span {
+	         width: 24px;
+	         height: 24px;
+	         display: block;
+	      } //top header left ul li a span
+	    } //top header left ul li
+
+    } //top header left
+
+	.top_header_right {
+
+	    float: right;
+	    width: 70%;
+	    padding: 0.4em;
+
+	    .free_delivery {
+	       float: left;
+	       width: 39%;
+	       text-align: right;
+
+	       h3 {
+	          color: $grey;
+	          font-weight: $bold;
+	          font-size: 0.85em;
+	       } // h3
+	    } // free delivery
+
+	    .order_50_or_more {
+	       float: right;
+	       width: 60%;
+
+	       .vticker li {
+	          color: darken($red, 10);
+	          font-size: 0.8em;
+	          font-weight: $bold;
+
+	          label {
+	            font-size: 0.75em;
+	          }
+	       } // vticker li
+	    } // order 50 or more
+	} //top header right
+    
+    .cart span{
+       background:url(../images/icons/image-sprit.png) no-repeat 0px 0px;
+    } //cart span
+
+    .info {
+       position: relative;
+
+       span {
+          background:url(../images/icons/image-sprit.png) no-repeat -22px 0px;
+       }
+    } //info
+
+    #info {
+       display: none;
+       width: 21%;
+       @include background-image(linear-gradient(to top, $blue, lighten($blue, 20)));
+       position: absolute;
+       padding: 0.9em 1em 1em 1em;
+       color: $light;
+       font-size: 0.875em;
+       font-weight: $bold;
+       top: 3.1em;
+       @include border-radius(10px);
+
+       span {
+         color: darken($red, 10);
+         font-weight: $bold;
+       } //info span
+
+       &:before {
+          content: '';
+          display: block;
+          border-color: transparent transparent lighten($blue, 20) transparent;
+          border-style: solid;
+          border-width: 10px;
+          position: absolute;
+          top: -16px;
+          left: 16%;
+          margin-left: -10px;
+       } //info before
+    } // info
+	
+
+} // top header
