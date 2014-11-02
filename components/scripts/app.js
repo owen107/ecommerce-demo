@@ -25,3 +25,8 @@ $(document).ready(function() {
 		};
 	});
 });
+
+// responsive menu script
+$(document).ready(function(){
+   $('.megamenu').megamenu();
+});

@@ -166,6 +166,11 @@ img {
   max-width: 100%;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+}
 /* line 1, ../components/sass/modules/_nav.scss */
 .wrapper {
   width: 70%;
@@ -287,4 +292,69 @@ img {
   top: -16px;
   left: 16%;
   margin-left: -10px;
+}
+
+/* line 2, ../components/sass/_mixins.scss */
+.mid_header:before, .mid_header:after {
+  content: '';
+  display: table;
+}
+/* line 7, ../components/sass/_mixins.scss */
+.mid_header:after {
+  clear: both;
+}
+/* line 107, ../components/sass/modules/_nav.scss */
+.mid_header .logo {
+  float: left;
+  max-width: 130px;
+  margin: 20px 0 10px 3%;
+}
+/* line 113, ../components/sass/modules/_nav.scss */
+.mid_header .mid_header_right {
+  float: right;
+  width: 32%;
+  padding-top: 1.3em;
+}
+/* line 119, ../components/sass/modules/_nav.scss */
+.mid_header .mid_header_right .search {
+  position: relative;
+}
+/* line 122, ../components/sass/modules/_nav.scss */
+.mid_header .mid_header_right .search:before {
+  position: absolute;
+  content: "\e000";
+  font-family: "icomoon";
+  font-size: 1.3em;
+  color: #55a0ca;
+  display: block;
+  top: 16%;
+  padding-left: 0.2em;
+}
+/* line 134, ../components/sass/modules/_nav.scss */
+.mid_header .mid_header_right input[type="text"] {
+  border: 2px solid #55a0ca;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  padding: 0.8em 0 0.8em 2.5em;
+  color: #333333;
+  width: 85%;
+  -moz-transition: width 0.5s ease-out;
+  -o-transition: width 0.5s ease-out;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+/* line 144, ../components/sass/modules/_nav.scss */
+.mid_header .mid_header_right input[type="text"]:focus {
+  width: 100%;
+  border: 2px solid #2C6A8D;
+  -moz-transition: width 0.5s ease-out;
+  -o-transition: width 0.5s ease-out;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+  -moz-box-shadow: 0px 0px 10px -2px #000000;
+  -webkit-box-shadow: 0px 0px 10px -2px #000000;
+  box-shadow: 0px 0px 10px -2px #000000;
 }
