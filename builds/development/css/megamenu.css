@@ -299,6 +299,9 @@ box-sizing: border-box;}
 	.header-bottom {
 		border-bottom: none;
 	}
+	.header-bottom .wrapper {
+		width: 100%;
+	}
 }
 @media only screen and (max-width: 320px) and (min-width: 240px) {
 	.men-pic {

@@ -358,3 +358,86 @@ img {
   -webkit-box-shadow: 0px 0px 10px -2px #000000;
   box-shadow: 0px 0px 10px -2px #000000;
 }
+
+/* line 1, ../components/sass/modules/_home.scss */
+.slider {
+  padding-bottom: 10px;
+}
+/* line 2, ../components/sass/_mixins.scss */
+.slider:before, .slider:after {
+  content: '';
+  display: table;
+}
+/* line 7, ../components/sass/_mixins.scss */
+.slider:after {
+  clear: both;
+}
+/* line 5, ../components/sass/modules/_home.scss */
+.slider .wmuSlider {
+  position: relative;
+  overflow: hidden;
+}
+/* line 9, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderWrapper article {
+  position: relative;
+}
+/* line 12, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderWrapper article img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+/* line 21, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPrev, .slider .wmuSlider .wmuSliderNext {
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  text-indent: -9999px;
+  background: url(../images/slider/img-sprite.png) no-repeat;
+  top: 42%;
+  z-index: 2;
+  cursor: pointer;
+}
+/* line 32, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPrev {
+  background-position: 0px 0px;
+  left: 5px;
+}
+/* line 37, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderNext {
+  background-position: -92px 0px;
+  right: 5px;
+}
+/* line 42, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPagination {
+  z-index: 2;
+  position: absolute;
+  left: 48.5%;
+  bottom: 10px;
+}
+/* line 48, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPagination li {
+  float: left;
+  margin: 0 10px 0 0;
+  list-style: none;
+}
+/* line 54, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPagination a {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border: 1px solid #4d4d4d;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+/* line 63, ../components/sass/modules/_home.scss */
+.slider .wmuSlider .wmuSliderPagination a.wmuActive {
+  background: #4d4d4d;
+  width: 10px;
+  height: 10px;
+}

@@ -30,3 +30,8 @@ $(document).ready(function() {
 $(document).ready(function(){
    $('.megamenu').megamenu();
 });
+
+// responsive wmu slider 
+$(document).ready(function() {
+	$('.wmuSlider').wmuSlider();
+});

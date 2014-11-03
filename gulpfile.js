@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 
 var jsSources = [
    'components/scripts/app.js',
+   'components/scripts/jquery.wmuSlider.js',
    "components/scripts/jquery-ui.js",
    "components/scripts/jquery.easy-ticker.js",
    "components/scripts/megamenu.js"
