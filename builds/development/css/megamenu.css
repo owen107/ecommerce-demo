@@ -244,6 +244,9 @@ box-sizing: border-box;}
 	.header-bottom {
 		border-bottom: none;
 	}
+	.header-bottom .wrapper {
+		width: 100%;
+	}
 }
 @media only screen and (max-width: 640px) and (min-width: 480px) {
 	.men-pic {
@@ -263,6 +266,9 @@ box-sizing: border-box;}
 	}
 	.header-bottom {
 		border-bottom: none;
+	}
+	.header-bottom .wrapper {
+		width: 100%;
 	}
 	
 }

@@ -10,6 +10,7 @@ var jsSources = [
    'components/scripts/jquery.wmuSlider.js',
    "components/scripts/jquery-ui.js",
    "components/scripts/jquery.easy-ticker.js",
+   "components/scripts/jquery.easing.js",
    "components/scripts/megamenu.js"
 ];
 

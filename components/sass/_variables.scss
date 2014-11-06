@@ -2,6 +2,28 @@
 
 @include border-box-sizing; //uses border box sizing like the old IE
 
+$susy: (
+    columns: 12,
+    container: 64em,
+    gutter: 1/4,
+    gutter-position: inside
+);
+
+//breakpoint for device
+$iPhone: 320px 480px;
+$retinaiPhone: 640px 960px;
+$iPad: 768px 1024px;
+$laptop: 1024px 1280px;
+
+//breakpoint for viewport
+$extraSmall: 480px;
+$small: 768px;
+$medium: 1024px;
+$wide: 1200px;
+$large: 1280px;
+$smallDesktop: 1366px;
+$largeDesktop: 1680px;
+
 //Add Color Palette
 $drakblue: #234C6F;
 $darkblue2: #004877;

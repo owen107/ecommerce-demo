@@ -20,24 +20,34 @@
 
       .wmuSliderPrev, .wmuSliderNext {
           position: absolute;
-		  width: 100px;
-		  height: 120px;
-		  text-indent: -9999px;
-		  background: url(../images/slider/img-sprite.png) no-repeat;
-		  top: 42%;
-		  z-index: 2;
-		  cursor: pointer;
+      	  width: 100px;
+      	  height: 120px;
+      	  text-indent: -9999px;
+      	  background: url(../images/slider/img-sprite.png) no-repeat;
+      	  top: 42%;
+      	  z-index: 2;
+      	  cursor: pointer;
+
+          @include breakpoint(max-width 640px) {
+             display: none;
+          }
       } // wmuSliderPrev, wmuSliderNext
 
       .wmuSliderPrev {
          background-position: 0px 0px;
-	     left: 5px;
+	       left: 5px;
+	       opacity: 0.5;
       } // wmuSliderPrev
 
       .wmuSliderNext {
          background-position: -92px 0px;
-	     right: 5px;
+	       right: 5px;
+	       opacity: 0.5;
       } // wmuSliderNext
+
+      a:hover {
+         opacity: 1;
+      }
 
       .wmuSliderPagination {
          z-index: 2;
@@ -66,6 +76,9 @@
                height: 10px;
             } // wmuSliderPagination li a.wmuActive 
          } // wmuSliderPagination li a
+         @include breakpoint(max-width 640px) {
+           display: none;
+         } // breakpoint
       } // wmuSliderPagination
 	} // wmuSlider
 } //slider
