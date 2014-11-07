@@ -429,7 +429,7 @@ img {
   max-width: 130px;
   margin: 20px 0 10px 3%;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   /* line 190, ../components/sass/modules/_nav.scss */
   .mid_header .mid_header_left .logo {
     max-width: 6em;
@@ -448,7 +448,7 @@ img {
   width: 32%;
   padding-top: 1.3em;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   /* line 201, ../components/sass/modules/_nav.scss */
   .mid_header .mid_header_right {
     float: left;
@@ -472,7 +472,7 @@ img {
   top: 16%;
   padding-left: 0.2em;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   /* line 218, ../components/sass/modules/_nav.scss */
   .mid_header .mid_header_right .search:before {
     font-size: 0.9em;
@@ -495,7 +495,7 @@ img {
   -webkit-transition: width 0.5s ease-out;
   transition: width 0.5s ease-out;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   /* line 235, ../components/sass/modules/_nav.scss */
   .mid_header .mid_header_right input[type="text"] {
     width: 93%;
@@ -681,5 +681,169 @@ img {
   /* line 52, ../components/sass/modules/_home.scss */
   .slider .wmuSlider .wmuSliderPagination {
     display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  /* line 87, ../components/sass/modules/_home.scss */
+  .main_content .wrapper {
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+  .main_content .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 91, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title {
+    margin: 20px 0 30px;
+  }
+  /* line 93, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    color: #B83936;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  /* line 87, ../components/sass/modules/_home.scss */
+  .main_content .wrapper {
+    max-width: 38.4em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+  .main_content .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 107, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title {
+    margin: 20px 0 30px;
+  }
+  /* line 109, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    color: #B83936;
+  }
+}
+@media (max-width: 480px) {
+  /* line 87, ../components/sass/modules/_home.scss */
+  .main_content .wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  /* line 124, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title {
+    margin: 10px 0 15px;
+    border-bottom: 1px solid #B83936;
+  }
+  /* line 127, ../components/sass/modules/_home.scss */
+  .main_content .wrapper .title h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #B83936;
+    padding-bottom: 8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  /* line 140, ../components/sass/modules/_home.scss */
+  .main_content .product_grid {
+    max-width: 64em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+  .main_content .product_grid:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 143, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+  /* line 146, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details {
+    position: relative;
+  }
+  /* line 148, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover {
+    border: 1px solid #33A3DC;
+  }
+  /* line 150, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover:before {
+    background: transparent;
+    z-index: 10;
+    content: url("../images/products/logo_s.png");
+    width: 226px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* line 161, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a {
+    opacity: 0.8;
+  }
+  /* line 164, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a:hover {
+    opacity: 1;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  /* line 140, ../components/sass/modules/_home.scss */
+  .main_content .product_grid {
+    max-width: 34.56em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+  .main_content .product_grid:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 177, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+  /* line 179, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details {
+    width: 226px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  /* line 187, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details {
+    width: 226px;
+    margin: 0 auto;
   }
 }

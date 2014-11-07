@@ -82,3 +82,132 @@
       } // wmuSliderPagination
 	} // wmuSlider
 } //slider
+
+.main_content {
+  .wrapper {
+     @include breakpoint($small $large) {
+        @include container;
+
+        .title {
+          margin: 20px 0 30px;
+          h2 {
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: $bold;
+            font-family: $fontfamily;
+            font-size: 2em;
+            color: $red;
+          } // h2
+        } // title 
+     } // breakpoint
+
+     @include breakpoint($extraSmall $small) {
+        @include container(38.4em);
+
+        .title {
+          margin: 20px 0 30px;
+          h2 {
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: $bold;
+            font-family: $fontfamily;
+            font-size: 1.5em;
+            color: $red;
+          } // h2
+        } // title 
+     } // breakpoint
+
+     @include breakpoint(max-width $extraSmall) {
+        width: 80%;
+        margin: 0 auto;
+
+        .title {
+          margin: 10px 0 15px;
+          border-bottom: 1px solid $red;
+          h2 {
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: $bold;
+            font-family: $fontfamily;
+            font-size: 1em;
+            color: $red;
+            padding-bottom: 8px;
+          } // h2
+        } // title 
+     } // breakpoint
+  } // wrapper
+
+  .product_grid {
+    @include breakpoint($small $large) {
+      @include container;
+      .product_item {
+         @include span(3);
+
+         .product_details {
+            position: relative;
+            &:hover {
+               border: 1px solid $lightblue;
+               &:before {
+                   background: transparent;
+                   z-index: 10;
+                   content: url('../images/products/logo_s.png');
+                   width: 226px;
+                   height: auto;
+                   position: absolute;
+                   top: 0;
+                   left: 0;                   
+                }
+            }
+            a {
+              opacity: 0.8;
+
+              &:hover {
+                opacity: 1;
+
+
+              }
+            }
+         }
+
+      } //product item
+    } // breakpoint
+
+    @include breakpoint($extraSmall $small) {
+      @include container(34.56em);
+      .product_item {
+          @include span(6);
+          .product_details {
+             width: 226px;
+             margin: 0 auto;
+          } // product details
+      } //product item
+    } // breakpoint
+
+    @include breakpoint(max-width $extraSmall) {
+      .product_details {
+         width: 226px;
+         margin: 0 auto;
+      } // product details
+    } // breakpoint
+  } // product grid
+} // main content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

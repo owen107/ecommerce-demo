@@ -113,7 +113,7 @@
             }
           }
           .order_50_or_more {
-            display:none;
+            display: none;
           }
       } // breakpoint
 	} //top header right
@@ -188,7 +188,7 @@
    .mid_header_left {
       @include span(5);
       .logo {
-        @include breakpoint($iPhone) {
+        @include breakpoint(max-width $extraSmall) {
            max-width: 6em;
         } // breakpoint
         float: left;
@@ -200,7 +200,7 @@
 
    .mid_header_right {
       @include span(7 at 5 of 12);
-      @include breakpoint($iPhone) {
+      @include breakpoint(max-width $extraSmall) {
          float: left;
          width: 58%;
          min-width: 10em;
@@ -225,7 +225,7 @@
             top: 16%;
             padding-left: 0.2em;
 
-            @include breakpoint($iPhone) {
+            @include breakpoint(max-width $extraSmall) {
                 font-size: 0.9em;
                 padding-left: 0.3em;
             } // breakpoint
@@ -233,7 +233,7 @@
       } // search
 
       input[type="text"] {
-        @include breakpoint($iPhone) {
+        @include breakpoint(max-width $extraSmall) {
             width: 93%;
             padding: 0.5em 0 0.6em 2em;
             font-size: 0.65em;
