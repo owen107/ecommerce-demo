@@ -763,7 +763,7 @@ img {
 @media (min-width: 768px) and (max-width: 1280px) {
   /* line 140, ../components/sass/modules/_home.scss */
   .main_content .product_grid {
-    max-width: 64em;
+    max-width: 60em;
     margin-left: auto;
     margin-right: auto;
   }
@@ -773,7 +773,7 @@ img {
     display: block;
     clear: both;
   }
-  /* line 143, ../components/sass/modules/_home.scss */
+  /* line 144, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -782,33 +782,72 @@ img {
     float: left;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
+    margin-bottom: 10px;
   }
-  /* line 146, ../components/sass/modules/_home.scss */
+  /* line 148, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details {
     position: relative;
   }
-  /* line 148, ../components/sass/modules/_home.scss */
+  /* line 150, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details:hover {
     border: 1px solid #33A3DC;
   }
-  /* line 150, ../components/sass/modules/_home.scss */
+  /* line 152, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover .hover {
+    white-space: normal;
+  }
+  /* line 156, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details:hover:before {
     background: transparent;
     z-index: 10;
     content: url("../images/products/logo_s.png");
-    width: 226px;
-    height: auto;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
   }
-  /* line 161, ../components/sass/modules/_home.scss */
+  /* line 165, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details a {
     opacity: 0.8;
   }
-  /* line 164, ../components/sass/modules/_home.scss */
+  /* line 167, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details a:hover {
     opacity: 1;
+  }
+  /* line 171, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a img {
+    margin-bottom: 10px;
+  }
+  /* line 175, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 8px;
+    border-top: 1px dotted #33A3DC;
+  }
+  /* line 181, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info h3 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.9em;
+    color: #3887b4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    margin-top: 3px;
+  }
+  /* line 192, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info h4 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.7em;
+    color: #cd5754;
+    margin-top: -4px;
+  }
+  /* line 199, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info p {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.8em;
+    color: #666666;
+    padding-bottom: 5px;
   }
 }
 @media (min-width: 480px) and (max-width: 768px) {
@@ -824,7 +863,7 @@ img {
     display: block;
     clear: both;
   }
-  /* line 177, ../components/sass/modules/_home.scss */
+  /* line 213, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -833,17 +872,147 @@ img {
     float: left;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
+    margin-bottom: 10px;
+    float: left;
   }
-  /* line 179, ../components/sass/modules/_home.scss */
+  /* line 217, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_item .product_details {
     width: 226px;
     margin: 0 auto;
+    position: relative;
+  }
+  /* line 221, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover {
+    border: 1px solid #33A3DC;
+  }
+  /* line 223, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover .hover {
+    white-space: normal;
+  }
+  /* line 227, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details:hover:before {
+    background: transparent;
+    z-index: 10;
+    content: url("../images/products/logo_s.png");
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  /* line 236, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a {
+    opacity: 0.8;
+  }
+  /* line 238, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a:hover {
+    opacity: 1;
+  }
+  /* line 242, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a img {
+    margin-bottom: 10px;
+  }
+  /* line 246, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 8px;
+    border-top: 1px dotted #33A3DC;
+  }
+  /* line 252, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info h3 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.9em;
+    color: #3887b4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    margin-top: 3px;
+  }
+  /* line 263, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info h4 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.7em;
+    color: #cd5754;
+    margin-top: -4px;
+  }
+  /* line 270, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item .product_details a .product_info p {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.8em;
+    color: #666666;
+    padding-bottom: 5px;
   }
 }
 @media (max-width: 480px) {
-  /* line 187, ../components/sass/modules/_home.scss */
+  /* line 283, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_item {
+    margin-bottom: 10px;
+  }
+  /* line 287, ../components/sass/modules/_home.scss */
   .main_content .product_grid .product_details {
     width: 226px;
     margin: 0 auto;
+    position: relative;
+  }
+  /* line 291, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details:hover {
+    border: 1px solid #33A3DC;
+  }
+  /* line 293, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details:hover .hover {
+    white-space: normal;
+  }
+  /* line 297, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details:hover:before {
+    background: transparent;
+    z-index: 10;
+    content: url("../images/products/logo_s.png");
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  /* line 306, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a {
+    opacity: 0.8;
+  }
+  /* line 308, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a:hover {
+    opacity: 1;
+  }
+  /* line 312, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a img {
+    margin-bottom: 10px;
+  }
+  /* line 316, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a .product_info {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 8px;
+    border-top: 1px dotted #33A3DC;
+  }
+  /* line 322, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a .product_info h3 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.9em;
+    color: #3887b4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    margin-top: 3px;
+  }
+  /* line 333, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a .product_info h4 {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.7em;
+    color: #cd5754;
+    margin-top: -4px;
+  }
+  /* line 340, ../components/sass/modules/_home.scss */
+  .main_content .product_grid .product_details a .product_info p {
+    font-family: "Open Sans" sans-serif;
+    font-size: 0.8em;
+    color: #666666;
+    padding-bottom: 5px;
   }
 }

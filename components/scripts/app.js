@@ -35,3 +35,12 @@ $(document).ready(function(){
 $(document).ready(function() {
 	$('.wmuSlider').wmuSlider();
 });
+
+// set the whitespace property of h3 when roll over the product
+$(document).ready(function() {
+	$('.product_details').hover(function() {
+         $(this).find('h3').addClass('hover');
+	}, function() {
+		 $(this).find('h3').removeClass('hover');
+	});
+});
