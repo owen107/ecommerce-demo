@@ -45,6 +45,20 @@ $(document).ready(function() {
 		 $(this).find('h3').removeClass('hover');
 	});
 });
+
+// initiate the moveToTop jQuery plugin
+$(document).ready(function() {
+			
+	var defaults = {
+		containerID: 'toTop', // fading element id
+		containerHoverID: 'toTopHover', // fading element hover id
+		scrollSpeed: 1200,
+		easingType: 'linear' 
+	};
+	
+	$().UItoTop({ easingType: 'easeOutQuart' });
+	
+});
 /*!
  * jQuery wmuSlider v2.1
  * 
@@ -17294,6 +17308,11 @@ jQuery.extend( jQuery.easing,
  * OF THE POSSIBILITY OF SUCH DAMAGE. 
  *
  */
+/* UItoTop jQuery Plugin 1.2 | Matt Varone | http://www.mattvarone.com/web-design/uitotop-jquery-plugin */
+(function($){$.fn.UItoTop=function(options){var defaults={text:'To Top',min:200,inDelay:600,outDelay:400,containerID:'toTop',containerHoverID:'toTopHover',scrollSpeed:1200,easingType:'linear'},settings=$.extend(defaults,options),containerIDhash='#'+settings.containerID,containerHoverIDHash='#'+settings.containerHoverID;$('body').append('<a href="#" id="'+settings.containerID+'">'+settings.text+'</a>');$(containerIDhash).hide().on('click.UItoTop',function(){$('html, body').animate({scrollTop:0},settings.scrollSpeed,settings.easingType);$('#'+settings.containerHoverID,this).stop().animate({'opacity':0},settings.inDelay,settings.easingType);return false;}).prepend('<span id="'+settings.containerHoverID+'"></span>').hover(function(){$(containerHoverIDHash,this).stop().animate({'opacity':1},600,'linear');},function(){$(containerHoverIDHash,this).stop().animate({'opacity':0},700,'linear');});$(window).scroll(function(){var sd=$(window).scrollTop();if(typeof document.body.style.maxHeight==="undefined"){$(containerIDhash).css({'position':'absolute','top':sd+$(window).height()-50});}
+if(sd>settings.min)
+$(containerIDhash).fadeIn(settings.inDelay);else
+$(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
 $.fn.megamenu=function(e){function r(){$(".megamenu").find("li, a").unbind();if(window.innerWidth<=768){o();s();if(n==0){$(".megamenu > li:not(.showhide)").hide(0)}}else{u();i()}}function i(){$(".megamenu li").bind("mouseover",function(){$(this).children(".dropdown, .megapanel").stop().fadeIn(t.interval)}).bind("mouseleave",function(){$(this).children(".dropdown, .megapanel").stop().fadeOut(t.interval)})}function s(){$(".megamenu > li > a").bind("click",function(e){if($(this).siblings(".dropdown, .megapanel").css("display")=="none"){$(this).siblings(".dropdown, .megapanel").slideDown(t.interval);$(this).siblings(".dropdown").find("ul").slideDown(t.interval);n=1}else{$(this).siblings(".dropdown, .megapanel").slideUp(t.interval)}})}function o(){$(".megamenu > li.showhide").show(0);$(".megamenu > li.showhide").bind("click",function(){if($(".megamenu > li").is(":hidden")){$(".megamenu > li").slideDown(300)}else{$(".megamenu > li:not(.showhide)").slideUp(300);$(".megamenu > li.showhide").show(0)}})}function u(){$(".megamenu > li").show(0);$(".megamenu > li.showhide").hide(0)}var t={interval:250};var n=0;$(".megamenu").prepend("<li class='showhide'><span class='title'>MENU</span><span class='icon1'></span><span class='icon2'></span></li>");r();$(window).resize(function(){r()})}
 },{"jquery":2}],2:[function(require,module,exports){
 /*!

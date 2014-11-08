@@ -1,3 +1,7 @@
+/**
+* Header and Navigation
+*/
+
 .top_header {
 	@include background-image(linear-gradient(to bottom, $blue, lighten($blue, 20)));
 	@include clearfix;
@@ -217,7 +221,7 @@
 
          &:before {
             position: absolute;
-            content: "\e000";
+            content: "\e617";
             font-family: "icomoon";
             font-size: 1.3em;
             color: lighten($blue, 20);

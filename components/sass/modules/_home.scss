@@ -1,6 +1,10 @@
+/**
+* Front Page Responsive Image Slider 
+*/
+
 .slider {
     @include clearfix;
-	padding-bottom: 10px;
+	  padding-bottom: 10px;
 
 	.wmuSlider {
 	  position: relative;
@@ -83,6 +87,10 @@
 	} // wmuSlider
 } //slider
 
+/**
+* Front Page Latest Products Grid 
+*/
+
 .main_content {
   .wrapper {
      @include breakpoint($small $large) {
@@ -149,9 +157,21 @@
             position: relative;
             &:hover {
                border: 1px solid $lightblue;
+               @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
+
+               img {
+                  @include scale(0.98, 0.98);
+               } //img
+
+               .shopnow img {
+                  @include translateX(0px);
+                  @include single-transition(all, 0.3s, ease-in-out);
+                  opacity: 1;
+               } // shopnow img
+
                .hover {
                  white-space: normal;
-               }
+               } // hover
 
                &:before {
                    background: transparent;
@@ -170,6 +190,7 @@
 
               img {
                 margin-bottom: 10px;
+                @include transition-duration(0.5s);
               }
 
               .product_info {
@@ -202,7 +223,25 @@
                     color: lighten($dark, 40);
                     padding-bottom: 5px;
                  } // h3
+
+                 .discount {
+                    color: darken($red, 5);
+                    padding-right: 5px;
+                    font-size: 0.9em;
+                 } // discount
+
+                 .original {
+                    text-decoration: line-through;
+                 } // original
               } // product info
+
+              .shopnow img {
+                  position: absolute;
+                  top: 23%;
+                  left: 35%;
+                  opacity: 0;
+                  @include translateX(-83px);
+              } // shop img
             } // a
          } // product details
       } //product item
@@ -220,9 +259,20 @@
               position: relative;
               &:hover {
                  border: 1px solid $lightblue;
+                 @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
                  .hover {
                    white-space: normal;
-                 }
+                 } // hover
+
+                 .shopnow img {
+                    @include translateX(0px);
+                    @include single-transition(all, 0.3s, ease-in-out);
+                    opacity: 1;
+                 } // shopnow img
+
+                 img {
+                    @include scale(0.98, 0.98);
+                 } // img
 
                  &:before {
                      background: transparent;
@@ -233,6 +283,7 @@
                      left: 5px;                   
                   } // product details hover before
               } // product details hover
+
               a {
                 opacity: 0.8;
                 &:hover {
@@ -273,7 +324,25 @@
                       color: lighten($dark, 40);
                       padding-bottom: 5px;
                    } // h3
+
+                   .discount {
+                      color: darken($red, 5);
+                      padding-right: 5px;
+                      font-size: 0.9em;
+                   } // discount
+
+                   .original {
+                      text-decoration: line-through;
+                   } // original
                 } // product info
+
+                .shopnow img {
+                    position: absolute;
+                    top: 23%;
+                    left: 35%;
+                    opacity: 0;
+                    @include translateX(-83px);
+                } // shop img
               } // a
           } // product details
       } //product item
@@ -290,9 +359,20 @@
           position: relative;
           &:hover {
              border: 1px solid $lightblue;
+             @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
              .hover {
                white-space: normal;
-             }
+             } // hover
+            
+            .shopnow img {
+                @include translateX(0px);
+                @include single-transition(all, 0.3s, ease-in-out);
+                opacity: 1;
+            } // shopnow img
+
+            img {
+              @include scale(0.98, 0.98);
+            } img
 
              &:before {
                  background: transparent;
@@ -311,7 +391,7 @@
 
             img {
               margin-bottom: 10px;
-            }
+            } // img
 
             .product_info {
                width: 90%;
@@ -343,7 +423,25 @@
                   color: lighten($dark, 40);
                   padding-bottom: 5px;
                } // h3
+
+               .discount {
+                  color: darken($red, 5);
+                  padding-right: 5px;
+                  font-size: 0.9em;
+               } // discount
+
+               .original {
+                  text-decoration: line-through;
+               } // original
             } // product info
+
+            .shopnow img {
+                position: absolute;
+                top: 23%;
+                left: 35%;
+                opacity: 0;
+                @include translateX(-83px);
+            } // shop img
           } // a
       } // product details
     } // breakpoint
