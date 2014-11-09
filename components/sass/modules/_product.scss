@@ -1,0 +1,122 @@
+/**
+* product content
+*/
+
+.products_content {
+	.wrapper {
+	   width: 90%;
+	   margin: 0 auto;
+
+	   .container {
+	      @include container(72em);
+
+	      .filters {
+	         @include span(4);
+	      } // filters
+
+	      .product_grid {
+	         @include span(8 at 4 of 12);
+	         @include container;
+
+	         .product_item {
+	             @include span(4);
+	             margin-bottom: 20px;
+
+		         .product_details {
+		            position: relative;
+
+		            &:hover {
+		               border: 1px solid $lightblue;
+		               @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
+
+		               img {
+		                  @include scale(0.98, 0.98);
+		               } //img
+
+		               .shopnow img {
+		                  @include translateX(0px);
+		                  @include single-transition(all, 0.3s, ease-in-out);
+		                  opacity: 1;
+		               } // shopnow img
+
+		               .hover {
+		                 white-space: normal;
+		               } // hover
+
+		               &:before {
+		                   background: transparent;
+		                   z-index: 10;
+		                   content: url('../images/products/logo_s.png');
+		                   position: absolute;
+		                   top: 5px;
+		                   left: 5px;                   
+		                } // product details hover before
+		            } // product details hover
+
+		            a {
+		              opacity: 0.8;
+		              &:hover {
+		                opacity: 1;
+		              } // a hover
+
+		              img {
+		                margin-bottom: 10px;
+		                @include transition-duration(0.5s);
+		              }
+
+		              .product_info {
+		                 width: 90%;
+		                 margin: 0 auto;
+		                 padding-top: 8px;
+		                 border-top: 1px dotted $lightblue;
+
+		                 h3 {
+		                    font-family: $productfamily;
+		                    font-size: 0.9em;
+		                    color: lighten($blue, 10);
+		                    white-space: nowrap;
+		                    overflow: hidden;
+		                    text-overflow: ellipsis;
+		                    line-height: 1.3em;
+		                    margin-top: 3px;
+		                 } // h3
+
+		                 h4 {
+		                    font-family: $productfamily;
+		                    font-size: 0.7em;
+		                    color: lighten($red, 10);
+		                    margin-top: -4px;
+		                 } // h4
+
+		                 p {
+		                    font-family: $productfamily;
+		                    font-size: 0.8em;
+		                    color: lighten($dark, 40);
+		                    padding-bottom: 5px;
+		                 } // h3
+
+		                 .discount {
+		                    color: darken($red, 5);
+		                    padding-right: 5px;
+		                    font-size: 0.9em;
+		                 } // discount
+
+		                 .original {
+		                    text-decoration: line-through;
+		                 } // original
+		              } // product info
+
+		              .shopnow img {
+		                  position: absolute;
+		                  top: 23%;
+		                  left: 35%;
+		                  opacity: 0;
+		                  @include translateX(-83px);
+		              } // shop img
+		            } // a
+		         } // product details
+	         } // product item
+	      } // product grid
+	   } // container
+	} // wrapper
+} // products content

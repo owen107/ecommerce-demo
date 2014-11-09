@@ -59,6 +59,49 @@ $(document).ready(function() {
 	$().UItoTop({ easingType: 'easeOutQuart' });
 	
 });
+
+// set up the jQuery UI accordion 
+$(document).ready( function() {
+    $('#department').accordion({
+        collapsible:true,
+        active: 0
+    });
+}); // initiate department filter 
+
+$(document).ready( function() {
+    $('#brand').accordion({
+        collapsible:true,
+        active: 0
+    });
+}); // initiate brand filter
+
+$(document).ready( function() {
+    $('#category').accordion({
+        collapsible:true,
+        active: 0
+    });
+}); // initiate category filter
+
+$(document).ready( function() {
+    $('#price').accordion({
+        collapsible:true,
+        active: 0
+    });
+}); // // initiate price filter
+
+$(document).ready( function() {
+    $('#size').accordion({
+        collapsible:true,
+        active: 0
+    });
+}); // initiate size filter
+
+$(document).ready( function() {
+    $('#color').accordion({
+    	collapsible:true,
+        active: 0
+    });
+}); // initiate color filter
 /*!
  * jQuery wmuSlider v2.1
  * 
