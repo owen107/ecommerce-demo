@@ -262,6 +262,7 @@
 
 	         .product_item {
 	             @include span(3);
+	             float: left;
 	             margin-bottom: 20px;
 
 		         .product_details {
@@ -359,6 +360,100 @@
 		         } // product details
 	         } // product item
 	      } // product grid
+
+	      @include breakpoint(max-width 900px) {
+              @include container;
+
+              .filters {
+                 @include span(4);
+              } // filters
+
+              .products_list {
+                 @include span(8);
+                 .wrapper {
+                    width: 86%;
+                    margin: 0 auto;
+                 } // wrapper
+
+                 .product_grid {
+                   .product_item { 
+                      @include span(6);
+                   } // product item
+                 } // product grid
+              } // product ist
+          } // breakpoint
+
+          @include breakpoint(max-width 720px) {
+              
+              .products_list .top_toolbar .sort {
+                 @include span(12);
+              } // top toolbar
+
+              .top_toolbar, .bottom_toolbar {
+                  .medium {
+                     display: none;
+                  } // medium
+              } // top_toolbar bottom_toolbar
+          } // breakpoint
+
+          @include breakpoint(480px 640px) {
+             .filters {
+                 @include span(5);
+              } // filters
+
+              .products_list {
+                 @include span(7);
+                 .wrapper {
+                    width: 69%;
+                    margin: 0 auto;
+                 } // wrapper
+
+                 .product_grid {
+                   .product_item { 
+                      @include span(12);
+                   } // product item
+                 } // product grid
+              } // product ist
+          }          
+
+          @include breakpoint(max-width 480px) {
+              .products_sum {
+                 margin-bottom: 0;
+                 p {
+                   a, span {
+                     font-size: 0.7em;
+                   } // a span
+                 } // p
+
+                 h3 {
+                   font-size: 1em;
+         
+                   span {
+                     font-size: 0.7em
+                   } //span
+                 } // h3 
+              } // product_sum
+
+              .products_list {
+                  @include span(12);
+                  .wrapper {
+                     width: 80%;
+                     margin: 0 auto;
+                  } // wrapper
+
+                  .product_grid .product_item {
+                     @include span(12);
+                  } // product item
+              } // product list
+
+              #hide_filters, #hide_pagi, #hide_sort {
+                  display: none;
+              } // hide filters, hide pagi, hide sort
+
+              .products_list .top_toolbar .sort {
+                 @include span(12);
+              } // top toolbar
+          } // breakpoint
 	   } // container
 	} // wrapper
 } // products content
