@@ -60,44 +60,50 @@ $(document).ready(function() {
 });
 
 // set up the jQuery UI accordion 
-$(document).ready( function() {
-    $('#department').accordion({
-        collapsible:true,
-        active: 0
-    });
+$(document).ready(function() {
+	$('#department h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
 }); // initiate department filter 
 
-$(document).ready( function() {
-    $('#brand').accordion({
-        collapsible:true,
-        active: 0
-    });
+$(document).ready(function() {
+	$('#category h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
+});// initiate category filter
+
+$(document).ready(function() {
+	$('#brand h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
 }); // initiate brand filter
 
-$(document).ready( function() {
-    $('#category').accordion({
-        collapsible:true,
-        active: 0
-    });
-}); // initiate category filter
-
-$(document).ready( function() {
-    $('#price').accordion({
-        collapsible:true,
-        active: 0
-    });
+$(document).ready(function() {
+	$('#price h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
 }); // // initiate price filter
 
-$(document).ready( function() {
-    $('#size').accordion({
-        collapsible:true,
-        active: 0
-    });
+$(document).ready(function() {
+	$('#size h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
 }); // initiate size filter
 
-$(document).ready( function() {
-    $('#color').accordion({
-    	collapsible:true,
-        active: 0
-    });
+$(document).ready(function() {
+	$('#color h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().show();
 }); // initiate color filter
