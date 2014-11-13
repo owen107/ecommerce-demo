@@ -60,7 +60,7 @@ $(document).ready(function() {
 	
 });
 
-// set up the jQuery UI accordion 
+// set up the jQuery filters accordion 
 $(document).ready(function() {
 	$('#department h3').click(function() {
 		$(this).toggleClass('special');
@@ -91,7 +91,7 @@ $(document).ready(function() {
     	$(this).next().toggle(800, 'swing');
     	return false
     }).next().show();
-}); // // initiate price filter
+}); // initiate price filter
 
 $(document).ready(function() {
 	$('#size h3').click(function() {
@@ -108,6 +108,213 @@ $(document).ready(function() {
     	return false
     }).next().show();
 }); // initiate color filter
+
+// set up the jQuery share accordion in details page 
+$(document).ready(function() {
+	$('#share h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle(800, 'swing');
+    	return false
+    }).next().hide();
+}); 
+
+// inititate easyResponsiveTabs jQuery plugin
+$(document).ready(function() {
+	$('#horizontalTab').easyResponsiveTabs({
+		type: 'default',
+		width: 'auto',
+		fit: true,
+		closed: 'accordion', // Start closed if in accordion view
+        activate: function(event) { // Callback function if tab is switched
+            var $tab = $(this);
+            var $info = $('#tabInfo');
+            var $name = $('span', $info);
+
+            $name.text($tab.text());
+
+            $info.show();
+        }
+	});
+});
+
+// create an image gallery selector in the product image
+$(document).ready(function() {
+	// select the link that its image child element has the gallery class selector
+	$('a:has(img.gallery)').click(function(e) {
+		 e.preventDefault(); // prevent the default action of the event to be triggered
+		 var largePath = $(this).attr('href');
+
+		 $('#large_image').attr({src: largePath});
+		 $('#full_screen a').attr({href: largePath});
+         // not follow the link
+		 // return false; 
+	});
+});
+
+// second approach to creata an image gallery selector
+$(document).ready(function() {
+	// select the image with the gallery class selector
+	$('#image_tn img.gallery').click(function() {
+		 var tnPath = $(this).attr('src');
+		 var largePath = tnPath.substr(0, tnPath.length-8) + ".jpeg";
+
+		 $('#large_image').attr({src: largePath});
+		 $('#full_screen a').attr({href: largePath});
+	});
+});
+
+//create lightbox effect for product gallery in the details page (Approach 1 - Using jQuery)
+$(document).ready(function() {
+	var $image = $('<img>'); // create a new image element
+	var $spinner = $('<img>');
+	$image.addClass("high_res");
+	$spinner.addClass("spinner");
+	$spinner.attr("src", "../images/details/ajax-loader.gif");
+	var overlay = $('#overlay'); 
+	overlay.append($image);  // append the new created image element into the overlay
+	overlay.append($spinner);  // append the spinner into the overlay
+
+	$('#full_screen a').click(function(event) {
+		event.preventDefault(); // prevent the default action of the event to be triggered
+		var curPath = $(this).attr('href');
+		var highResPath = curPath.substr(0, curPath.length-5) + "_hr.jpeg" 
+		$image.attr("src", highResPath);
+		overlay.css({
+			display: "block",
+			top: window.pageYOffset + "px",
+			left: window.pageXOffset + "px"
+		});
+		// when completely loading the image, remove the spinner 
+		$image.load(function() {
+			$spinner.remove();
+
+			$(window).scroll(function() {
+				if (overlay) {
+				  overlay.css({
+				    top: window.pageYOffset + "px",
+					left: window.pageXOffset + "px"
+				  });
+				}
+			});
+		});
+		// overlay.show();
+    });
+
+    overlay.click(function() {
+    	// overlay.hide();
+    	overlay.css("display", "none");
+    });
+});
+
+//create lightbox effect for size chart in the details page 
+$(document).ready(function() {
+	var $sizeChart = $('<img>'); // create a new image element
+	var $spinner = $('<img>');
+	$sizeChart.addClass("high_res");
+	$spinner.addClass("spinner");
+	$spinner.attr("src", "../images/details/spinner.gif");
+	var overLay = $('#overLay'); 
+	overLay.append($sizeChart);  // append the new created image element into the overlay
+	overLay.append($spinner);  // append the spinner into the overlay
+
+	$('#size_chart a').click(function(event) {
+		event.preventDefault(); // prevent the default action of the event to be triggered
+		var imgPath = $(this).attr('href');
+		$sizeChart.attr("src", imgPath);
+		overLay.css({
+			display: "block",
+			top: window.pageYOffset + "px",
+			left: window.pageXOffset + "px"
+		});
+		// when completely loading the image, remove the spinner 
+		$sizeChart.load(function() {
+			$spinner.remove();
+
+			$(window).scroll(function() {
+				if (overLay) {
+				  overLay.css({
+				    top: window.pageYOffset + "px",
+					left: window.pageXOffset + "px"
+				  });
+				}
+			});
+		});
+		// overlay.show();
+    });
+
+    overLay.click(function() {
+    	// overlay.hide();
+    	overLay.css("display", "none");
+    });
+});
+
+//create lightbox effect for product gallery in the details page (Approach 1 - Using jQuery)
+// $(document).ready(function() {
+// 	var $overLay = $('<div>');
+// 	var $sizeChart = $('<img>'); // create a new image element
+// 	var $spinner = $('<img>');
+// 	$spinner.attr("src", "../images/details/spinner.gif");
+// 	$overLay.append($sizeChart);  // append the new created image element into the overlay
+// 	$overLay.append($spinner);  // append the spinner into the overlay
+// 	$('body').append($overLay);
+
+// 	$('#size_chart a').click(function(event) {
+// 		event.preventDefault(); // prevent the default action of the event to be triggered
+// 		var imgPath = $(this).attr('href');
+// 		$sizeChart.attr("src", imgPath);
+// 		$sizeChart.css({
+// 			display: "block",
+//             marginTop: "30px",
+// 		    marginLeft: "auto",
+// 		    marginRight: "auto",
+// 		    marginBottom: "0px",
+//             maxWidth: ($(window).width()) + "px",
+//             maxHeight: ($(window).height() * 0.92) + "px"
+// 		});
+// 		$overLay.css({
+// 			display: "block",
+// 			top: window.pageYOffset + "px",
+// 			left: window.pageXOffset + "px",
+// 			width: $(window).width() + "px",
+// 	        height: $(window).height() + "px",
+// 	        background: "rgba(0, 0, 0, 0.7)",
+// 	        position: "absolute",
+// 	        cursor: "pointer" 
+// 		});
+
+// 		$spinner.css({
+// 			display: "block",
+// 		    marginTop: "300px",
+// 		    marginLeft: "auto",
+// 		    marginRight: "auto",
+// 		    marginBottom: "0px",
+// 		    position: "absolute",
+// 		    top: "0",
+// 		    left: ($(window).width() * 0.45) + "px"
+// 		});
+// 		// when completely loading the image, remove the spinner 
+// 		$sizeChart.load(function() {
+// 			$spinner.remove();
+
+// 			$(window).scroll(function() {
+// 				if ($overLay) {
+// 				  $overLay.css({
+// 				    top: window.pageYOffset + "px",
+// 					left: window.pageXOffset + "px"
+// 				  });
+// 				}
+// 			});
+// 		});
+// 		// overlay.show();
+//     });
+
+//     $overLay.click(function() {
+//     	// overlay.hide();
+//     	$overLay.css("display", "none");
+//     });
+// });
+
+
 /*!
  * jQuery wmuSlider v2.1
  * 
@@ -17362,6 +17569,179 @@ jQuery.extend( jQuery.easing,
 if(sd>settings.min)
 $(containerIDhash).fadeIn(settings.inDelay);else
 $(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
+// Easy Responsive Tabs Plugin
+// Author: Samson.Onna <Email : samson3d@gmail.com>
+(function ($) {
+    $.fn.extend({
+        easyResponsiveTabs: function (options) {
+            //Set the default values, use comma to separate the settings, example:
+            var defaults = {
+                type: 'default', //default, vertical, accordion;
+                width: 'auto',
+                fit: true,
+                closed: false,
+                activate: function(){}
+            }
+            //Variables
+            var options = $.extend(defaults, options);            
+            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
+            var hash = window.location.hash;
+            var historyApi = !!(window.history && history.replaceState);
+            
+            //Events
+            $(this).bind('tabactivate', function(e, currentTab) {
+                if(typeof options.activate === 'function') {
+                    options.activate.call(currentTab, e)
+                }
+            });
+
+            //Main function
+            this.each(function () {
+                var $respTabs = $(this);
+                var $respTabsList = $respTabs.find('ul.resp-tabs-list');
+                var respTabsId = $respTabs.attr('id');
+                $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
+                $respTabs.css({
+                    'display': 'block',
+                    'width': jwidth
+                });
+
+                $respTabs.find('.resp-tabs-container > div').addClass('resp-tab-content');
+                jtab_options();
+                //Properties Function
+                function jtab_options() {
+                    if (jtype == vtabs) {
+                        $respTabs.addClass('resp-vtabs');
+                    }
+                    if (jfit == true) {
+                        $respTabs.css({ width: '100%', margin: '0px' });
+                    }
+                    if (jtype == accord) {
+                        $respTabs.addClass('resp-easy-accordion');
+                        $respTabs.find('.resp-tabs-list').css('display', 'none');
+                    }
+                }
+
+                //Assigning the h2 markup to accordion title
+                var $tabItemh2;
+                $respTabs.find('.resp-tab-content').before("<h2 class='resp-accordion' role='tab'><span class='resp-arrow'></span></h2>");
+
+                var itemCount = 0;
+                $respTabs.find('.resp-accordion').each(function () {
+                    $tabItemh2 = $(this);
+                    var $tabItem = $respTabs.find('.resp-tab-item:eq(' + itemCount + ')');
+                    var $accItem = $respTabs.find('.resp-accordion:eq(' + itemCount + ')');
+                    $accItem.append($tabItem.html());
+                    $accItem.data($tabItem.data());
+                    $tabItemh2.attr('aria-controls', 'tab_item-' + (itemCount));
+                    itemCount++;
+                });
+
+                //Assigning the 'aria-controls' to Tab items
+                var count = 0,
+                    $tabContent;
+                $respTabs.find('.resp-tab-item').each(function () {
+                    $tabItem = $(this);
+                    $tabItem.attr('aria-controls', 'tab_item-' + (count));
+                    $tabItem.attr('role', 'tab');
+
+                    //Assigning the 'aria-labelledby' attr to tab-content
+                    var tabcount = 0;
+                    $respTabs.find('.resp-tab-content').each(function () {
+                        $tabContent = $(this);
+                        $tabContent.attr('aria-labelledby', 'tab_item-' + (tabcount));
+                        tabcount++;
+                    });
+                    count++;
+                });
+                
+                // Show correct content area
+                var tabNum = 0;
+                if(hash!='') {
+                    var matches = hash.match(new RegExp(respTabsId+"([0-9]+)"));
+                    if (matches!==null && matches.length===2) {
+                        tabNum = parseInt(matches[1],10)-1;
+                        if (tabNum > count) {
+                            tabNum = 0;
+                        }
+                    }
+                }
+
+                //Active correct tab
+                $($respTabs.find('.resp-tab-item')[tabNum]).addClass('resp-tab-active');
+
+                //keep closed if option = 'closed' or option is 'accordion' and the element is in accordion mode
+                if(options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {                  
+                    $($respTabs.find('.resp-accordion')[tabNum]).addClass('resp-tab-active');
+                    $($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active').attr('style', 'display:block');
+                }
+                //assign proper classes for when tabs mode is activated before making a selection in accordion mode
+                else {
+                    $($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active resp-accordion-closed')
+                }
+
+                //Tab Click action function
+                $respTabs.find("[role=tab]").each(function () {
+                   
+                    var $currentTab = $(this);
+                    $currentTab.click(function () {
+                        
+                        var $currentTab = $(this);
+                        var $tabAria = $currentTab.attr('aria-controls');
+
+                        if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
+                            $respTabs.find('.resp-tab-content-active').slideUp('', function () { $(this).addClass('resp-accordion-closed'); });
+                            $currentTab.removeClass('resp-tab-active');
+                            return false;
+                        }
+                        if (!$currentTab.hasClass('resp-tab-active') && $currentTab.hasClass('resp-accordion')) {
+                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content-active').slideUp().removeClass('resp-tab-content-active resp-accordion-closed');
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
+
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').slideDown().addClass('resp-tab-content-active');
+                        } else {
+                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content-active').removeAttr('style').removeClass('resp-tab-content-active').removeClass('resp-accordion-closed');
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').addClass('resp-tab-content-active').attr('style', 'display:block');
+                        }
+                        //Trigger tab activation event
+                        $currentTab.trigger('tabactivate', $currentTab);
+                        
+                        //Update Browser History
+                        if(historyApi) {
+                            var currentHash = window.location.hash;
+                            var newHash = respTabsId+(parseInt($tabAria.substring(9),10)+1).toString();
+                            if (currentHash!="") {
+                                var re = new RegExp(respTabsId+"[0-9]+");
+                                if (currentHash.match(re)!=null) {                                    
+                                    newHash = currentHash.replace(re,newHash);
+                                }
+                                else {
+                                    newHash = currentHash+"|"+newHash;
+                                }
+                            }
+                            else {
+                                newHash = '#'+newHash;
+                            }
+                            
+                            history.replaceState(null,null,newHash);
+                        }
+                    });
+                    
+                });
+                
+                //Window resize function                   
+                $(window).resize(function () {
+                    $respTabs.find('.resp-accordion-closed').removeAttr('style');
+                });
+            });
+        }
+    });
+})(jQuery);
+
+
 $.fn.megamenu=function(e){function r(){$(".megamenu").find("li, a").unbind();if(window.innerWidth<=768){o();s();if(n==0){$(".megamenu > li:not(.showhide)").hide(0)}}else{u();i()}}function i(){$(".megamenu li").bind("mouseover",function(){$(this).children(".dropdown, .megapanel").stop().fadeIn(t.interval)}).bind("mouseleave",function(){$(this).children(".dropdown, .megapanel").stop().fadeOut(t.interval)})}function s(){$(".megamenu > li > a").bind("click",function(e){if($(this).siblings(".dropdown, .megapanel").css("display")=="none"){$(this).siblings(".dropdown, .megapanel").slideDown(t.interval);$(this).siblings(".dropdown").find("ul").slideDown(t.interval);n=1}else{$(this).siblings(".dropdown, .megapanel").slideUp(t.interval)}})}function o(){$(".megamenu > li.showhide").show(0);$(".megamenu > li.showhide").bind("click",function(){if($(".megamenu > li").is(":hidden")){$(".megamenu > li").slideDown(300)}else{$(".megamenu > li:not(.showhide)").slideUp(300);$(".megamenu > li.showhide").show(0)}})}function u(){$(".megamenu > li").show(0);$(".megamenu > li.showhide").hide(0)}var t={interval:250};var n=0;$(".megamenu").prepend("<li class='showhide'><span class='title'>MENU</span><span class='icon1'></span><span class='icon2'></span></li>");r();$(window).resize(function(){r()})}
 },{"jquery":2}],2:[function(require,module,exports){
 /*!

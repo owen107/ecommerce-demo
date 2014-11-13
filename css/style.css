@@ -467,7 +467,7 @@ img {
 /* line 222, ../components/sass/modules/_nav.scss */
 .mid_header .mid_header_right .search:before {
   position: absolute;
-  content: "\e626";
+  content: "\e609";
   font-family: "icomoon";
   font-size: 1.3em;
   color: #55a0ca;
@@ -1240,14 +1240,14 @@ img {
 /* line 61, ../components/sass/modules/_product.scss */
 .products_content .wrapper .container .filters h3:after {
   font-family: "icomoon";
-  content: "\e602";
+  content: "\e60e";
   float: right;
   font-size: 0.7em;
   padding-right: 5px;
 }
 /* line 70, ../components/sass/modules/_product.scss */
 .products_content .wrapper .container .filters h3.special:after {
-  content: "\e603";
+  content: "\e60d";
 }
 /* line 74, ../components/sass/modules/_product.scss */
 .products_content .wrapper .container .filters .filter_box {
@@ -1756,6 +1756,102 @@ img {
 }
 
 /**
+* Details page
+*/
+/* line 6, ../components/sass/modules/_details.scss */
+#product_details .wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 11, ../components/sass/modules/_details.scss */
+#product_details #product_content {
+  max-width: 72em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../components/sass/modules/_details.scss */
+#product_details #product_content #overlay, #product_details #product_content #overLay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  cursor: pointer;
+  z-index: 100;
+}
+/* line 21, ../components/sass/modules/_details.scss */
+#product_details #product_content #overlay img.high_res, #product_details #product_content #overLay img.high_res {
+  display: block;
+  margin: 30px auto 0;
+  max-width: 100%;
+  max-height: 92%;
+}
+/* line 28, ../components/sass/modules/_details.scss */
+#product_details #product_content #overlay img.spinner, #product_details #product_content #overLay img.spinner {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  margin-top: 300px;
+}
+/* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+#product_details #product_content:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 39, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  max-width: 64em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+#product_details #product_content .image_container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 43, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_list {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+/* line 47, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_gallery {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 75%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+/* line 52, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+
+/**
 * Footer 
 */
 /* line 5, ../components/sass/modules/_footer.scss */
@@ -1937,27 +2033,27 @@ img {
 }
 /* line 141, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .facebook a:before {
-  content: "\e609";
+  content: "\e618";
 }
 /* line 145, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .twitter a:before {
-  content: "\e60c";
+  content: "\e61b";
 }
 /* line 149, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .googleplus a:before {
-  content: "\e605";
+  content: "\e614";
 }
 /* line 153, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .youtube a:before {
-  content: "\e612";
+  content: "\e61e";
 }
 /* line 157, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .instagram a:before {
-  content: "\e625";
+  content: "\e61a";
 }
 /* line 161, ../components/sass/modules/_footer.scss */
 .footer .mid_footer .social .pinterest a:before {
-  content: "\e624";
+  content: "\e630";
 }
 @media (min-width: 768px) and (max-width: 1280px) {
   /* line 167, ../components/sass/modules/_footer.scss */
