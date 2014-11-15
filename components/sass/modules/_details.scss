@@ -18,6 +18,20 @@
            cursor: pointer;
            z-index: 100;
 
+           #content {
+             
+             width: 100%;
+             height: 100%;
+             position: relative;
+
+             a.close {
+              content: url('../images/details/close.png');
+              position: absolute;
+              top: 0;
+              right: 0;
+             } // close
+           } // content
+
            img.high_res {
               display: block;
               margin: 30px auto 0;
@@ -42,15 +56,81 @@
 
 	      .image_list {
 	         @include span(3);
+
+           img.gallery{
+              opacity: 0.8;
+
+              &:hover {
+                opacity: 1;
+                border: 3px solid lighten($blue, 20);
+                @include transition-duration(0.1s);
+                @include transition-timing-function(linear);
+              } // li hover
+           } // img gallery
+
+           img.selectedImg {
+              border: 3px solid lighten($blue, 20);
+              opacity: 1;
+           } // img selectedImg
 	      } // image list
 
 	      .image_gallery {
 	         @include span(9);
+           
+           .big_img {
+             position: relative;
+             max-width: 384px;
+
+             #logo {
+                position: absolute;
+                top: 5px;
+                left: 15px;
+             } // logo
+
+             #zoomin {
+                position: absolute;
+                right: 5px;
+                bottom: 12px;
+                width: 40px;
+                height: 40px;
+             }
+           } // big_img
 	      } // image gallery
 	   } // image container
 
 	   .purchase_block {
 	      @include span(4);
+
+        .color_list li {
+          display: inline-block;
+
+          .blue, .lightblue, .grey {
+             width: 25px;
+             height: 25px;
+             opacity: 0.9;
+             border: 2px solid lighten($dark, 80);
+             @include border-radius(50%);
+
+             &:hover {
+               opacity: 1;
+               @include scale(1.2);
+               @include transition-duration(0.2s);
+               @include transition-timing-function(ease-in-out);
+             } // hover
+          } // all colors
+
+          .blue  {
+            background: $blue;            
+          } // blue
+
+          .grey {
+            background: lighten($dark, 30);
+          } // grey
+
+          .lightblue {
+            background: $lightblue;
+          } // lightblue
+        } // color-list li
 	   } // purchase block
 	} // product content
 } // product details

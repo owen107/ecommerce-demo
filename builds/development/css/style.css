@@ -1780,13 +1780,26 @@ img {
   z-index: 100;
 }
 /* line 21, ../components/sass/modules/_details.scss */
+#product_details #product_content #overlay #content, #product_details #product_content #overLay #content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* line 27, ../components/sass/modules/_details.scss */
+#product_details #product_content #overlay #content a.close, #product_details #product_content #overLay #content a.close {
+  content: url("../images/details/close.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 35, ../components/sass/modules/_details.scss */
 #product_details #product_content #overlay img.high_res, #product_details #product_content #overLay img.high_res {
   display: block;
   margin: 30px auto 0;
   max-width: 100%;
   max-height: 92%;
 }
-/* line 28, ../components/sass/modules/_details.scss */
+/* line 42, ../components/sass/modules/_details.scss */
 #product_details #product_content #overlay img.spinner, #product_details #product_content #overLay img.spinner {
   display: block;
   margin: 0 auto;
@@ -1801,7 +1814,7 @@ img {
   display: block;
   clear: both;
 }
-/* line 39, ../components/sass/modules/_details.scss */
+/* line 53, ../components/sass/modules/_details.scss */
 #product_details #product_content .image_container {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1820,7 +1833,7 @@ img {
   display: block;
   clear: both;
 }
-/* line 43, ../components/sass/modules/_details.scss */
+/* line 57, ../components/sass/modules/_details.scss */
 #product_details #product_content .image_container .image_list {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1830,7 +1843,29 @@ img {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 47, ../components/sass/modules/_details.scss */
+/* line 60, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_list img.gallery {
+  opacity: 0.8;
+}
+/* line 63, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_list img.gallery:hover {
+  opacity: 1;
+  border: 3px solid #55a0ca;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+/* line 71, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_list img.selectedImg {
+  border: 3px solid #55a0ca;
+  opacity: 1;
+}
+/* line 77, ../components/sass/modules/_details.scss */
 #product_details #product_content .image_container .image_gallery {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1840,7 +1875,26 @@ img {
   padding-left: 0.83333%;
   padding-right: 0.83333%;
 }
-/* line 52, ../components/sass/modules/_details.scss */
+/* line 80, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_gallery .big_img {
+  position: relative;
+  max-width: 384px;
+}
+/* line 84, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_gallery .big_img #logo {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+}
+/* line 90, ../components/sass/modules/_details.scss */
+#product_details #product_content .image_container .image_gallery .big_img #zoomin {
+  position: absolute;
+  right: 5px;
+  bottom: 12px;
+  width: 40px;
+  height: 40px;
+}
+/* line 101, ../components/sass/modules/_details.scss */
 #product_details #product_content .purchase_block {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1849,6 +1903,48 @@ img {
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
+}
+/* line 104, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li {
+  display: inline-block;
+}
+/* line 107, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li .blue, #product_details #product_content .purchase_block .color_list li .lightblue, #product_details #product_content .purchase_block .color_list li .grey {
+  width: 25px;
+  height: 25px;
+  opacity: 0.9;
+  border: 2px solid #cccccc;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 114, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li .blue:hover, #product_details #product_content .purchase_block .color_list li .lightblue:hover, #product_details #product_content .purchase_block .color_list li .grey:hover {
+  opacity: 1;
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 122, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li .blue {
+  background: #2C6A8D;
+}
+/* line 126, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li .grey {
+  background: #4d4d4d;
+}
+/* line 130, ../components/sass/modules/_details.scss */
+#product_details #product_content .purchase_block .color_list li .lightblue {
+  background: #33A3DC;
 }
 
 /**

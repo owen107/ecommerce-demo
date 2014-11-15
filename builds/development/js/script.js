@@ -141,7 +141,8 @@ $(document).ready(function() {
 $(document).ready(function() {
 	// select the link that its image child element has the gallery class selector
 	$('a:has(img.gallery)').click(function(e) {
-		 e.preventDefault(); // prevent the default action of the event to be triggered
+		 e.preventDefault(); 
+		 e.stopPropagation(); // prevent the default action of the event to be triggered
 		 var largePath = $(this).attr('href');
 
 		 $('#large_image').attr({src: largePath});
@@ -155,10 +156,23 @@ $(document).ready(function() {
 $(document).ready(function() {
 	// select the image with the gallery class selector
 	$('#image_tn img.gallery').click(function() {
+		 // check to see whether there is an image that has already been selected
+         // and remove the class if it does exists
+         $('#image_tn img').each(function() {
+		 	if($(this).hasClass("selectedImg")) {
+		 		$(this).removeClass("selectedImg");
+		 	}
+		 });
+		 
+		 // add a new class for the image that has been selected
+         $(this).addClass("selectedImg");
+		 
 		 var tnPath = $(this).attr('src');
 		 var largePath = tnPath.substr(0, tnPath.length-8) + ".jpeg";
+		 var zoomInImgPath = largePath.substr(0, largePath.length-5) + "_hr.jpeg";
 
 		 $('#large_image').attr({src: largePath});
+		 $('#large_image').parent().attr("href", zoomInImgPath);
 		 $('#full_screen a').attr({href: largePath});
 	});
 });
@@ -248,72 +262,45 @@ $(document).ready(function() {
     });
 });
 
-//create lightbox effect for product gallery in the details page (Approach 1 - Using jQuery)
-// $(document).ready(function() {
-// 	var $overLay = $('<div>');
-// 	var $sizeChart = $('<img>'); // create a new image element
-// 	var $spinner = $('<img>');
-// 	$spinner.attr("src", "../images/details/spinner.gif");
-// 	$overLay.append($sizeChart);  // append the new created image element into the overlay
-// 	$overLay.append($spinner);  // append the spinner into the overlay
-// 	$('body').append($overLay);
+// create color options selectors for details page
+$(document).ready(function() {
+	$('.color_list a').click(function(e) {
+		e.stopPropagation();
+		e.preventDefault(); // prevent default action of event
 
-// 	$('#size_chart a').click(function(event) {
-// 		event.preventDefault(); // prevent the default action of the event to be triggered
-// 		var imgPath = $(this).attr('href');
-// 		$sizeChart.attr("src", imgPath);
-// 		$sizeChart.css({
-// 			display: "block",
-//             marginTop: "30px",
-// 		    marginLeft: "auto",
-// 		    marginRight: "auto",
-// 		    marginBottom: "0px",
-//             maxWidth: ($(window).width()) + "px",
-//             maxHeight: ($(window).height() * 0.92) + "px"
-// 		});
-// 		$overLay.css({
-// 			display: "block",
-// 			top: window.pageYOffset + "px",
-// 			left: window.pageXOffset + "px",
-// 			width: $(window).width() + "px",
-// 	        height: $(window).height() + "px",
-// 	        background: "rgba(0, 0, 0, 0.7)",
-// 	        position: "absolute",
-// 	        cursor: "pointer" 
-// 		});
+		// select the class name and save as the color option
+		var color = $(this).children().attr('class');
 
-// 		$spinner.css({
-// 			display: "block",
-// 		    marginTop: "300px",
-// 		    marginLeft: "auto",
-// 		    marginRight: "auto",
-// 		    marginBottom: "0px",
-// 		    position: "absolute",
-// 		    top: "0",
-// 		    left: ($(window).width() * 0.45) + "px"
-// 		});
-// 		// when completely loading the image, remove the spinner 
-// 		$sizeChart.load(function() {
-// 			$spinner.remove();
+		// select the image list and loop through each of its child element
+		var list = $('#image_tn li');
+		list.each(function(index) {
 
-// 			$(window).scroll(function() {
-// 				if ($overLay) {
-// 				  $overLay.css({
-// 				    top: window.pageYOffset + "px",
-// 					left: window.pageXOffset + "px"
-// 				  });
-// 				}
-// 			});
-// 		});
-// 		// overlay.show();
-//     });
+		   // get the current image location
+           var imageLoc = $(this).children().attr("src");
 
-//     $overLay.click(function() {
-//     	// overlay.hide();
-//     	$overLay.css("display", "none");
-//     });
-// });
+           // change the image location
+           var newImageLoc = imageLoc.substring(0, 19) + color + "_tn.jpeg";
 
+           // reset the image location
+           $(this).children().attr("src", newImageLoc);
+
+           // check if each image element has the class selector "selectedImg" 
+           // and remove the class if it does exists
+           if ($(this).children().hasClass("selectedImg")) {
+                $(this).children().removeClass("selectedImg");
+           }
+
+           // if the element is the first child, also change the path for gallery and zoomIn image
+           if (index === 0) {
+           	  var largeImageLoc = $('#large_image').attr("src");
+           	  var newLargeImgLoc = newImageLoc.substr(0, newImageLoc.length-8) + ".jpeg";
+           	  var zoomInImgLoc = newLargeImgLoc.substr(0, newLargeImgLoc.length-5) + "_hr.jpeg";
+           	  $('#large_image').attr("src", newLargeImgLoc);
+           	  $('#large_image').parent().attr("href", zoomInImgLoc);
+           }
+		});
+	});
+});
 
 /*!
  * jQuery wmuSlider v2.1
