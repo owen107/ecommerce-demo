@@ -110,31 +110,19 @@ $(document).ready(function() {
 
 // set up the jQuery share accordion in details page 
 $(document).ready(function() {
+	
+    $('#product_desc h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle('slow');
+    	return false
+    }).next().show();
+
 	$('#share h3').click(function() {
 		$(this).toggleClass('special');
     	$(this).next().toggle(800, 'swing');
     	return false
     }).next().hide();
 }); 
-
-// inititate easyResponsiveTabs jQuery plugin
-$(document).ready(function() {
-	$('#horizontalTab').easyResponsiveTabs({
-		type: 'default',
-		width: 'auto',
-		fit: true,
-		closed: 'accordion', // Start closed if in accordion view
-        activate: function(event) { // Callback function if tab is switched
-            var $tab = $(this);
-            var $info = $('#tabInfo');
-            var $name = $('span', $info);
-
-            $name.text($tab.text());
-
-            $info.show();
-        }
-	});
-});
 
 // create an image gallery selector in the product image
 $(document).ready(function() {
@@ -185,6 +173,7 @@ $(document).ready(function() {
 	overlay.append($spinner);  // append the spinner into the overlay
 
 	$('#full_screen a').click(function(event) {
+		event.stopPropagation();
 		event.preventDefault(); // prevent the default action of the event to be triggered
 		var curPath = $(this).attr('href');
 		var highResPath = curPath.substr(0, curPath.length-5) + "_hr.jpeg" 
@@ -266,6 +255,7 @@ $(document).ready(function() {
 
 		// select the class name and save as the color option
 		var color = $(this).children().attr('class');
+		$('#color_selected span').text(color);
 
 		// select the image list and loop through each of its child element
 		var list = $('#image_tn li');
@@ -291,7 +281,108 @@ $(document).ready(function() {
            	  var zoomInImgLoc = newLargeImgLoc.substr(0, newLargeImgLoc.length-5) + "_hr.jpeg";
            	  $('#large_image').attr("src", newLargeImgLoc);
            	  $('#large_image').parent().attr("href", zoomInImgLoc);
+           	  $('#full_screen a').attr("href", newLargeImgLoc);
            }
 		});
 	});
+});
+
+// create a dropdown for size and quantity select element in details page 
+$(document).ready(function() {
+    
+    // create variables for selected ID elements, appended object and target ID
+    var size = $("#size"),
+        sizeTargId = size.attr("id") + "Target",
+        sizeObject = $(".size"),
+        quantity = $("#quantity"),
+        quantityTargId = quantity.attr("id") + "Target",
+        quantityObject = $(".quantity");
+    
+    // create dropdown for each element
+    createDropDown(size, sizeObject, sizeTargId);
+    createDropDown(quantity, quantityObject, quantityTargId);
+
+    // bind click for each element
+    bindDropdown(size);
+    bindDropdown(quantity);
+
+});
+
+// reusable function for creating the dropdown 
+function createDropDown(selectedElem, appendObject, targetId){
+    var selected = selectedElem.find("option[selected]");  // get selected <option>
+    var options = $("option", selectedElem);  // get all <option> elements
+
+    // create <dl> and <dt> with selected value inside it
+    appendObject.append('<dl id="' + targetId + '"class="dropdown"></dl>');
+    // console.log(targetId);
+    $("#" + targetId).append('<dt><a href="#">' + selected.text() + 
+        '<span class="value">' + selected.val() + 
+        '</span></a></dt>');
+    $("#" + targetId).append('<dd><ul></ul></dd>');
+
+    // iterate through all the <option> elements and create UL
+    options.each(function(){
+        $("#" + targetId + " dd ul").append('<li><a href="#">' + 
+            $(this).text() + '<span class="value">' + 
+            $(this).val() + '</span></a></li>');
+    });
+}
+
+// reusable function for binding event of each dropdown 
+function bindDropdown(elementId) {
+
+    var targetId = elementId.attr('id');
+
+    // when clicking dropdown dt element
+    // UL element inside can be toggle
+    $("." + targetId + " .dropdown dt a").click(function() {
+        $("." + targetId + " .dropdown dd ul").toggle();
+    });
+    
+    // check whether the LI element in UL is clicked
+    // if so, hide UL 
+    $(document).bind('click', function(e) {
+        var $clicked = $(e.target);
+        if (! $clicked.parents().hasClass("dropdown"))
+            $("." + targetId + " .dropdown dd ul").hide();
+    });
+    
+    // when clicking li elment, replace the text of link in dt element
+    // meanwhile, set the value for hidden select element            
+    $("." + targetId + " .dropdown dd ul li a").click(function() {
+        var text = $(this).html();
+        $("." + targetId + " .dropdown dt a").html(text);
+        $("." + targetId + " .dropdown dd ul").hide();
+
+        elementId.val($(this).find("span.value").html());
+    });
+}
+
+// initiate flexisel carousel jQuery plugin
+$(window).load(function() {
+
+	$("#recommend_products").flexisel({
+		visibleItems: 5,
+		animationSpeed: 1000,
+		autoPlay: true,
+		autoPlaySpeed: 3000,    		
+		pauseOnHover: true,
+		enableResponsiveBreakpoints: true,
+    	responsiveBreakpoints: { 
+    		portrait: { 
+    			changePoint:480,
+    			visibleItems: 1
+    		}, 
+    		landscape: { 
+    			changePoint:640,
+    			visibleItems: 2
+    		},
+    		tablet: { 
+    			changePoint:768,
+    			visibleItems: 3
+    		}
+    	}
+    });
+    
 });

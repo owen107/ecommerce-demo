@@ -111,31 +111,19 @@ $(document).ready(function() {
 
 // set up the jQuery share accordion in details page 
 $(document).ready(function() {
+	
+    $('#product_desc h3').click(function() {
+		$(this).toggleClass('special');
+    	$(this).next().toggle('slow');
+    	return false
+    }).next().show();
+
 	$('#share h3').click(function() {
 		$(this).toggleClass('special');
     	$(this).next().toggle(800, 'swing');
     	return false
     }).next().hide();
 }); 
-
-// inititate easyResponsiveTabs jQuery plugin
-$(document).ready(function() {
-	$('#horizontalTab').easyResponsiveTabs({
-		type: 'default',
-		width: 'auto',
-		fit: true,
-		closed: 'accordion', // Start closed if in accordion view
-        activate: function(event) { // Callback function if tab is switched
-            var $tab = $(this);
-            var $info = $('#tabInfo');
-            var $name = $('span', $info);
-
-            $name.text($tab.text());
-
-            $info.show();
-        }
-	});
-});
 
 // create an image gallery selector in the product image
 $(document).ready(function() {
@@ -156,16 +144,13 @@ $(document).ready(function() {
 $(document).ready(function() {
 	// select the image with the gallery class selector
 	$('#image_tn img.gallery').click(function() {
-		 // check to see whether there is an image that has already been selected
-         // and remove the class if it does exists
-         $('#image_tn img').each(function() {
+		 $('#image_tn img').each(function() {
 		 	if($(this).hasClass("selectedImg")) {
 		 		$(this).removeClass("selectedImg");
 		 	}
 		 });
 		 
-		 // add a new class for the image that has been selected
-         $(this).addClass("selectedImg");
+		 $(this).addClass("selectedImg");
 		 
 		 var tnPath = $(this).attr('src');
 		 var largePath = tnPath.substr(0, tnPath.length-8) + ".jpeg";
@@ -189,6 +174,7 @@ $(document).ready(function() {
 	overlay.append($spinner);  // append the spinner into the overlay
 
 	$('#full_screen a').click(function(event) {
+		event.stopPropagation();
 		event.preventDefault(); // prevent the default action of the event to be triggered
 		var curPath = $(this).attr('href');
 		var highResPath = curPath.substr(0, curPath.length-5) + "_hr.jpeg" 
@@ -270,6 +256,7 @@ $(document).ready(function() {
 
 		// select the class name and save as the color option
 		var color = $(this).children().attr('class');
+		$('#color_selected span').text(color);
 
 		// select the image list and loop through each of its child element
 		var list = $('#image_tn li');
@@ -284,8 +271,6 @@ $(document).ready(function() {
            // reset the image location
            $(this).children().attr("src", newImageLoc);
 
-           // check if each image element has the class selector "selectedImg" 
-           // and remove the class if it does exists
            if ($(this).children().hasClass("selectedImg")) {
                 $(this).children().removeClass("selectedImg");
            }
@@ -297,9 +282,110 @@ $(document).ready(function() {
            	  var zoomInImgLoc = newLargeImgLoc.substr(0, newLargeImgLoc.length-5) + "_hr.jpeg";
            	  $('#large_image').attr("src", newLargeImgLoc);
            	  $('#large_image').parent().attr("href", zoomInImgLoc);
+           	  $('#full_screen a').attr("href", newLargeImgLoc);
            }
 		});
 	});
+});
+
+// create a dropdown for size and quantity select element in details page 
+$(document).ready(function() {
+    
+    // create variables for selected ID elements, appended object and target ID
+    var size = $("#size"),
+        sizeTargId = size.attr("id") + "Target",
+        sizeObject = $(".size"),
+        quantity = $("#quantity"),
+        quantityTargId = quantity.attr("id") + "Target",
+        quantityObject = $(".quantity");
+    
+    // create dropdown for each element
+    createDropDown(size, sizeObject, sizeTargId);
+    createDropDown(quantity, quantityObject, quantityTargId);
+
+    // bind click for each element
+    bindDropdown(size);
+    bindDropdown(quantity);
+
+});
+
+// reusable function for creating the dropdown 
+function createDropDown(selectedElem, appendObject, targetId){
+    var selected = selectedElem.find("option[selected]");  // get selected <option>
+    var options = $("option", selectedElem);  // get all <option> elements
+
+    // create <dl> and <dt> with selected value inside it
+    appendObject.append('<dl id="' + targetId + '"class="dropdown"></dl>');
+    // console.log(targetId);
+    $("#" + targetId).append('<dt><a href="#">' + selected.text() + 
+        '<span class="value">' + selected.val() + 
+        '</span></a></dt>');
+    $("#" + targetId).append('<dd><ul></ul></dd>');
+
+    // iterate through all the <option> elements and create UL
+    options.each(function(){
+        $("#" + targetId + " dd ul").append('<li><a href="#">' + 
+            $(this).text() + '<span class="value">' + 
+            $(this).val() + '</span></a></li>');
+    });
+}
+
+// reusable function for binding event of each dropdown 
+function bindDropdown(elementId) {
+
+    var targetId = elementId.attr('id');
+
+    // when clicking dropdown dt element
+    // UL element inside can be toggle
+    $("." + targetId + " .dropdown dt a").click(function() {
+        $("." + targetId + " .dropdown dd ul").toggle();
+    });
+    
+    // check whether the LI element in UL is clicked
+    // if so, hide UL 
+    $(document).bind('click', function(e) {
+        var $clicked = $(e.target);
+        if (! $clicked.parents().hasClass("dropdown"))
+            $("." + targetId + " .dropdown dd ul").hide();
+    });
+    
+    // when clicking li elment, replace the text of link in dt element
+    // meanwhile, set the value for hidden select element            
+    $("." + targetId + " .dropdown dd ul li a").click(function() {
+        var text = $(this).html();
+        $("." + targetId + " .dropdown dt a").html(text);
+        $("." + targetId + " .dropdown dd ul").hide();
+
+        elementId.val($(this).find("span.value").html());
+    });
+}
+
+// initiate flexisel carousel jQuery plugin
+$(window).load(function() {
+
+	$("#recommend_products").flexisel({
+		visibleItems: 5,
+		animationSpeed: 1000,
+		autoPlay: true,
+		autoPlaySpeed: 3000,    		
+		pauseOnHover: true,
+		enableResponsiveBreakpoints: true,
+    	responsiveBreakpoints: { 
+    		portrait: { 
+    			changePoint:480,
+    			visibleItems: 1
+    		}, 
+    		landscape: { 
+    			changePoint:640,
+    			visibleItems: 2
+    		},
+    		tablet: { 
+    			changePoint:768,
+    			visibleItems: 3
+    		}
+    	}
+    });
+    
 });
 
 /*!
@@ -17556,178 +17642,290 @@ jQuery.extend( jQuery.easing,
 if(sd>settings.min)
 $(containerIDhash).fadeIn(settings.inDelay);else
 $(containerIDhash).fadeOut(settings.Outdelay);});};})(jQuery);
-// Easy Responsive Tabs Plugin
-// Author: Samson.Onna <Email : samson3d@gmail.com>
+/*
+* File: jquery.flexisel.js
+* Version: 1.0.0
+* Description: Responsive carousel jQuery plugin
+* Author: 9bit Studios
+* Copyright 2012, 9bit Studios
+* http://www.9bitstudios.com
+* Free to use and abuse under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+*/
+
 (function ($) {
-    $.fn.extend({
-        easyResponsiveTabs: function (options) {
-            //Set the default values, use comma to separate the settings, example:
-            var defaults = {
-                type: 'default', //default, vertical, accordion;
-                width: 'auto',
-                fit: true,
-                closed: false,
-                activate: function(){}
-            }
-            //Variables
-            var options = $.extend(defaults, options);            
-            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
-            var hash = window.location.hash;
-            var historyApi = !!(window.history && history.replaceState);
-            
-            //Events
-            $(this).bind('tabactivate', function(e, currentTab) {
-                if(typeof options.activate === 'function') {
-                    options.activate.call(currentTab, e)
-                }
-            });
 
-            //Main function
-            this.each(function () {
-                var $respTabs = $(this);
-                var $respTabsList = $respTabs.find('ul.resp-tabs-list');
-                var respTabsId = $respTabs.attr('id');
-                $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
-                $respTabs.css({
-                    'display': 'block',
-                    'width': jwidth
-                });
+    $.fn.flexisel = function (options) {
 
-                $respTabs.find('.resp-tabs-container > div').addClass('resp-tab-content');
-                jtab_options();
-                //Properties Function
-                function jtab_options() {
-                    if (jtype == vtabs) {
-                        $respTabs.addClass('resp-vtabs');
-                    }
-                    if (jfit == true) {
-                        $respTabs.css({ width: '100%', margin: '0px' });
-                    }
-                    if (jtype == accord) {
-                        $respTabs.addClass('resp-easy-accordion');
-                        $respTabs.find('.resp-tabs-list').css('display', 'none');
-                    }
-                }
+        var defaults = $.extend({
+    		visibleItems: 4,
+    		animationSpeed: 200,
+    		autoPlay: false,
+    		autoPlaySpeed: 3000,    		
+    		pauseOnHover: true,
+			setMaxWidthAndHeight: false,
+    		enableResponsiveBreakpoints: false,
+    		responsiveBreakpoints: { 
+	    		portrait: { 
+	    			changePoint:480,
+	    			visibleItems: 1
+	    		}, 
+	    		landscape: { 
+	    			changePoint:640,
+	    			visibleItems: 2
+	    		},
+	    		tablet: { 
+	    			changePoint:768,
+	    			visibleItems: 3
+	    		}
+        	}
+        }, options);
+        
+		/******************************
+		Private Variables
+		*******************************/         
+        
+        var object = $(this);
+		var settings = $.extend(defaults, options);        
+		var itemsWidth; // Declare the global width of each item in carousel
+		var canNavigate = true; 
+        var itemsVisible = settings.visibleItems; 
+        
+		/******************************
+		Public Methods
+		*******************************/        
+        
+        var methods = {
+        		
+			init: function() {
+				
+        		return this.each(function () {
+        			methods.appendHTML();
+        			methods.setEventHandlers();      			
+        			methods.initializeItems();
+				});
+			},
 
-                //Assigning the h2 markup to accordion title
-                var $tabItemh2;
-                $respTabs.find('.resp-tab-content').before("<h2 class='resp-accordion' role='tab'><span class='resp-arrow'></span></h2>");
+			/******************************
+			Initialize Items
+			*******************************/			
+			
+			initializeItems: function() {
+				
+				var listParent = object.parent();
+				var innerHeight = listParent.height(); 
+				var childSet = object.children();
+				
+    			var innerWidth = listParent.width(); // Set widths
+    			itemsWidth = (innerWidth)/itemsVisible;
+    			childSet.width(itemsWidth);
+    			childSet.last().insertBefore(childSet.first());
+    			childSet.last().insertBefore(childSet.first());
+    			object.css({'left' : -itemsWidth}); 
 
-                var itemCount = 0;
-                $respTabs.find('.resp-accordion').each(function () {
-                    $tabItemh2 = $(this);
-                    var $tabItem = $respTabs.find('.resp-tab-item:eq(' + itemCount + ')');
-                    var $accItem = $respTabs.find('.resp-accordion:eq(' + itemCount + ')');
-                    $accItem.append($tabItem.html());
-                    $accItem.data($tabItem.data());
-                    $tabItemh2.attr('aria-controls', 'tab_item-' + (itemCount));
-                    itemCount++;
-                });
+    			object.fadeIn();
+				$(window).trigger("resize"); // needed to position arrows correctly
 
-                //Assigning the 'aria-controls' to Tab items
-                var count = 0,
-                    $tabContent;
-                $respTabs.find('.resp-tab-item').each(function () {
-                    $tabItem = $(this);
-                    $tabItem.attr('aria-controls', 'tab_item-' + (count));
-                    $tabItem.attr('role', 'tab');
+			},
+			
+			
+			/******************************
+			Append HTML
+			*******************************/			
+			
+			appendHTML: function() {
+				
+   			 	object.addClass("nbs-flexisel-ul");
+   			 	object.wrap("<div class='nbs-flexisel-container'><div class='nbs-flexisel-inner'></div></div>");
+   			 	object.find("li").addClass("nbs-flexisel-item");
+ 
+   			 	if(settings.setMaxWidthAndHeight) {
+	   			 	var baseWidth = $(".nbs-flexisel-item > img").width();
+	   			 	var baseHeight = $(".nbs-flexisel-item > img").height();
+	   			 	$(".nbs-flexisel-item > img").css("max-width", baseWidth);
+	   			 	$(".nbs-flexisel-item > img").css("max-height", baseHeight);
+   			 	}
+ 
+   			 	$("<div class='nbs-flexisel-nav-left'></div><div class='nbs-flexisel-nav-right'></div>").insertAfter(object);
+   			 	var cloneContent = object.children().clone();
+   			 	object.append(cloneContent);
+			},
+					
+			
+			/******************************
+			Set Event Handlers
+			*******************************/
+			setEventHandlers: function() {
+				
+				var listParent = object.parent();
+				var childSet = object.children();
+				var leftArrow = listParent.find($(".nbs-flexisel-nav-left"));
+				var rightArrow = listParent.find($(".nbs-flexisel-nav-right"));
+				
+				$(window).on("resize", function(event){
+					
+					methods.setResponsiveEvents();
+					
+					var innerWidth = $(listParent).width();
+					var innerHeight = $(listParent).height(); 
+					
+					itemsWidth = (innerWidth)/itemsVisible;
+					
+					childSet.width(itemsWidth);
+					object.css({'left' : -itemsWidth});
+					
+					var halfArrowHeight = (leftArrow.height())/2;
+					var arrowMargin = (innerHeight/2) - halfArrowHeight;
+					leftArrow.css("top", arrowMargin + "px");
+					rightArrow.css("top", arrowMargin + "px");
+					
+				});					
+				
+				$(leftArrow).on("click", function (event) {
+					methods.scrollLeft();
+				});
+				
+				$(rightArrow).on("click", function (event) {
+					methods.scrollRight();
+				});
+				
+				if(settings.pauseOnHover == true) {
+					$(".nbs-flexisel-item").on({
+						mouseenter: function () {
+							canNavigate = false;
+						}, 
+						mouseleave: function () {
+							canNavigate = true;
+						}
+					 });
+				}
 
-                    //Assigning the 'aria-labelledby' attr to tab-content
-                    var tabcount = 0;
-                    $respTabs.find('.resp-tab-content').each(function () {
-                        $tabContent = $(this);
-                        $tabContent.attr('aria-labelledby', 'tab_item-' + (tabcount));
-                        tabcount++;
-                    });
-                    count++;
-                });
-                
-                // Show correct content area
-                var tabNum = 0;
-                if(hash!='') {
-                    var matches = hash.match(new RegExp(respTabsId+"([0-9]+)"));
-                    if (matches!==null && matches.length===2) {
-                        tabNum = parseInt(matches[1],10)-1;
-                        if (tabNum > count) {
-                            tabNum = 0;
-                        }
-                    }
-                }
+				if(settings.autoPlay == true) {
+					
+					setInterval(function () {
+						if(canNavigate == true)
+							methods.scrollRight();
+					}, settings.autoPlaySpeed);
+				}
+				
+			},
+			
+			/******************************
+			Set Responsive Events
+			*******************************/			
+			
+			setResponsiveEvents: function() {
+				var contentWidth = $('html').width();
+				
+				if(settings.enableResponsiveBreakpoints == true) {
+					if(contentWidth < settings.responsiveBreakpoints.portrait.changePoint) {
+						itemsVisible = settings.responsiveBreakpoints.portrait.visibleItems;
+					}
+					else if(contentWidth > settings.responsiveBreakpoints.portrait.changePoint && contentWidth < settings.responsiveBreakpoints.landscape.changePoint) {
+						itemsVisible = settings.responsiveBreakpoints.landscape.visibleItems;
+					}
+					else if(contentWidth > settings.responsiveBreakpoints.landscape.changePoint && contentWidth < settings.responsiveBreakpoints.tablet.changePoint) {
+						itemsVisible = settings.responsiveBreakpoints.tablet.visibleItems;
+					}
+					else {
+						itemsVisible = settings.visibleItems;
+					}
+				}
+			},			
+			
+			/******************************
+			Scroll Left
+			*******************************/				
+			
+			scrollLeft:function() {
 
-                //Active correct tab
-                $($respTabs.find('.resp-tab-item')[tabNum]).addClass('resp-tab-active');
+				if(canNavigate == true) {
+					canNavigate = false;
+					
+					var listParent = object.parent();
+					var innerWidth = listParent.width();
+					
+					itemsWidth = (innerWidth)/itemsVisible;
+					
+					var childSet = object.children();
+					
+					object.animate({
+							'left' : "+=" + itemsWidth
+						},
+						{
+							queue:false, 
+							duration:settings.animationSpeed,
+							easing: "linear",
+							complete: function() {  
+								childSet.last().insertBefore(childSet.first()); // Get the first list item and put it after the last list item (that's how the infinite effects is made)   								
+								methods.adjustScroll();
+								canNavigate = true; 
+							}
+						}
+					);
+				}
+			},
+			
+			/******************************
+			Scroll Right
+			*******************************/				
+			
+			scrollRight:function() {
+				
+				if(canNavigate == true) {
+					canNavigate = false;
+					
+					var listParent = object.parent();
+					var innerWidth = listParent.width();
+					
+					itemsWidth = (innerWidth)/itemsVisible;
+					
+					var childSet = object.children();
+					
+					object.animate({
+							'left' : "-=" + itemsWidth
+						},
+						{
+							queue:false, 
+							duration:settings.animationSpeed,
+							easing: "linear",
+							complete: function() {  
+								childSet.first().insertAfter(childSet.last()); // Get the first list item and put it after the last list item (that's how the infinite effects is made)   
+								methods.adjustScroll();
+								canNavigate = true; 
+							}
+						}
+					);
+				}
+			},
+			
+			/******************************
+			Adjust Scroll 
+			*******************************/
+			
+			adjustScroll: function() {
+				
+				var listParent = object.parent();
+				var childSet = object.children();				
+				
+				var innerWidth = listParent.width(); 
+				itemsWidth = (innerWidth)/itemsVisible;
+				childSet.width(itemsWidth);
+				object.css({'left' : -itemsWidth});		
+			}			
+        
+        };
+        
+        if (methods[options]) { 	// $("#element").pluginName('methodName', 'arg1', 'arg2');
+            return methods[options].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof options === 'object' || !options) { 	// $("#element").pluginName({ option: 1, option:2 });
+            return methods.init.apply(this);  
+        } else {
+            $.error( 'Method "' +  method + '" does not exist in flexisel plugin!');
+        }        
+};
 
-                //keep closed if option = 'closed' or option is 'accordion' and the element is in accordion mode
-                if(options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {                  
-                    $($respTabs.find('.resp-accordion')[tabNum]).addClass('resp-tab-active');
-                    $($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active').attr('style', 'display:block');
-                }
-                //assign proper classes for when tabs mode is activated before making a selection in accordion mode
-                else {
-                    $($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active resp-accordion-closed')
-                }
-
-                //Tab Click action function
-                $respTabs.find("[role=tab]").each(function () {
-                   
-                    var $currentTab = $(this);
-                    $currentTab.click(function () {
-                        
-                        var $currentTab = $(this);
-                        var $tabAria = $currentTab.attr('aria-controls');
-
-                        if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
-                            $respTabs.find('.resp-tab-content-active').slideUp('', function () { $(this).addClass('resp-accordion-closed'); });
-                            $currentTab.removeClass('resp-tab-active');
-                            return false;
-                        }
-                        if (!$currentTab.hasClass('resp-tab-active') && $currentTab.hasClass('resp-accordion')) {
-                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
-                            $respTabs.find('.resp-tab-content-active').slideUp().removeClass('resp-tab-content-active resp-accordion-closed');
-                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
-
-                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').slideDown().addClass('resp-tab-content-active');
-                        } else {
-                            $respTabs.find('.resp-tab-active').removeClass('resp-tab-active');
-                            $respTabs.find('.resp-tab-content-active').removeAttr('style').removeClass('resp-tab-content-active').removeClass('resp-accordion-closed');
-                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active');
-                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + ']').addClass('resp-tab-content-active').attr('style', 'display:block');
-                        }
-                        //Trigger tab activation event
-                        $currentTab.trigger('tabactivate', $currentTab);
-                        
-                        //Update Browser History
-                        if(historyApi) {
-                            var currentHash = window.location.hash;
-                            var newHash = respTabsId+(parseInt($tabAria.substring(9),10)+1).toString();
-                            if (currentHash!="") {
-                                var re = new RegExp(respTabsId+"[0-9]+");
-                                if (currentHash.match(re)!=null) {                                    
-                                    newHash = currentHash.replace(re,newHash);
-                                }
-                                else {
-                                    newHash = currentHash+"|"+newHash;
-                                }
-                            }
-                            else {
-                                newHash = '#'+newHash;
-                            }
-                            
-                            history.replaceState(null,null,newHash);
-                        }
-                    });
-                    
-                });
-                
-                //Window resize function                   
-                $(window).resize(function () {
-                    $respTabs.find('.resp-accordion-closed').removeAttr('style');
-                });
-            });
-        }
-    });
 })(jQuery);
-
 
 $.fn.megamenu=function(e){function r(){$(".megamenu").find("li, a").unbind();if(window.innerWidth<=768){o();s();if(n==0){$(".megamenu > li:not(.showhide)").hide(0)}}else{u();i()}}function i(){$(".megamenu li").bind("mouseover",function(){$(this).children(".dropdown, .megapanel").stop().fadeIn(t.interval)}).bind("mouseleave",function(){$(this).children(".dropdown, .megapanel").stop().fadeOut(t.interval)})}function s(){$(".megamenu > li > a").bind("click",function(e){if($(this).siblings(".dropdown, .megapanel").css("display")=="none"){$(this).siblings(".dropdown, .megapanel").slideDown(t.interval);$(this).siblings(".dropdown").find("ul").slideDown(t.interval);n=1}else{$(this).siblings(".dropdown, .megapanel").slideUp(t.interval)}})}function o(){$(".megamenu > li.showhide").show(0);$(".megamenu > li.showhide").bind("click",function(){if($(".megamenu > li").is(":hidden")){$(".megamenu > li").slideDown(300)}else{$(".megamenu > li:not(.showhide)").slideUp(300);$(".megamenu > li.showhide").show(0)}})}function u(){$(".megamenu > li").show(0);$(".megamenu > li.showhide").hide(0)}var t={interval:250};var n=0;$(".megamenu").prepend("<li class='showhide'><span class='title'>MENU</span><span class='icon1'></span><span class='icon2'></span></li>");r();$(window).resize(function(){r()})}
 },{"jquery":2}],2:[function(require,module,exports){

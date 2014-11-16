@@ -12,7 +12,7 @@ var jsSources = [
    "components/scripts/jquery.easy-ticker.js",
    "components/scripts/jquery.easing.js",
    "components/scripts/move-top.js",
-   "components/scripts/easyResponsiveTabs.js",
+   "components/scripts/jquery.flexisel.js",
    "components/scripts/megamenu.js"
 ];
 
