@@ -5,7 +5,7 @@
 	.top_footer {
 	    @include background-image(linear-gradient(to top, $lightblue, lighten($lightblue, 10)));
 
-        @include breakpoint(880px $large) {
+        @include breakpoint(880px) {
            .wrapper {
               @include container(72em);
            } // wrapper
@@ -163,7 +163,7 @@
             } // pinterest
         } // social
 
-	    @include breakpoint($small $large) {
+	    @include breakpoint($small) {
 	      .wrapper {
              @include container;
 
@@ -273,6 +273,12 @@
 	         } // term
 	       } // policy
 	    } // wrapper
+
+	    @include breakpoint($large) {
+	       .wrapper {
+	         @include container;
+	       } // wrapper
+	    } // breakpoint
 
 	    @include breakpoint($extraSmall $small) {
 	        .wrapper li {

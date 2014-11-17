@@ -109,7 +109,7 @@ $(document).ready(function() {
     }).next().show();
 }); // initiate color filter
 
-// set up the jQuery share accordion in details page 
+// set up the jQuery share and product description accordion in details page 
 $(document).ready(function() {
 	
     $('#product_desc h3').click(function() {
@@ -397,6 +397,7 @@ $(document).ready(function() {
 		var winWidth = $(window).width();
 		var productDesc = $('#product_desc h3');
 		var share = $('#share h3');
+
 		if ( winWidth <= 980 && winWidth >= 753) {
 				
 			// hide product description accordion
@@ -407,14 +408,15 @@ $(document).ready(function() {
 			share.addClass('special');
 			share.next().show(); 
 		} else {
+			// show product description accordion
 			productDesc.next().show();
-			productDesc.removeClass('special');
+			productDesc.removeClass('special'); // / remove special class so as to display the correct icon
+
+			// hide the share accordion and remove special class
 			share.next().hide();
 			share.removeClass('special');
 		}
-		console.log(winWidth);
-	});
-	
+	});	
 });
 
 /*!

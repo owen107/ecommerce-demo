@@ -3,6 +3,39 @@
 */
 
 #product_details {
+    @include breakpoint(1522px $largeDesktop) {
+        #recommendation {
+           .nbs-flexisel-item {
+              opacity: 0.8;
+              &:hover {
+                border: none;
+
+                &:before {
+                   content: '';
+                } // before
+              } // hover
+           } // nbs-flexisel-item
+        } // recommendation
+    } // breakpoint
+
+    @include breakpoint(1561px $largeDesktop) {
+       .wrapper {
+          width: 60%;
+       }
+    } // breakpoint
+
+    @include breakpoint(1501px 1560px) {
+       .wrapper {
+          width: 65%;
+       }
+    } // breakpoint
+
+    @include breakpoint(1400px 1500px) {
+       .wrapper {
+          width: 70%;
+       }
+    } // breakpoint
+
 	@include breakpoint($medium 1279px) {
 		.wrapper {
 		   width: 86%;
