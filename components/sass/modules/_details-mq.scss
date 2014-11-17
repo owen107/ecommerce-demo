@@ -1,0 +1,184 @@
+/**
+* Details page - Media Queries
+*/
+
+#product_details {
+	@include breakpoint($medium 1279px) {
+		.wrapper {
+		   width: 86%;
+		} // wrapper
+
+		#product_content {
+
+		   .image_gallery {
+		      .big_img {
+		         #large_image {
+		            min-width: 355px;
+		            min-height: 435px;
+		         } // large image
+		      } // image gallery
+		   } // image gallery
+
+		   .purchase_block {
+		      .product_specifc {
+		         #product_desc {
+		           #description {
+			           p {
+			             font-size: 0.59em;
+			           } // p
+		           } // description
+
+		           #details {
+		             li {
+		               font-size: 0.59em;
+		             } // li
+		           } // details
+		         } // product desc
+		      } // product specifc
+		   } // purchase block
+		} // product content
+	} // breakpoint 
+
+	@include breakpoint(max-width $medium) {
+       .wrapper {
+          width: 90%;
+       } // wrapper
+
+       #product_content {
+
+          .purchase_block {
+		      .product_specifc {
+		         #product_desc {
+		           #description {
+			           p {
+			             font-size: 0.55em;
+			           } // p
+		           } // description
+
+		           #details {
+		             li {
+		               font-size: 0.55em;
+		             } // li
+		           } // details
+		         } // product desc
+		      } // product specifc
+		   } // purchase block
+       } // product content
+	} // breakpoint
+
+	@include breakpoint(max-width 928px) {
+       .wrapper {
+          width: 92%;
+       } // wrapper
+
+       #product_content {
+          .image_container {
+             @include span(8);
+          } // image container
+
+          .purchase_block {
+             @include span(4);
+
+             #purchase_info {
+                h2 {
+                  font-size: 1.1em; 
+                } // h2
+             } // purchase info
+
+             #dropdown {
+                .size {
+                   @include span(9);
+                } // size
+
+                .quantity {
+                    @include span(3);
+                } // quantity
+             } // dropdown
+
+             #add_to_bag {
+               #buy_button {
+                  @include span(12);
+               } // buy button
+             } // add to bag
+
+             .product_specifc {
+		         #product_desc {
+		           @include span(12);
+		           #description {
+		               h4 {
+	                     margin-bottom: 8px;
+	                   } // h4
+			           p {
+			             font-size: 0.4em;
+			             line-height: 1.3em;
+			           } // p
+		           } // description
+
+		           #details {
+		             li {
+		               font-size: 0.4em;
+		             } // li
+		           } // details
+		         } // product desc
+
+		         #share {
+		            @include span(12);
+		            #social_media {
+		               li {
+		                 span {
+		                    font-size: 1.1em;
+		                 } // span
+		               } // li
+		            } // social media 
+		         } // share
+		     } // product specifc
+          } // purchase block
+       } // product content
+	} // breakpoint
+
+	@include breakpoint(max-width 767px) {
+	   .wrapper {
+          width: 90%;
+       } // wrapper
+
+       #product_content {
+          .image_container {
+             display: block;
+             width: 100%;
+
+             .image_gallery {
+                #full_screen {
+                  padding-top: 0;
+                  padding-left: 7%;
+
+                  i {
+                    font-size: 0.8em;
+                  } // i
+
+                  a {
+                    font-size: 0.75em;
+                  } // a
+                } // full screen
+             } // image gallery
+          } // image container
+
+          .purchase_block {
+             width: 100%;
+             display: block
+          } // purchase block
+       } // product content
+
+        #recommendation {
+           .nbs-flexisel-item {
+              opacity: 0.8;
+              &:hover {
+                border: none;
+
+                &:before {
+                   content: '';
+                } // before
+              } // hover
+           } // nbs-flexisel-item
+        } // recommendation
+	} // breakpoint
+} // product details

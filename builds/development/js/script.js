@@ -365,14 +365,14 @@ $(window).load(function() {
 
 	$("#recommend_products").flexisel({
 		visibleItems: 5,
-		animationSpeed: 1000,
+		animationSpeed: 1500,
 		autoPlay: true,
-		autoPlaySpeed: 3000,    		
+		autoPlaySpeed: 4000,    		
 		pauseOnHover: true,
 		enableResponsiveBreakpoints: true,
     	responsiveBreakpoints: { 
     		portrait: { 
-    			changePoint:480,
+    			changePoint:320,
     			visibleItems: 1
     		}, 
     		landscape: { 
@@ -385,7 +385,36 @@ $(window).load(function() {
     		}
     	}
     });
-    
+});
+
+// change the behavior of accordion in details page when resizing the window between 995px and 768px
+$(document).ready(function() {
+
+	// when window is resizing fire up the function
+	$(window).resize(function() {
+
+		// get the current size of window
+		var winWidth = $(window).width();
+		var productDesc = $('#product_desc h3');
+		var share = $('#share h3');
+		if ( winWidth <= 980 && winWidth >= 753) {
+				
+			// hide product description accordion
+			productDesc.next().hide();
+			productDesc.addClass('special'); // add special class so as to display the correct icon
+
+			// show the share accordion and add special class
+			share.addClass('special');
+			share.next().show(); 
+		} else {
+			productDesc.next().show();
+			productDesc.removeClass('special');
+			share.next().hide();
+			share.removeClass('special');
+		}
+		console.log(winWidth);
+	});
+	
 });
 
 /*!

@@ -471,7 +471,10 @@
 	} // product content
 
   #recommendation {
+     @include clearfix;
      margin-top: 30px;
+     margin-bottom: 30px;
+
      h2 {
         font-size: 1.5em;
         font-family: 'Open Sans' Sans-Serif;
@@ -481,5 +484,95 @@
         opacity: 0.9;
         padding-bottom: 20px; 
      } // h2
-  }
+
+     #recommed_products {
+        display: none;
+     } // recommend products
+
+     .nbs-flexisel-container {
+        position: relative;
+         max-width: 100%;
+     } // nbs-flexisel-container
+
+     .nbs-flexisel-inner {
+        overflow: hidden;
+     } // nbs-flexisel-inner 
+        
+     .nbs-flexisel-ul {
+        position: relative;
+        width: 9999px;
+        padding: 0;
+        margin: 0;
+        list-style-type:none;
+        text-align: center;
+     } // nbs-flexisel-ul
+
+     .nbs-flexisel-item {
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: inline-block;
+        opacity: 0.85;
+
+        &:hover {
+          opacity: 1;
+          border: 1px solid lighten($blue, 20);
+          @include border-bottom-radius(10px);
+          @include transition-duration(0.5s);
+          @include transition-timing-function(ease-in-out);
+
+          &:before {
+             background: transparent;
+             z-index: 10;
+             content: url('../images/products/logo_s.png');
+             position: absolute;
+             top: 5px;
+             left: 5px;                   
+          } // nbs-flexisel-item hover before
+        } // nbs-flexisle-item hover
+
+        .item_info {
+
+           h3 {
+             font-size: 0.7em;
+             font-weight: $bold;
+             color: $blue;
+             padding: 0 25px;
+             line-height: 1em;
+           } // h3
+
+           p {
+             font-size: 0.6em;
+             font-weight: 500;
+             line-height: 2em;
+             color: lighten($dark, 30);
+           } // p
+        } // item info
+     } // nbs-flexisel-item
+
+     .nbs-flexisel-item img {
+        max-width: 226px;
+        max-height: 226px;
+        width: 100%;
+     } // nbs-flexisel-item img
+
+     .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
+        width:30px;
+        height:30px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 80;
+     } // nbs-flexisel-nav-left, .nbs-flexisel-nav-right
+
+     .nbs-flexisel-nav-left {
+        left: 0px;
+        background: url(../images/icons/img-sprite.png) no-repeat -166px -321px;
+     } // nbs-flexisel-nav-left
+
+     .nbs-flexisel-nav-right {
+        right: 0px;
+        background: url(../images/icons/img-sprite.png) no-repeat -193px -321px;
+     } // nbs-flexisel-nav-right
+  } // recommendation
 } // product details
