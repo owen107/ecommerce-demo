@@ -180,22 +180,22 @@ $(document).ready(function() {
 		var highResPath = curPath.substr(0, curPath.length-5) + "_hr.jpeg" 
 		$image.attr("src", highResPath);
 		overlay.css({
-			display: "block",
-			top: window.pageYOffset + "px",
-			left: window.pageXOffset + "px"
+			display: "block"
+			// top: window.pageYOffset + "px",
+			// left: window.pageXOffset + "px"
 		});
 		// when completely loading the image, remove the spinner 
 		$image.load(function() {
 			$spinner.remove();
 
-			$(window).scroll(function() {
-				if (overlay) {
-				  overlay.css({
-				    top: window.pageYOffset + "px",
-					left: window.pageXOffset + "px"
-				  });
-				}
-			});
+			// $(window).scroll(function() {
+			// 	if (overlay) {
+			// 	  overlay.css({
+			// 	    top: window.pageYOffset + "px",
+			// 		left: window.pageXOffset + "px"
+			// 	  });
+			// 	}
+			// });
 		});
 		// overlay.show();
     });
@@ -222,22 +222,22 @@ $(document).ready(function() {
 		var imgPath = $(this).attr('href');
 		$sizeChart.attr("src", imgPath);
 		overLay.css({
-			display: "block",
-			top: window.pageYOffset + "px",
-			left: window.pageXOffset + "px"
+			display: "block"
+			// top: window.pageYOffset + "px",
+			// left: window.pageXOffset + "px"
 		});
 		// when completely loading the image, remove the spinner 
 		$sizeChart.load(function() {
 			$spinner.remove();
 
-			$(window).scroll(function() {
-				if (overLay) {
-				  overLay.css({
-				    top: window.pageYOffset + "px",
-					left: window.pageXOffset + "px"
-				  });
-				}
-			});
+			// $(window).scroll(function() {
+			// 	if (overLay) {
+			// 	  overLay.css({
+			// 	    top: window.pageYOffset + "px",
+			// 		left: window.pageXOffset + "px"
+			// 	  });
+			// 	}
+			// });
 		});
 		// overlay.show();
     });
