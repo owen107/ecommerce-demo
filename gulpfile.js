@@ -16,7 +16,7 @@ var jsSources = [
    "components/scripts/megamenu.js"
 ];
 
-var sassSources = ['components/sass/style.scss'];
+var sassSources = ['components/sass/application.scss', 'components/sass/style.scss'];
 var htmlSources = ['builds/development/*.html'];
 
 gulp.task('js', function() {
@@ -30,8 +30,11 @@ gulp.task('js', function() {
 gulp.task('compass', function() {
   gulp.src(sassSources)
     .pipe(compass({
+      css: 'builds/development/css',
       sass: 'components/sass',
       image: 'builds/development/images',
+      font: 'builds/development/fonts',
+      relative: false,
       style: 'expanded',
       comments: true,
       require: ['susy', 'breakpoint']
