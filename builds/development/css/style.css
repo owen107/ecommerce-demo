@@ -150,6 +150,11 @@ p {
   src: url('/builds/development/fonts/icomoon.eot?1415682436');
   src: url('/builds/development/fonts/icomoon.eot?&1415682436#iefix') format('embedded-opentype'), url('/builds/development/fonts/icomoon.woff?1415682436') format('woff'), url('/builds/development/fonts/icomoon.ttf?1415682436') format('truetype'), url('/builds/development/fonts/icomoon.svg?1415682436') format('svg');
 }
+@font-face {
+  font-family: "FontAwesome";
+  src: url('/builds/development/fonts/fontawesome/fontawesome-webfont.eot?1429329384');
+  src: url('/builds/development/fonts/fontawesome/fontawesome-webfont.eot?&1429329384#iefix') format('embedded-opentype'), url('/builds/development/fonts/fontawesome/fontawesome-webfont.woff?1429329384') format('woff'), url('/builds/development/fonts/fontawesome/fontawesome-webfont.ttf?1429329384') format('truetype'), url('/builds/development/fonts/fontawesome/fontawesome-webfont.svg?1429329384') format('svg');
+}
 /**
 * Header and Navigation
 */

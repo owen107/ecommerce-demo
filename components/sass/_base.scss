@@ -61,3 +61,6 @@ p {
 }
 
 @include font-face('icomoon', font-files('icomoon.woff', 'icomoon.ttf', 'icomoon.svg'), 'icomoon.eot');
+
+@include font-face('FontAwesome', font-files('fontawesome/fontawesome-webfont.woff', 'fontawesome/fontawesome-webfont.ttf', 'fontawesome/fontawesome-webfont.svg'), 'fontawesome/fontawesome-webfont.eot');
+
