@@ -16,7 +16,7 @@ var jsSources = [
    "components/scripts/megamenu.js"
 ];
 
-var sassSources = ['components/sass/application.scss', 'components/sass/style.scss'];
+var sassSources = ['components/sass/application.scss'];
 var htmlSources = ['builds/development/*.html'];
 
 gulp.task('js', function() {
@@ -51,7 +51,7 @@ gulp.task('html', function() {
 
 gulp.task('watch', function() {
   gulp.watch(jsSources, ['js']);
-  gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['compass']);
+  gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss', 'components/sass/*/*/*.scss'], ['compass']);
   gulp.watch(htmlSources, ['html']);
 });
 

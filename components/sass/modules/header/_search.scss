@@ -1,0 +1,120 @@
+// ==========================================================
+// Header - search box
+// ==========================================================
+
+
+.cd-search {
+	position: absolute;
+	height: $search-height-short;
+	width: 100%;
+	top: $header-height-short;
+	left: 0;
+	z-index: $above-content;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+	-moz-transition: opacity .3s 0s, visibility 0s .3s;
+	transition: opacity .3s 0s, visibility 0s .3s;
+
+	form {
+		height: 100%;
+		width: 100%;
+	}
+
+	.search-form {
+		&::before {
+		  position: absolute;
+		  content: "\f002";
+		  font-family: "FontAwesome";
+		  font-size: 1.2em;
+		  color: $lightblue;
+		  display: block;
+		  top: 26%;
+		  padding-left: 4%;
+		}
+	}
+
+	input {
+		border-radius: 0;
+		border: none;
+		background: $light;
+		height: 100%;
+		width: 100%;
+		padding: 0 10%;
+		box-shadow: inset 0 1px 0 $lightgrey, 0 3px 6px rgba(#000, .05);
+		@include appearance(none);
+
+		@include input-placeholder {
+			color: darken($lightgrey, 10%);
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+		-moz-transition: opacity .3s 0s, visibility 0s 0s;
+		transition: opacity .3s 0s, visibility 0s 0s;
+	}
+
+	.nav-is-fixed & {
+		position: fixed;
+	}
+
+	@include MQ(large) {
+		height: $search-height-tall;
+		top: $header-height-tall;
+
+		.search-form {
+			&::before {
+			  font-size: 3.2em;
+			  top: 39%;
+			  padding-left: 1.2em;
+			}
+		}
+
+		input {
+			padding: 0 4em;
+			font-size: 3.2rem;
+			font-weight: 300;
+		}
+	}
+}
+
+.cd-overlay {
+	/* shadow layer visible when navigation is active */
+	position: fixed;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: rgba($lightblue, .5);
+	visibility: hidden;
+	opacity: 0;
+	@include backface-visibility(hidden);
+	@include transition(opacity .3s 0s, visibility 0s .3s, transform .3s 0s);
+	
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity .3s 0s, visibility 0s 0s, transform .3s 0s);
+	}
+
+	@include MQ(wide) {
+		&.is-visible {
+			@include transform(translateX(-$nav-width-small));
+		}
+		.nav-on-left &.is-visible {
+			@include transform(translateX($nav-width-small));
+		}
+		&.is-visible.search-is-visible, .nav-on-left &.is-visible.search-is-visible {
+			@include transform(translateX(0));
+		}
+	}
+}

@@ -1,0 +1,504 @@
+// ==========================================================
+// Header - icons
+// ==========================================================
+
+/* -------------------------------- 
+Primary style
+-------------------------------- */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $fontfamily; 
+	}
+	color: $light;
+	background-color: $light;
+
+	@include MQ(wide) { 
+		&.nav-on-left.overflow-hidden {
+			overflow: hidden;
+		}
+	}
+}
+
+a {
+	color: $lightblue;
+	text-decoration: none;
+}
+
+img {
+	/* make images responsive */
+	max-width: 100%;
+}
+
+input {
+	font-family: $fontfamily;
+	font-size: 1.6rem;
+}
+
+input[type="search"]::-ms-clear {
+	/* removes close icon - IE */
+    display: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* -------------------------------- 
+Main components 
+-------------------------------- */
+
+.cd-main-content, .cd-main-header {
+	/* Force Hardware Acceleration in WebKit */
+	@include transform(translateZ(0));
+	will-change: transform;
+	position: relative;
+	@include transition(transform .3s);
+
+	@include MQ(wide) {
+		&.nav-is-visible {
+			@include transform(translateX(-$nav-width-small));
+		}
+
+		.nav-on-left &.nav-is-visible {
+			@include transform(translateX($nav-width-small));
+		}
+	}
+}
+
+.cd-main-content {
+	background: $lightyellow;
+	min-height: 100vh;
+	z-index: $content;
+}
+
+.cd-main-header {
+	height: $header-height-short;
+	background: $light;
+	border-top: 5px solid $lightblue;
+	@include box-shadow(rgba($dark, 0.3) 0 3px 6px);
+	z-index: $above-content;
+
+	.nav-is-fixed & {
+		/* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	@include MQ(large) {
+		height: $header-height-tall;
+		@include clearfix;
+	}
+}
+
+.cd-logo {
+	position: absolute;
+	top: 9px;
+    left: 5%;
+    width: 60px;
+    // height: 34px;
+
+	img {
+		display: block;
+	}
+
+	@include MQ(wide) {
+		.nav-on-left & {
+			@include abcenter(10px, 0, 0, 0px, auto);
+		}
+	}
+
+	@include MQ(large) {
+		top: 13px;
+        left: 4em;
+        width: 120px;
+        height: 51px;
+	}
+} 
+
+.dj-right-section {
+	position: absolute;
+	z-index: $above-content;
+	top: 9px;
+	right: 3%;
+
+	li {
+		display: inline-block;
+		font-size: 1.6em;
+		margin-right: 12px;
+	} // li
+
+	@include MQ(large) {
+		top: 22px;
+	    right: 5em;
+
+	    li {
+	    	margin-right: 26px;
+	    	font-size: 2em;
+	    } // li
+	}
+} // dj-right-section
+
+.user-account {
+	position: relative;
+
+	ul {
+		position: absolute;
+		top: 36px;
+		left: -28px;
+		width: 130px;
+		background: $light;
+		border-top: 3px solid $lightblue;
+        opacity: 0;
+	}
+
+	li {
+		color: $lightblue;
+		font-size: 0.5em;
+        margin-left: 10px;
+        width: 92px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted $lightblue;
+
+        a:hover {
+		   text-decoration: underline;
+	    }
+	}
+
+	li:first-child {
+		color: $red;
+	}
+
+	li:last-child {
+		padding-bottom: 8px;
+		border-bottom: none;
+	}
+
+	@include MQ(large) {
+		ul {
+			top: 53px;
+			left: -40px;
+			width: 150px;
+		}
+
+		li {
+	        margin-left: 20px;
+	        width: 110px;
+		}
+
+	} // MQ(large)
+} // user-account
+
+.fa-user {
+	position: relative;
+
+	span {
+		position: absolute;
+		font-size: 0.5em;
+		top: 7px;
+		left: 23px;
+	}
+
+	.fa-close {
+		opacity: 0;
+	}
+
+	@include MQ(large) {
+		span {
+			top: 10px;
+			left: 32px;
+		}
+	} 	
+} // fa-user
+
+.fa-shopping-cart {
+	position: relative;
+
+	&:hover {
+		span {
+			opacity: 1;
+			@include translateX(0px);
+		}
+	} // fa-shopping-cart:hover
+
+    span {
+    	
+    	position: absolute;
+    	font-weight: $heavy;
+    	font-size: 13px;
+    	top: 4px;
+    	right: -20px;
+        width: 14px;
+	    height: 20px;
+		padding-left: 3px;
+	    padding-top: 3px;
+	    background-color: $dark;
+    	color: $light;
+    	opacity: 0;
+    	@include single-transition(all, 0.25s, ease-out);
+    	@include translateX(-10px);
+
+    	&::before {
+    		position: absolute;
+		    top: 6px;
+		    left: -5px;
+		    height: 0;
+		    width: 0;
+		    border-top: 4px solid transparent;
+	        border-right: 8px solid $dark;
+	        border-bottom: 4px solid transparent;
+		    content: "";
+		    display: block;
+    	} // span::before
+
+        @include MQ(large) {
+			
+			top: 7px;
+			left: 13px;       
+	        font-size: 11px;
+	        width: 11px;
+	        height: 11px;
+	        background-color: $light;
+	        color: $lightblue;	        
+	        padding-left: 1.5px;
+	        padding-top: 0.5px;
+	        opacity: 1;
+	        @include translateX(0px);
+	        @include border-radius(50%);
+
+	        &::before {
+	        	display: none;
+	        }
+    	} // media query
+    } // span 
+} // fa-shopping-cart
+
+.cd-header-buttons {
+	position: absolute;
+	display: inline-block;
+	top: 1px;
+	right: 5%;
+
+	li {
+		display: inline-block;
+
+		&:last-child {
+			border-right: 2px solid $lightblue;
+		}
+	}
+
+	@include MQ(wide) {
+		.nav-on-left & {
+			right: auto;
+			left: 1%;
+
+			li {
+				float: right;
+			}
+		}
+	}
+
+	@include MQ(large) {
+		top: 14px;
+		right: 13.5em;
+	}
+}
+
+.cd-search-trigger, .cd-nav-trigger {
+	position: relative;
+	display: block;
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	white-space: nowrap;
+	/* hide text */
+	color: transparent;
+	z-index: $above-content;
+}
+
+.cd-search-trigger {
+	
+	&::before, &::after {
+		/* search icon */
+		content: '';
+		position: absolute;
+		@include transition(opacity .3s);
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	&::before {
+		/* lens */
+		top: 11px;
+		left: 11px;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		border: 3px solid $lightblue;
+	}
+
+	&::after {
+		/* handle */
+		height: 3px;
+		width: 11px;
+		background: $lightblue;
+		bottom: 14px;
+		right: 11px;
+		@include transform(rotate(45deg));
+	}
+
+	span {
+		/* container for the X icon */
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	span::before, span::after {
+		/* close icon */
+		content: '';
+		position: absolute;
+		display: inline-block;
+		height: 3px;
+		width: 22px;
+		top: 50%;
+		margin-top: -2px;
+		left: 50%;
+		margin-left: -11px;
+		background: $lightblue;
+		opacity: 0;
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		@include transition(opacity .3s, transform .3s);
+	}
+
+	span::before {
+		@include transform(rotate(45deg));
+	}
+
+	span::after {
+		@include transform(rotate(-45deg));
+	}
+
+	&.search-is-visible {
+		&::before, &::after {
+			/* hide search icon */
+			opacity: 0;
+		}
+
+		span::before, span::after {
+			/* show close icon */
+			opacity: 1;
+		}
+
+		span::before {
+			@include transform(rotate(135deg));
+		}
+
+		span::after {
+			@include transform(rotate(45deg));
+		}
+	}
+
+	@include MQ(large) {
+		&::before {
+			width: 22px;
+            height: 22px;
+		}
+
+		&::after {
+			bottom: 9px;
+			right: 5px;
+		}
+
+		span::before, span::after {
+			height: 5px;
+		    width: 28px;
+		    top: 55%;
+		}
+            
+	}
+}
+
+.cd-nav-trigger {
+
+	span, span::before, span::after {
+		/* hamburger icon in CSS */
+		position: absolute;
+		display: inline-block;
+		height: 3px;
+		width: 22px;
+		background: $lightblue;
+	}
+
+	span {
+		/* line in the center */
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-top: -2px;
+		@include transition(background .3s .3s);
+	}
+
+	span::before, span::after {
+		/* other 2 lines */
+		content: '';
+		right: 0;
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		@include transform-origin(0% 50%);
+		@include transition(transform .3s .3s);
+	}
+
+	span::before {
+		/* menu icon top line */
+		top: -7px;
+	}
+
+	span::after {
+		/* menu icon bottom line */
+		top: 7px;
+	}
+
+	&.nav-is-visible {
+		span {
+			/* hide line in the center */
+			background: rgba($lightblue, 0);
+		}
+
+		span::before, span::after {
+			/* keep visible other 2 lines */
+			background: rgba($lightblue, 1);
+		}
+
+		span::before {
+			@include transform(translateX(4px) translateY(7px) rotate(45deg));
+		}
+
+		span::after {
+			@include transform(translateX(4px) translateY(-7px) rotate(-45deg));
+		}
+	}
+
+	@include MQ(large) {
+		display: none;
+	}
+}

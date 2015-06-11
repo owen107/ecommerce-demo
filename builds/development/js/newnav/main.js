@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-	var MqL = 1170;
+	var MqL = 1024;
 	//move nav element position according to window width
 	moveNavigation();
 	$(window).on('resize', function(){
@@ -133,4 +133,22 @@ jQuery(document).ready(function($){
 			navigation.insertAfter('.cd-main-content');
 		}
 	}
+    
+    // open the user account menu when hovering the user icon
+	$('.fa-user').hover(function() {
+		 console.log('enter');
+         $(this).next().animate({opacity: 1}, 300);
+         $(this).find('.fa-caret-down').animate({opacity: 0}, 300);
+         $(this).find('.fa-close').animate({opacity: 1}, 300);
+	}, function() {
+		 console.log('leave');
+	});
+    
+    // close the user account meun when clicking the close icon
+	$('.fa-close').on('click', function() {
+		console.log('click');
+		$(this).parent().next().animate({opacity: 0}, 300);
+		$(this).animate({opacity: 0}, 300);
+		$(this).prev().animate({opacity: 1}, 300);
+	});
 });

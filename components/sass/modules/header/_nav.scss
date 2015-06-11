@@ -1,0 +1,403 @@
+// ==========================================================
+// Header - navigation
+// ==========================================================
+
+.cd-primary-nav, .cd-primary-nav ul {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	height: 100%;
+	width: $nav-width-small;
+	background: $light;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	z-index: $below-content;
+	/* Force Hardware Acceleration in WebKit */
+	@include transform(translateZ(0));
+	@include transform(translateX(0));
+	@include transition(transform .3s);
+
+	a {
+		display: block;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 20px;
+		color: $lightblue;
+		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		border-bottom: 1px solid lighten($lightblue, 5%);
+		@include transform(translateZ(0));
+		will-change: transform, opacity;
+		@include transition(transform .3s, opacity .3s);
+	}
+
+	&.is-hidden {
+		/* secondary navigations hidden by default */
+		@include transform(translateX(100%));
+	}
+
+	&.moves-out > li > a {
+		/* push the navigation items to the left - and lower down opacity - when secondary nav slides in */
+		@include transform(translateX(-100%));
+		opacity: 0;
+	}
+}
+
+@include MQ(wide) {
+	.nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul {
+		right: auto;
+		left: 0;
+	}
+}
+
+.cd-primary-nav {
+
+	.see-all a {
+		/* different style for the See all button on mobile and tablet */
+		color: $red;
+	}
+
+	@include MQ(wide) {
+		/* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down */
+		visibility: hidden;
+		@include transition(visibility 0s .3s);
+
+		&.nav-is-visible {
+			visibility: visible;
+			@include transition(visibility 0s 0s);
+		}
+	}
+}
+
+@include MQ(large) {
+
+	.cd-primary-nav {
+
+		position: static;
+		padding: 0 0 0 160px;
+		height: auto;
+		width: auto;
+		overflow: visible;
+		background: transparent;
+		@include clearfix;
+
+		&.moves-out > li > a {
+			/* reset mobile style */
+			@include transform(translateX(0));
+			opacity: 1;
+		}
+
+		ul {
+			position: static;
+			height: auto;
+			width: auto;
+			background: transparent;
+			overflow: visible;
+			z-index: $above-content;
+
+			&.is-hidden {
+				/* reset mobile style */
+				@include transform(translateX(0));
+			}
+
+			&.moves-out > li > a {
+				/* reset mobile style */
+				@include transform(translateX(0));
+				opacity: 1;
+			}
+		}
+
+		> li {
+			float: left;
+			margin-left: 3em;
+		}
+
+		> li > a {
+			/* main navigation buttons style */
+			position: relative;
+			display: inline-block;
+			height: $header-height-tall;
+			line-height: $header-height-tall;
+			padding: 0 10px;
+			color: $lightblue;
+			overflow: visible;
+			border-bottom: none;
+			margin-top: -2px;
+			font-weight: $heavy;
+			@include transition(color .3s, box-shadow .3s);
+
+			&:hover {
+				color: $blue;
+			}
+
+			&.selected {
+				color: $lightblue;
+				box-shadow: inset 0 -4px 0 $lightblue;
+				z-index: 10;
+			}
+		}
+
+		.go-back, .see-all {
+			display: none;
+		}
+
+		.cd-secondary-nav {
+			/* dropdown menu style */
+			position: absolute;
+			top: 75px;
+			width: 100vw;
+			background: $light;
+			padding: 48px 64px 130px;
+			box-shadow: inset 0 1px 0 rgba($dark, 0.1), 0 3px 6px rgba(#000, .05);
+			@include transform(translateX(0));
+			@include clearfix;
+			-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+			-moz-transition: opacity .3s 0s, visibility 0s 0s;
+			transition: opacity .3s 0s, visibility 0s 0s;
+
+			&.is-hidden {
+				opacity: 0;
+				visibility: hidden;
+				-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+				-moz-transition: opacity .3s 0s, visibility 0s .3s;
+				transition: opacity .3s 0s, visibility 0s .3s;
+			}
+
+			> .see-all {
+				/* this is the BIG See all button at the bottom of the dropdown menu */
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: 80px;
+				width: 100%;
+				overflow: hidden;
+				/* reset some inherited style */
+				margin: 0;
+				padding: 0;
+
+				a {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					font-size: 2.2rem;
+					font-weight: bold;
+					text-align: center;
+					line-height: 80px;
+					border-top: 1px solid rgba($dark, 0.1);
+					/* reset some inherited style */
+					border-bottom: none;
+					margin: 0;
+					padding: 0;
+					color: $lightblue;
+					@include transition(color .2s, background .2s, border .2s);
+
+					&:hover {
+						background: $lightblue;
+						border-color: $lightblue;
+						color: $light;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.cd-secondary-nav {
+
+			> li {
+				/* change the height according to your needs - you can even set height: auto */
+				height: 340px;
+				/* here you set the number of columns - use width percentage */
+				@include column(.23); // see partials > _layout.scss
+				margin-right: 2.66%;
+				border-right: 1px solid rgba($dark, 0.1);
+				overflow: hidden;
+				overflow-x: hidden;
+				overflow-y: auto;
+				-webkit-overflow-scrolling: touch;
+
+				&:nth-child(4n+2) {
+					/* +2 because we have 2 list items with display:none */
+					margin-right: 0;
+					border-right: none;
+				}
+
+				> a {
+					/* secondary nav title */
+					color: $red;
+					font-weight: bold;
+					font-size: 1.6rem;
+					margin-bottom: .6em;
+				}
+			}
+
+			a {
+				height: 30px;
+				line-height: 30px;
+				padding: 0 18% 0 0;
+				color: rgba($dark, 0.75);
+				border-bottom: none;
+				font-size: 1.4rem;
+
+				&:hover {
+					color: $lightblue;
+					text-decoration: underline;
+					// background: lighten($lightgrey, 8%);
+				}
+			}
+
+			ul {
+				/* Force Hardware Acceleration in WebKit */
+				@include transform(translateZ(0));
+			}
+
+			ul ul {
+				/* tertiary navigation */
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+
+				&.is-hidden {
+					@include transform(translateX(100%));
+				}
+
+				.go-back {
+					display: block;
+
+					a {
+						color: transparent;
+					}
+				}
+
+				.see-all {
+					display: block;
+				}
+			}
+
+			.moves-out > li > a {
+				/* push the navigation items to the left - and lower down opacity - when tertiary nav slides in */
+				@include transform(translateX(-100%));
+			}
+		}
+
+	} // cd-primary-nav
+} // MQ(large)
+
+.has-children > a, .go-back a {
+	position: relative;
+
+	&::before, &::after {
+		/* arrow icon in CSS - for element with nested unordered lists */
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: -1px;
+		display: inline-block;
+		height: 2px;
+		width: 10px;
+		background: lighten($lightblue, 10%);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+
+	&::before {
+		@include transform(rotate(45deg));
+	}
+
+	&::after {
+		@include transform(rotate(-45deg));
+	}
+
+	@include MQ(L) {
+		&::before, &::after {
+			background: $lightblue;
+		}
+
+		&:hover::before, &:hover::after {
+			background: $blue;
+		}
+	}
+} // .has-children > a, .go-back a
+
+.has-children > a {
+	padding-right: 40px;
+
+	&::before, &::after {
+		/* arrow goes on the right side - children navigation */
+		right: 20px;
+		@include transform-origin(9px, 50%);
+	}
+}
+
+.cd-primary-nav .go-back a {
+	padding-left: 40px;
+
+	&::before, &::after {
+		/* arrow goes on the left side - go back button */
+		left: 20px;
+		@include transform-origin(1px, 50%);
+	}
+}
+
+@include MQ(large) {
+
+	.has-children > a {
+		&::before, &::after {
+			right: 15%;
+		}
+	}
+
+	.cd-primary-nav > .has-children > a {
+		/* main navigation arrows on larger devices */
+		padding-right: 30px !important;
+
+		&::before, &::after {
+			width: 9px;
+			@include transform-origin(50%, 50%);
+			background: $lightblue;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			@include transition(width .3s, transform .3s);
+		}
+
+		&::before {
+			right: 12px;
+		}
+
+		&::after {
+			right: 7px;
+		}
+
+		&.selected::before, &.selected::after {
+			width: 14px;
+		}
+
+		&.selected::before {
+			@include transform(translateX(5px) rotate(-45deg));
+		}
+
+		&.selected::after {
+			@include transform(rotate(45deg));
+		}
+	} 
+
+	.cd-secondary-nav > .has-children > a::before, .cd-secondary-nav > .has-children > a::after {
+		/* remove arrows on secondary nav titles */
+		display: none;
+	}
+
+	.cd-primary-nav .go-back a {
+		padding-left: 20px;
+
+		&::before, &::after {
+			left: 1px;
+		}
+	}
+}

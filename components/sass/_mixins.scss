@@ -8,3 +8,38 @@
 	   clear: both;
 	} //after
 } //clearfix
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == small {
+   @media only screen and (min-width: $small) { @content; } 
+  }
+  @else if $canvas == medium {
+   @media only screen and (min-width: $medium) { @content; } 
+  }
+  @else if $canvas == large {
+   @media only screen and (min-width: $large) { @content; } 
+  }
+  @else if $canvas == wide {
+   @media only screen and (max-width: $wide) { @content; } 
+  }
+}
+
+// super light grid - it works with the .cd-container class inside style.scss
+
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+// set up abosulte positioning
+
+@mixin abcenter($top: null, $left: null, $right: null, $bottom: null, $margin: null, $width: null) {
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+	width: $width;
+    margin: $margin;
+} 

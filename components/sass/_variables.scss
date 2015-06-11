@@ -1,6 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+// Uses border box sizing like the old IE
 
-@include border-box-sizing; //uses border box sizing like the old IE
+@include border-box-sizing; 
+
+// Basic set up for susy
 
 $susy: (
     columns: 12,
@@ -9,20 +11,19 @@ $susy: (
     gutter-position: inside
 );
 
-//breakpoint for device
+// Breakpoint for device
+
 $iPhone: 320px 480px;
 $retinaiPhone: 640px 960px;
 $iPad: 768px 1024px;
 $laptop: 1024px 1280px;
 
-//breakpoint for viewport
-$extraSmall: 480px;
-$small: 768px;
-$medium: 1024px;
-$wide: 1200px;
-$large: 1280px;
-$smallDesktop: 1366px;
-$largeDesktop: 1680px;
+// Breakpoint for viewport
+
+$small: 480px;
+$medium: 768px;
+$large: 1024px;
+$wide: $large - 1px;
 
 //Add Color Palette
 $darkblue: #234C6F;
@@ -32,11 +33,12 @@ $blue2: #006B9D;
 $lightblue: #33A3DC;
 $yellow: #D8CF90;
 $orange: #F58220;
-$grey: #F0F0E1;
+$lightyellow: #F0F0E1;
 $red: #B83936;
 $lightred: #FF1919;
 $dark: #000000;
 $light: #FFFFFF;
+$lightgrey: #e2e3df;
 $butfirst: #025F8E;
 $butsecond: #0286CD;
 
@@ -44,8 +46,7 @@ $backgroundColor: $light;
 $typeDefault: $dark;
 
 //Font variables
-$fontfamily: Helvetica, Arial, sans-serif;
-$productfamily: 'Open Sans' sans-serif;
+$fontfamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $thin: 200;
 $normal: 400;
@@ -54,5 +55,30 @@ $heavy: 800;
 
 $headFont: $thin 1.5em/1.5em $fontfamily;
 $mainFont: $thin 1em/1.5em $fontfamily;
+
+// Header height
+
+$header-height-short: 50px;
+$header-height-tall: 80px;
+
+// Navigation width
+
+$nav-width-small: 260px;
+
+// Search height
+
+$search-height-short: 50px;
+$search-height-tall: 120px;
+
+// z-index
+
+$below-content: 1;
+$content: 2;
+$above-content: 3;
+
+
+
+
+
 
 
