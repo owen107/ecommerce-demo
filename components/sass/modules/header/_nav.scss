@@ -2,7 +2,7 @@
 // Header - navigation
 // ==========================================================
 
-.cd-primary-nav, .cd-primary-nav ul {
+.dj-primary-nav, .dj-primary-nav ul {
 	position: fixed;
 	top: 0;
 	right: 0px;
@@ -23,6 +23,7 @@
 		line-height: 50px;
 		padding: 0 20px;
 		color: $lightblue;
+		font-weight: 500;
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
 		overflow: hidden;
@@ -47,13 +48,13 @@
 }
 
 @include MQ(wide) {
-	.nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul {
+	.nav-on-left .dj-primary-nav, .nav-on-left .dj-primary-nav ul {
 		right: auto;
 		left: 0;
 	}
 }
 
-.cd-primary-nav {
+.dj-primary-nav {
 
 	.see-all a {
 		/* different style for the See all button on mobile and tablet */
@@ -61,7 +62,7 @@
 	}
 
 	@include MQ(wide) {
-		/* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down */
+		/* by default .dj-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down */
 		visibility: hidden;
 		@include transition(visibility 0s .3s);
 
@@ -74,7 +75,7 @@
 
 @include MQ(large) {
 
-	.cd-primary-nav {
+	.dj-primary-nav {
 
 		position: static;
 		padding: 0 0 0 160px;
@@ -130,7 +131,7 @@
 			@include transition(color .3s, box-shadow .3s);
 
 			&:hover {
-				color: $blue;
+				text-decoration: underline;
 			}
 
 			&.selected {
@@ -144,7 +145,7 @@
 			display: none;
 		}
 
-		.cd-secondary-nav {
+		.dj-secondary-nav {
 			/* dropdown menu style */
 			position: absolute;
 			top: 75px;
@@ -207,7 +208,7 @@
 			}
 		}
 
-		.cd-secondary-nav {
+		.dj-secondary-nav {
 
 			> li {
 				/* change the height according to your needs - you can even set height: auto */
@@ -227,7 +228,7 @@
 					border-right: none;
 				}
 
-				> a {
+				> span {
 					/* secondary nav title */
 					color: $red;
 					font-weight: bold;
@@ -240,7 +241,7 @@
 				height: 30px;
 				line-height: 30px;
 				padding: 0 18% 0 0;
-				color: rgba($dark, 0.75);
+				color: rgba($dark, 0.45);
 				border-bottom: none;
 				font-size: 1.4rem;
 
@@ -287,7 +288,7 @@
 			}
 		}
 
-	} // cd-primary-nav
+	} // dj-primary-nav
 } // MQ(large)
 
 .has-children > a, .go-back a {
@@ -328,6 +329,7 @@
 
 .has-children > a {
 	padding-right: 40px;
+	font-weight: 500;
 
 	&::before, &::after {
 		/* arrow goes on the right side - children navigation */
@@ -336,12 +338,15 @@
 	}
 }
 
-.cd-primary-nav .go-back a {
+.dj-primary-nav .go-back a {
 	padding-left: 40px;
+	background-color: rgba($lightblue, 0.66);
+	color: $light;
 
 	&::before, &::after {
 		/* arrow goes on the left side - go back button */
 		left: 20px;
+		background: $light;
 		@include transform-origin(1px, 50%);
 	}
 }
@@ -354,7 +359,7 @@
 		}
 	}
 
-	.cd-primary-nav > .has-children > a {
+	.dj-primary-nav > .has-children > a {
 		/* main navigation arrows on larger devices */
 		padding-right: 30px !important;
 
@@ -388,12 +393,12 @@
 		}
 	} 
 
-	.cd-secondary-nav > .has-children > a::before, .cd-secondary-nav > .has-children > a::after {
+	.dj-secondary-nav > .has-children > a::before, .dj-secondary-nav > .has-children > a::after {
 		/* remove arrows on secondary nav titles */
 		display: none;
 	}
 
-	.cd-primary-nav .go-back a {
+	.dj-primary-nav .go-back a {
 		padding-left: 20px;
 
 		&::before, &::after {

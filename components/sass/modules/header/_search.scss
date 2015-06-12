@@ -3,7 +3,7 @@
 // ==========================================================
 
 
-.cd-search {
+.dj-search {
 	position: absolute;
 	height: $search-height-short;
 	width: 100%;
@@ -85,7 +85,7 @@
 	}
 }
 
-.cd-overlay {
+.dj-overlay {
 	/* shadow layer visible when navigation is active */
 	position: fixed;
 	z-index: 2;
