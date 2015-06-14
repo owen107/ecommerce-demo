@@ -1,0 +1,22 @@
+// ==========================================================
+// Resuable Components - Buttons
+// ==========================================================
+
+.reg-button {
+	display: inline-block;
+    width: 170px;
+    font-size: 19px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 26px;
+    margin: 0 20px 0 0px;
+    font-weight: $normal;
+    @include single-transition(all, 0.3s, ease-in, 0.1s);
+
+    &:hover {
+    	background: $light;
+    	color: $darkred;
+    } // reg-button:hover
+} // reg-button
+

@@ -20,6 +20,7 @@ $laptop: 1024px 1280px;
 
 // Breakpoint for viewport
 
+$extraSm: 320px;
 $small: 480px;
 $medium: 768px;
 $large: 1024px;
@@ -35,6 +36,7 @@ $yellow: #D8CF90;
 $orange: #F58220;
 $lightyellow: #F0F0E1;
 $red: #B83936;
+$darkred: #970700;
 $lightred: #FF1919;
 $dark: #000000;
 $light: #FFFFFF;
@@ -55,6 +57,9 @@ $heavy: 800;
 
 $headFont: $thin 1.5em/1.5em $fontfamily;
 $mainFont: $thin 1em/1.5em $fontfamily;
+
+$promoFont: "EBGaramond", serif;
+$promoCodeFont: "Pathway Gothic One", sans-serif;
 
 // Header height
 

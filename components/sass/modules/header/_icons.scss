@@ -233,7 +233,6 @@ Main components
 	} // fa-shopping-cart:hover
 
     span {
-    	
     	position: absolute;
     	font-weight: $heavy;
     	font-size: 13px;
@@ -264,15 +263,15 @@ Main components
 
         @include MQ(large) {
 			
-			top: 7px;
-			left: 13px;       
+			top: 0;
+			left: 23px;       
 	        font-size: 11px;
-	        width: 11px;
-	        height: 11px;
-	        background-color: $light;
-	        color: $lightblue;	        
-	        padding-left: 1.5px;
-	        padding-top: 0.5px;
+	        width: 14px;
+	        height: 15px;
+	        background-color: $darkred;
+	        color: $light;	        
+	        padding-left: 3px;
+	        padding-top: 1.5px;
 	        opacity: 1;
 	        @include translateX(0px);
 	        @include border-radius(50%);

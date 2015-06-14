@@ -151,4 +151,11 @@ jQuery(document).ready(function($){
 		$(this).animate({opacity: 0}, 300);
 		$(this).prev().animate({opacity: 1}, 300);
 	});
+
+	$('.dj-slides').slick({
+         fade: true,
+         // autoplay: true,
+         arrows: true,
+         dots: true
+    });
 });

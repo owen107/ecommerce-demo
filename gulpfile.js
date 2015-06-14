@@ -51,7 +51,12 @@ gulp.task('html', function() {
 
 gulp.task('watch', function() {
   gulp.watch(jsSources, ['js']);
-  gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss', 'components/sass/*/*/*.scss'], ['compass']);
+  gulp.watch([
+    'components/sass/*.scss', 
+    'components/sass/*/*.scss', 
+    'components/sass/modules/header/*.scss',
+    'components/sass/modules/home/*.scss'
+  ], ['compass']);
   gulp.watch(htmlSources, ['html']);
 });
 
