@@ -1,0 +1,78 @@
+// ==========================================================
+// Resuable Input Styles
+// ==========================================================
+
+.input-control {
+	  width: 100%;
+	  float: left;
+	  height: 46px;
+	  padding: 12px 13px;
+	  border: 1px solid #ccc;
+	  background-color: #fff;
+	  color: #333;
+	  font-weight: 400;
+	  line-height: 27px;
+	  -webkit-font-smoothing: antialiased;
+	  font-size: 18px;
+	  line-height: 24px;
+	  vertical-align: middle;
+
+	  &:focus {
+         border-color: $lightblue;
+	  } // focus
+}
+
+// Customize Checkbox Styles
+
+.dj-checkbox {
+    float: left;
+    position: relative;
+
+    label {
+       position: absolute;
+       top: 3px;
+       left: 1px;
+       border: 1px solid #ccc;
+       width: 20px;
+       height: 20px;
+
+       &:hover {
+         background: $lightblue;
+
+         &::after {
+           opacity: 1;
+           border-color: $light; 
+         } // label hover after			         
+       } // label hover
+
+       &:after {
+         content: "";
+         background: transparent;
+         border: 3px solid $lightblue;
+         border-top: none;
+         border-right: none;
+         position: absolute;
+         width: 14px;
+         height: 8px;
+         top: 3px;
+         left: 3px;
+         opacity: 0;
+         @include rotate(-45deg);
+       } // label after
+	} // label
+
+	input[type=checkbox] {
+       visibility: hidden;
+    } // input checkbox
+
+	input[type=checkbox]:checked + label:after {
+        opacity: 1;
+    } // input checked
+
+    span {
+      font-size: 0.75em;
+      font-weight: 500;
+      color: $dark;
+      opacity: 0.9;
+    } // span
+ } // dj-checkbox

@@ -162,7 +162,7 @@
     } // reg-button
 } // breakpoint
 
-@include breakpoint(max-width $extraSm) {
+@include breakpoint(max-width $small) {
     .dj-slides {
     	.dj-slide {
 
@@ -238,7 +238,7 @@
 } // s-red
 
 .s-white {
-	background: $lightgrey;
+	background: $orange;
 } // s-white
 
 .s-blue {
@@ -253,7 +253,7 @@
   left: 0;
 
   @include breakpoint(max-width $wide) {
-  	 bottom: -145px;
+  	 bottom: 5px;
   	 left: 10px;
   } // breakpoint
 
@@ -289,7 +289,7 @@
   	} 
 } // breakpoint
 
-@include breakpoint(max-width $extraSm) {
+@include breakpoint(max-width $small) {
     .slick-prev, .slick-next {
   		display: none !important;
   	} 

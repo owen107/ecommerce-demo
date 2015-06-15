@@ -115,6 +115,113 @@ p {
   color: #970700;
 }
 
+/* line 23, ../../../components/sass/components/_buttons.scss */
+.primary-button {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNWY4ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyODZjZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #025f8e), color-stop(100%, #0286cd));
+  background-image: -moz-linear-gradient(left, #025f8e, #0286cd);
+  background-image: -webkit-linear-gradient(left, #025f8e, #0286cd);
+  background-image: linear-gradient(to right, #025f8e, #0286cd);
+  padding: 13px 0;
+  border: 0;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+/* line 33, ../../../components/sass/components/_buttons.scss */
+.primary-button:hover {
+  opacity: 1;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+/* line 5, ../../../components/sass/components/_input.scss */
+.input-control {
+  width: 100%;
+  float: left;
+  height: 46px;
+  padding: 12px 13px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-weight: 400;
+  line-height: 27px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+/* line 20, ../../../components/sass/components/_input.scss */
+.input-control:focus {
+  border-color: #33A3DC;
+}
+
+/* line 27, ../../../components/sass/components/_input.scss */
+.dj-checkbox {
+  float: left;
+  position: relative;
+}
+/* line 31, ../../../components/sass/components/_input.scss */
+.dj-checkbox label {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  border: 1px solid #ccc;
+  width: 20px;
+  height: 20px;
+}
+/* line 39, ../../../components/sass/components/_input.scss */
+.dj-checkbox label:hover {
+  background: #33A3DC;
+}
+/* line 42, ../../../components/sass/components/_input.scss */
+.dj-checkbox label:hover::after {
+  opacity: 1;
+  border-color: #FFFFFF;
+}
+/* line 48, ../../../components/sass/components/_input.scss */
+.dj-checkbox label:after {
+  content: "";
+  background: transparent;
+  border: 3px solid #33A3DC;
+  border-top: none;
+  border-right: none;
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  top: 3px;
+  left: 3px;
+  opacity: 0;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 64, ../../../components/sass/components/_input.scss */
+.dj-checkbox input[type=checkbox] {
+  visibility: hidden;
+}
+/* line 68, ../../../components/sass/components/_input.scss */
+.dj-checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+/* line 72, ../../../components/sass/components/_input.scss */
+.dj-checkbox span {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: #000000;
+  opacity: 0.9;
+}
+
 /* -------------------------------- 
 Primary style
 -------------------------------- */
@@ -205,7 +312,7 @@ Main components
 
 /* line 76, ../../../components/sass/modules/header/_icons.scss */
 .dj-main-content {
-  background: #F0F0E1;
+  background: #FFFFFF;
   min-height: 100vh;
   z-index: 2;
 }
@@ -1516,7 +1623,7 @@ Main components
     padding: 12px 23px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 480px) {
   /* line 167, ../../../components/sass/modules/home/_carousel.scss */
   .dj-slides .dj-slide {
     height: 420px;
@@ -1584,7 +1691,7 @@ Main components
 
 /* line 240, ../../../components/sass/modules/home/_carousel.scss */
 .s-white {
-  background: #e2e3df;
+  background: #F58220;
 }
 
 /* line 244, ../../../components/sass/modules/home/_carousel.scss */
@@ -1602,7 +1709,7 @@ Main components
 @media (max-width: 1023px) {
   /* line 249, ../../../components/sass/modules/home/_carousel.scss */
   .slick-dots {
-    bottom: -145px;
+    bottom: 5px;
     left: 10px;
   }
 }
@@ -1638,7 +1745,7 @@ Main components
     top: 270px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 480px) {
   /* line 293, ../../../components/sass/modules/home/_carousel.scss */
   .slick-prev, .slick-next {
     display: none !important;
@@ -1647,4 +1754,129 @@ Main components
 /* line 299, ../../../components/sass/modules/home/_carousel.scss */
 .slick-prev:before, .slick-next:before {
   font-size: 20px;
+}
+
+/* line 4, ../../../components/sass/modules/auth/_login.scss */
+.content-wrapper {
+  margin-top: 150px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+@media (max-width: 320px) {
+  /* line 4, ../../../components/sass/modules/auth/_login.scss */
+  .content-wrapper {
+    margin-top: 120px;
+  }
+}
+
+/* line 16, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 21px;
+}
+/* line 23, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-header p {
+  color: #33A3DC;
+  font-weight: 500;
+}
+
+/* line 29, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main {
+  padding: 20px 15%;
+}
+/* line 32, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .auth-input {
+  width: 100%;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+/* line 38, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .auth-input-last {
+  margin-bottom: 10px;
+}
+/* line 42, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main input {
+  border-width: 1.5px;
+}
+/* line 46, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main input:focus {
+  border-color: #33A3DC;
+  background: rgba(204, 204, 204, 0.2);
+  outline: none;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 55, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .remember-section {
+  margin-bottom: 20px;
+  color: #000000;
+}
+/* line 2, ../../../components/sass/_mixins.scss */
+.dj-auth-main .remember-section:before, .dj-auth-main .remember-section:after {
+  content: '';
+  display: table;
+}
+/* line 7, ../../../components/sass/_mixins.scss */
+.dj-auth-main .remember-section:after {
+  clear: both;
+}
+/* line 60, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .remember-section .forget-password {
+  float: right;
+  font-size: 13px;
+  padding-top: 2px;
+}
+/* line 65, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .remember-section .forget-password:hover {
+  text-decoration: underline;
+}
+/* line 71, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .auth-button {
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+/* line 79, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .dj-auth-footer p {
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+/* line 85, ../../../components/sass/modules/auth/_login.scss */
+.dj-auth-main .dj-auth-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  /* line 93, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-header {
+    font-size: 18px;
+  }
+
+  /* line 97, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-main {
+    padding: 5px 5%;
+  }
+  /* line 100, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-main .auth-input {
+    margin-bottom: 15px;
+  }
+  /* line 104, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-main .remember-section {
+    margin-bottom: 5px;
+  }
+  /* line 107, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-main .remember-section .forget-password {
+    font-size: 12px;
+  }
+  /* line 112, ../../../components/sass/modules/auth/_login.scss */
+  .dj-auth-main .auth-button {
+    width: 100%;
+  }
 }

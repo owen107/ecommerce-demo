@@ -20,3 +20,19 @@
     } // reg-button:hover
 } // reg-button
 
+.primary-button {
+	 @include background-image(linear-gradient(to right, $butfirst, $butsecond));
+	 padding: 13px 0;
+	 border: 0;
+	 cursor: pointer;
+	 color: $light;
+	 font-size: 0.8em;
+	 text-transform: uppercase;
+	 opacity: 0.95;
+
+	 &:hover {
+	    opacity: 1;
+	    @include transition-duration(0.2s);
+	    @include transition-timing-function(ease-in-out);
+	 } // hover
+} // primary button

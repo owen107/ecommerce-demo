@@ -1,0 +1,116 @@
+// ==========================================================
+// Authentication - Log In
+// ==========================================================
+.content-wrapper {
+	margin-top: 150px;
+	max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+    @include breakpoint(max-width $extraSm) {
+    	margin-top: 120px;
+    } // breakpoint
+} // content-wrapper
+
+.dj-auth-header {
+	
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 21px;
+
+    p {
+    	color: $lightblue;
+    	font-weight: 500;
+    } //p
+} // dj-auth-header
+
+.dj-auth-main {
+     padding: 20px 15%;
+
+     .auth-input {
+     	width: 100%;
+     	font-weight: $normal;
+     	margin-bottom: 25px;
+     } // auth-input
+
+     .auth-input-last {
+     	margin-bottom: 10px;
+     }
+
+     input {
+
+     	border-width: 1.5px;
+     	
+        &:focus {
+     	  border-color: $lightblue;
+     	  background: rgba(#ccc, 0.2);
+     	  outline: none;
+     	  @include single-transition(all, 0.3s, ease-in-out);
+        }// input:focus
+
+     } // input
+
+     .remember-section {
+     	margin-bottom: 20px;
+     	color: $dark;
+     	@include clearfix;
+
+     	.forget-password {
+     		float: right;
+     		font-size: 13px;
+            padding-top: 2px;
+
+            &:hover {
+            	text-decoration: underline;
+            } //hover
+     	} // forget-password
+     } // remeber-section
+
+     .auth-button {
+     	width: 80%;
+     	margin-top: 15px;
+     	margin-bottom: 5px;
+     } //auth-button
+
+     .dj-auth-footer {
+     	
+     	p {
+     		color: rgba($dark, 0.6);
+     		letter-spacing: 0.5px;
+     		font-size: 14px;
+     	} // p 
+
+     	a:hover {
+ 			text-decoration: underline;
+     	} // a
+     } // dj-auth-footer
+} // dj-auth-main
+
+@include breakpoint(max-width $small) {
+     
+     .dj-auth-header {
+     	font-size: 18px;
+     }
+
+     .dj-auth-main {
+     	padding: 5px 5%;
+
+     	.auth-input {
+     		margin-bottom: 15px;
+     	} // auth-input
+
+     	.remember-section {
+     		margin-bottom: 5px;
+
+     		.forget-password {
+     			font-size: 12px;
+     		} // forget-password
+     	} // remember-section
+
+     	.auth-button {
+     		width: 100%;
+     	} // auth-button
+     } // dj-auth-main
+} // breakpoint
