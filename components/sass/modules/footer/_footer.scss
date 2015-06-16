@@ -1,0 +1,239 @@
+// ==========================================================
+// Footer Styles
+// ==========================================================
+
+.dj-footer {
+    
+    .top-footer, .bottom-footer {
+    	.footer-container {
+	    	width: 75%;
+		    margin: 0 auto;
+		    @include clearfix;
+
+		    @include breakpoint(max-width $large) {
+		    	width: 90%;
+		    } // breakpoint
+
+		    @include breakpoint(max-width 635px) {
+		    	width: 80%;
+		    } // breakpoint
+	    } // footer-container
+    } // top-footer, bottom-footer
+    
+	.top-footer {
+		background: $blue;
+		padding: 12px 0 7px 0;
+
+		.social {
+			float: left;
+			
+			p {
+				text-transform: uppercase;
+				display: inline-block;
+				padding-bottom: 0;
+				font-size: 14px;
+				font-weight: $normal;
+				letter-spacing: 0.8px;
+
+				@include breakpoint(max-width 450px) {
+					display: none;
+				}
+			} // p
+
+			span {
+				background-color: $light;
+				width: 22px;
+			    font-size: 17px;
+			    height: 22px;
+			    padding-left: 5px;
+			    padding-top: 2px;
+			    opacity: 0.7;
+				@include border-radius(50%);
+
+				&:hover {
+					opacity: 1;
+				}
+			} // span
+
+			.fa-twitter, .fa-google-plus,
+			.fa-youtube, .fa-instagram {
+                padding-left: 4px;
+			}
+
+			.fa-pinterest-p {
+				padding-top: 3px;
+			}
+		} // social
+
+		.payment-methods {
+			float: right;
+			vertical-align: top;
+			text-transform: uppercase;
+			font-size: 14px;
+
+			img {
+				height: 25px;
+			} // img
+		} // payment-methods
+
+		@include breakpoint(max-width $large) {
+            .social {
+            	p {
+            		font-size: 12px;
+            	} //p
+            } // social
+
+            .payment-methods {
+            	font-size: 12px;
+            } // payment-methods
+		} // breakpoint
+        
+        @include breakpoint(max-width 750px) {
+        	.social {
+        		float: none;
+        		text-align: center;
+
+        		p {
+        			font-size: 15px;
+        		} // p
+
+        		span {
+        			padding-left: 0;
+        			padding-top: 3px;
+        		} // span
+
+        		.fa-twitter, .fa-google-plus {
+	                padding-left: 2px;
+				}
+
+				.fa-youtube, .fa-instagram {
+					padding-left: 1px;
+					padding-top: 2px;
+				}
+
+        	} // social
+
+        	.payment-methods {
+        		display: none;
+        	} // payment-methods
+        } // breakpoint
+	} // top-footer
+
+	.bottom-footer {
+		background: $lightblue;
+
+		.top-section {
+			margin-top: 15px;
+			margin-bottom: 12px;
+			@include clearfix;
+			letter-spacing: 1px;
+
+			.info-list {
+	           @include span(3);
+	           padding-top: 10px;
+	           padding-bottom: 10px;	           
+	        } // info list
+
+			h3 {
+	           color: darken($lightyellow, 10);
+	           text-transform: uppercase;
+	           font-size: 0.9em;
+	           font-weight: $bold;
+	           line-height: 1.2em;
+	        } // h3
+
+	        h4 {
+	           color: $red;
+	           font-size: 0.85em;
+	           font-weight: $bold;
+	           line-height: 1.5em;
+	        } // h4
+	        
+	        li a {
+	           color: rgba($light, 0.85);
+	           font-size: 0.7em;
+	           line-height: 0;
+	           display: inline-block;
+
+	           @include breakpoint(max-width 360px) {
+	           	  font-size: 0.6em;
+	           }
+
+	           &:hover {
+	           	  color: $light;
+	              text-decoration: underline;
+	           } // a hover
+		    } // li a
+	        
+	        .list-title {
+	            margin-top: 15px;
+	        } // list title
+
+	        .shop-title {
+	            margin-bottom: 5px;
+	        } // shop title
+
+	        @include breakpoint(max-width 635px) {
+        	    .info-list {
+        	    	width: span(6);
+
+        	    	&:first-child, &:nth-child(2) {
+        	    		height: 230px;
+
+        	    		@include breakpoint(max-width $extraSm) {
+			            	display: none;
+			            }
+        	    	} 
+
+        	    	&:nth-child(2), &:last-child {
+        	    		padding-left: 20px;
+
+        	    		@include breakpoint(max-width 360px) {
+        	    			padding-left: 0;
+        	    		}
+        	    	}
+        	    } // info-list
+            } // breakpoint
+
+
+		} // top-section
+
+		.bottom-section {
+             border-top: 1px solid rgba($light, 0.5);
+             padding: 8px 0;
+             @include clearfix;
+             font-size: 11px;
+             letter-spacing: 0.5px;
+             color: rgba($light, 0.85);
+
+             .dj-copyright {
+             	float: left;
+             } // copyright
+
+             .dj-policy {
+             	float: right;
+
+             	.policy {
+             		li {
+             			display: inline-block;
+             			text-transform: capitalize;
+             			margin-right: 6px;
+             		} // li
+             	} // policy
+             } // dj-policy
+
+             @include breakpoint(max-width 550px) {
+
+             	.dj-copyright {
+             		float: none;
+             		text-align: center;
+             	}
+
+             	.dj-policy {
+             		display: none;
+             	}
+             }
+		} // bottom-section
+	} // bottom-footer
+} // dj-footer
+

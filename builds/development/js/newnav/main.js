@@ -158,4 +158,24 @@ jQuery(document).ready(function($){
          arrows: true,
          dots: true
     });
+
+
+
+    // footer accordion transition
+
+    // function checkWidth() {
+    // 	var windowSize = $(window).width();
+    // 	if (windowSize < 769) {
+    //        $('#weila').click(function() {
+				// // $(this).toggleClass('special');
+				// console.log($(this).next());
+		  //   	$(this).next().toggle(800, 'swing');
+		  //   	return false;
+		  //   }).next().show();
+    // 	}
+    // }
+
+    // checkWidth();
+
+    // $(window).on('resize', checkWidth);
 });
