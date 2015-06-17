@@ -57,7 +57,8 @@ gulp.task('watch', function() {
     'components/sass/modules/header/*.scss',
     'components/sass/modules/home/*.scss',
     'components/sass/modules/auth/*.scss',
-    'components/sass/modules/footer/*.scss'
+    'components/sass/modules/footer/*.scss',
+    'components/sass/modules/cart/*.scss'
   ], ['compass']);
   gulp.watch(htmlSources, ['html']);
 });

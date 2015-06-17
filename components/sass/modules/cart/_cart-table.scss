@@ -1,0 +1,462 @@
+// ==========================================================
+// Shopping Cart Styles
+// ==========================================================
+
+.dj-shopping-cart {
+	margin-top: 120px;
+    @include container(80%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+
+    @include breakpoint(max-width 1230px) {
+        @include container(95%);
+    }
+
+    .shopping-cart-table {
+    	@include span(8);
+
+    	.cart-header-section {
+    		color: $dark;
+    		padding: 2px 8px 3px 5px;
+    		@include clearfix;
+
+    		.cart-title {
+    			float: left;
+    			font-size: 26px;
+                font-weight: 800;
+                font-family: $promoFont;
+                letter-spacing: -0.5px;
+
+    			span {
+    				color: darken($lightgrey, 20);
+    				font-size: 18px;
+    			} // span
+    		} // cart-title
+
+    		.continue-shopping {
+    			float: right;
+    			padding-top: 2px;
+    			font-size: 15px;
+
+    			&:hover {
+    				text-decoration: underline;
+    			}
+    		} // continue-shopping
+    	} // cart-header-section
+
+    	.cart-item-details {
+    		@include clearfix;
+
+    		.item-info {
+    			border-top: 1px dotted rgba($dark, 0.75);
+    			padding: 16px 0 13px 10px;
+    			@include clearfix;
+
+    			.image-column {
+    				@include column(0.25);
+
+    				img {
+    					width: 150px;
+    				} // img
+    			} // image-column
+
+    			.details-column {
+    				@include column(0.4);
+
+    				.item-name p {
+    					font-size: 15px;
+    					font-weight: 400;
+    					line-height: 1;
+    					color: $lightblue;
+    					letter-spacing: 0;
+
+    					&:hover {
+    						text-decoration: underline;
+    					} // a:hover
+    				} // a
+
+    				p {
+    					color: rgba($dark, 0.75);
+    					font-size: 13px;
+    					padding-bottom: 0;
+    					line-height: 1.35;
+    					letter-spacing: 0.8px;
+                        font-weight: 700;
+
+                        span {
+                            font-weight: initial;
+                        }
+    				} // p
+
+    				.sku {
+    					margin-bottom: 13px;
+    					padding-top: 8px;
+    					font-size: 11px;
+    					color: darken($lightyellow, 25);
+    					letter-spacing: 0.8px;
+
+                        span {
+                            font-weight: initial;
+                        }
+    				} // sku
+
+                    .dj-mobile-price {
+                        display: none;
+                    } // dj-mobile-price
+
+    				ul {
+    					color: $lightblue;
+    					margin-top: 17px;
+
+    					li {
+    						display: inline-block;
+    					} // li
+
+    					.reg-button {
+    						font-size: 13px;
+    						width: 70px;
+    						text-align: center;
+    						border-color: $red;
+    						color: $red;
+    						margin: 0; 
+    						padding: 3px 5px;
+
+    					    &:hover {
+    						   background: $red;
+    						   color: $light;
+    					    } // a:hover 
+    					} // a
+    				} // ul
+    			} // details-column
+
+    			.unitprice-column {
+    				@include column(0.11);
+
+    				p {
+    					color: rgba($dark, 0.4);
+    				}
+    			} // unitprice-column
+
+    			.qty-column {
+    				@include column(0.11);
+
+    				p {
+    					color: rgba($dark, 0.4);
+    				}
+
+    				.update-input {
+    					position: relative;
+    				} // update-input
+
+    				.input-control {
+    					
+    					position: absolute;
+    					padding: 5px;
+    					text-align: center;
+    					@include abcenter(40px, -10px, 0, 0, auto, 60%);
+    					
+    					&:focus {
+    						border-color: $lightblue;
+    					    outline: none;
+    					}
+    				} // input-control
+    			} // qty-column
+
+    			.total-column {
+    				@include column(0.13);
+
+    				p {
+    					color: rgba($dark, 0.4); 
+    					text-align: center;
+    				} // p
+    			} // total-column
+
+    			.dj-price-info {
+                	padding-bottom: 5px;;
+                	line-height: 1;
+                	font-size: 15px;
+                	font-weight: $normal;
+                } //dj-price-info
+
+                .dj-price {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: rgba($dark, 0.75) !important;
+                    letter-spacing: 0.3px;
+                    padding-top: 12px;
+                } // dj-price
+
+    		} // item-info
+    	} // cart-item-details
+    } // shopping-cart-table 
+
+} // dj-shopping-cart
+
+@include breakpoint(max-width $large) {
+
+  .dj-shopping-cart {    
+    .shopping-cart-table {
+        
+        .cart-item-details {
+            .item-info {
+
+                .image-column {
+
+                    @include column(0.24);
+
+                    img {
+                        width: 100px;
+                    } // img
+                } // image-column
+
+                .details-column {
+                    @include column(0.41);
+
+                    .item-name p {
+                        font-size: 13px;
+                        
+                    } // item-name p
+
+                    p {
+                        font-size: 11.5px;
+                        line-height: 1.3;
+                    } // p
+
+                    .sku {
+                        margin-bottom: 6px;
+                        padding-top: 3px;
+                        font-size: 10px;
+                    } // sku
+
+                    ul {
+                        margin-top: 10px;
+
+                        li {
+                            display: inline-block;
+                        } // li
+
+                        .reg-button {
+                            font-size: 12px;
+                            width: 66px;
+                            padding: 2px 5px;
+                        } // reg-button
+                    } // ul
+                } // details-column
+
+                .unitprice-column {
+                    @include column(0.10);
+
+                    p {
+                        text-align: center;
+                    }
+                } // unitprice-column
+
+                .qty-column {
+
+                    .input-control {
+                        
+                        left: 5px;
+                        height: 40px;
+                        padding: 1px;
+                    } // input-control
+                } // qty-column
+
+                .dj-price-info {
+                    font-size: 12px;
+                } //dj-price-info
+
+                .dj-price {
+                    font-size: 13px;
+                } // dj-price
+
+            } // item-info           
+        } // cart-item-details
+    } // shopping-cart-table
+  } // dj-shopping-cart
+} // breakpoint
+
+@include breakpoint(max-width $medium) {
+    .dj-shopping-cart {
+        .shopping-cart-table  {
+            @include span(12);
+
+            .cart-item-details {
+                .item-info {
+
+                    .image-column {
+
+                        @include column(0.25);
+
+                        img {
+                            width: 150px;
+                        } // img
+                    } // image-column
+
+                    .details-column {
+                        @include column(0.45);
+
+                        .item-name p {
+                            font-size: 15px;
+                            
+                        } // item-name p
+
+                        p {
+                            font-size: 13.5px;
+                            line-height: 1.35;
+                        } // p
+
+                        .sku {
+                            margin-bottom: 10px;
+                            padding-top: 5px;
+                            font-size: 12px;
+                        } // sku
+
+                        ul {
+                            margin-top: 18px;
+
+                            .reg-button {
+                                font-size: 13px;
+                                width: 70px;
+                                padding: 4px 6px;
+                            } // reg-button
+                        } // ul
+                    } // details-column
+
+                    .unitprice-column {
+                        @include column(0.08);
+
+                        p {
+                            text-align: left;
+                        }
+                    } // unitprice-column
+
+                    .qty-column {
+                        @include column(0.1);
+
+                        .input-control {
+                            
+                            left: -15px;
+                            height: 45px;
+                            padding: 1px;
+                        } // input-control
+                    } // qty-column
+
+                    .total-column {
+                        @include column(0.12);
+                    }
+
+                    .dj-price-info {
+                        font-size: 12px;
+                    } //dj-price-info
+
+                    .dj-price {
+                        font-size: 13px;
+                    } // dj-price
+
+                } // item-info           
+            } // cart-item-details
+        } // shopping-cart-table;
+    } // dj-shopping-cart
+} // breakpoint
+
+@include breakpoint(max-width 600px) {
+    .dj-shopping-cart {
+        .shopping-cart-table  {
+            @include span(12);
+
+            .cart-header-section {
+
+                .cart-title {
+                    font-size: 18px;
+                } // cart-title
+
+                .continue-shopping {
+                    font-size: 14px;
+                } // continue-shopping
+            } // cart-header-section
+
+            .cart-item-details {
+                .item-info {
+
+                    .image-column {
+
+                        @include column(0.35);
+
+                        img {
+                            width: 90px;
+                        } // img
+                    } // image-column
+
+                    .details-column {
+                        @include column(0.65);
+
+                        .item-name p {
+                            font-size: 12px;
+                            
+                        } // item-name p
+
+                        p {
+                            font-size: 11px;
+                            line-height: 1.25;
+                        } // p
+
+                        .sku {
+                            margin-bottom: 5px;
+                            padding-top: 2px;
+                            font-size: 10px;
+                        } // sku
+
+                        .dj-mobile-price {
+                            display: block;
+
+                            span {
+                                display: inline-block;
+                                position: relative;
+                            } // span
+
+                            .mobile-update-input {
+                                height: 25px;
+                                width: 25px;
+                                font-size: 12px;
+                                padding: 0px 0 0 8px;
+                                position: absolute;
+                                top: -18px;
+                                left: 8px;
+
+                                &:focus {
+                                    border-color: $lightblue;
+                                    outline: none;
+                                }
+                            } //mobile-update-input 
+                        } // dj-mobile-price
+
+                        ul {
+                            margin-top: 13px;
+
+                            .reg-button {
+                                font-size: 12.5px;
+                                width: 76px;
+                                padding: 3px 4px;
+                            } // reg-button
+                        } // ul
+                    } // details-column
+
+                    .unitprice-column, .qty-column,
+                    .total-column {
+                        display: none;
+                    } // unitprice-column
+
+                    .dj-price-info {
+                        font-size: 12px;
+                    } //dj-price-info
+
+                    .dj-price {
+                        font-size: 13px;
+                    } // dj-price
+
+                } // item-info           
+            } // cart-item-details
+        } // shopping-cart-table;
+    } // dj-shopping-cart
+} // breakpoint
