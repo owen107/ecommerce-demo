@@ -2,51 +2,17 @@
 var $ = require('jquery');
 var jQuery = $;
 
-//initiate jquery easyTicker plugin 
-$(document).ready(function(){
-	$('.vticker').easyTicker();
-});
-
-// info toggle script
-$(document).ready(function() {
-	var $info = $('#info');
-	$('#clickme').click(function(e){
-		e.stopPropagation();
-		if ($info.is(":hidden")) {
-	        $info.slideDown('slow');
-		} else {
-			$info.slideUp('slow');
-		}
-	});
-	
-	$(document.body).ready(function(){
-		if ($info.not(":hidden")) {
-			$info.slideUp('slow');
-		};
-	});
-});
-
-// responsive menu script
-$(document).ready(function(){
-   $('.megamenu').megamenu();
-});
-
-// responsive wmu slider 
-$(document).ready(function() {
-	$('.wmuSlider').wmuSlider();
-});
-
 // set the whitespace property of h3 when roll over the product
-$(document).ready(function() {
+(function(){
 	$('.product_details').hover(function() {
          $(this).find('h3').addClass('hover');
 	}, function() {
 		 $(this).find('h3').removeClass('hover');
 	});
-});
-
+})();
+	
 // initiate the moveToTop jQuery plugin
-$(document).ready(function() {
+(function(){
 			
 	var defaults = {
 		containerID: 'toTop', // fading element id
@@ -57,75 +23,44 @@ $(document).ready(function() {
 	
 	$().UItoTop({ easingType: 'easeOutQuart' });
 	
-});
+})();
 
 // set up the jQuery filters accordion 
-$(document).ready(function() {
-	$('#department h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-}); // initiate department filter 
+(function() {
 
-$(document).ready(function() {
-	$('#category h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-});// initiate category filter
+    // initiate department filter 
+	$('#department h3').on('click', filterAccordion).next().show();
 
-$(document).ready(function() {
-	$('#brand h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-}); // initiate brand filter
+    // initiate category filter
+    $('#category h3').on('click', filterAccordion).next().show();
+    
+    // initiate brand filter
+    $('#brand h3').on('click', filterAccordion).next().show();
 
-$(document).ready(function() {
-	$('#price h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-}); // initiate price filter
+    // initiate price filter
+    $('#price h3').on('click', filterAccordion).next().show();
 
-$(document).ready(function() {
-	$('#size h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-}); // initiate size filter
+    // initiate size filte
+    $('#size h3').on('click', filterAccordion).next().show();
 
-$(document).ready(function() {
-	$('#color h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().show();
-}); // initiate color filter
+    // initiate color filter
+    $('#color h3').on('click', filterAccordion).next().show();
 
-// set up the jQuery share and product description accordion in details page 
-$(document).ready(function() {
-	
-    $('#product_desc h3').click(function() {
-		$(this).toggleClass('special');
-    	$(this).next().toggle('slow');
-    	return false
-    }).next().show();
+    // set up the jQuery share and product description accordion in details page 
+    $('#product_desc h3').on('click', filterAccordion).next().show();
 
-	$('#share h3').click(function() {
-		$(this).toggleClass('special');
+    $('#share h3').on('click', filterAccordion).next().hide();
+
+    // callback function
+    function filterAccordion() {
+    	$(this).toggleClass('special');
     	$(this).next().toggle(800, 'swing');
-    	return false
-    }).next().hide();
-}); 
+    	return false;
+    }
+})(); 
 
 // create an image gallery selector in the product image
-$(document).ready(function() {
+(function() {
 	// select the link that its image child element has the gallery class selector
 	$('a:has(img.gallery)').click(function(e) {
 		 e.preventDefault(); 
@@ -137,10 +72,10 @@ $(document).ready(function() {
          // not follow the link
 		 // return false; 
 	});
-});
+})();
 
 // second approach to creata an image gallery selector
-$(document).ready(function() {
+(function() {
 	// select the image with the gallery class selector
 	$('#image_tn img.gallery').click(function() {
 		 $('#image_tn img').each(function() {
@@ -159,10 +94,11 @@ $(document).ready(function() {
 		 $('#large_image').parent().attr("href", zoomInImgPath);
 		 $('#full_screen a').attr({href: largePath});
 	});
-});
+})();
 
 //create lightbox effect for product gallery in the details page (Approach 1 - Using jQuery)
-$(document).ready(function() {
+(function() {
+
 	var $image = $('<img>'); // create a new image element
 	var $spinner = $('<img>');
 	$image.addClass("high_res");
@@ -203,10 +139,11 @@ $(document).ready(function() {
     	// overlay.hide();
     	overlay.css("display", "none");
     });
-});
+})();
 
 //create lightbox effect for size chart in the details page 
-$(document).ready(function() {
+(function() {
+
 	var $sizeChart = $('<img>'); // create a new image element
 	var $spinner = $('<img>');
 	$sizeChart.addClass("high_res");
@@ -245,10 +182,11 @@ $(document).ready(function() {
     	// overlay.hide();
     	overLay.css("display", "none");
     });
-});
+})();
 
 // create color options selectors for details page
-$(document).ready(function() {
+(function() {
+
 	$('.color_list a').click(function(e) {
 		e.stopPropagation();
 		e.preventDefault(); // prevent default action of event
@@ -285,10 +223,10 @@ $(document).ready(function() {
            }
 		});
 	});
-});
+})();
 
 // create a dropdown for size and quantity select element in details page 
-$(document).ready(function() {
+(function() {
     
     // create variables for selected ID elements, appended object and target ID
     var size = $("#size"),
@@ -306,7 +244,7 @@ $(document).ready(function() {
     bindDropdown(size);
     bindDropdown(quantity);
 
-});
+})();
 
 // reusable function for creating the dropdown 
 function createDropDown(selectedElem, appendObject, targetId){
@@ -387,7 +325,7 @@ $(window).load(function() {
 });
 
 // change the behavior of accordion in details page when resizing the window between 995px and 768px
-$(document).ready(function() {
+(function() {
 
 	// when window is resizing fire up the function
 	$(window).resize(function() {
@@ -416,4 +354,4 @@ $(document).ready(function() {
 			share.removeClass('special');
 		}
 	});	
-});
+})();

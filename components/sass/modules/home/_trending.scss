@@ -1,175 +1,75 @@
 .dj-main-content {
     .wrapper {
-     @include breakpoint($small $large) {
-        @include container;
+       @include breakpoint($medium $extraLg) {
+          @include container;
+          margin-bottom: 30px;
 
-        .title {
-          margin: 20px 0 30px;
-          h2 {
-            text-align: center;
-            text-transform: capitalize;
-            font-weight: $bold;
-            font-family: $fontfamily;
-            font-size: 2em;
-            color: $red;
-          } // h2
-        } // title 
-     } // breakpoint
+          .title {
+            margin: 20px 0 30px;
+            h2 {
+              text-align: center;
+              text-transform: capitalize;
+              font-weight: $bold;
+              font-family: $fontfamily;
+              font-size: 2em;
+              color: $red;
+            } // h2
+          } // title 
+       } // breakpoint
 
-     @include breakpoint($extraSm $small) {
-        @include container(38.4em);
+       @include breakpoint($small $medium) {
+          @include container(38.4em);
 
-        .title {
-          margin: 20px 0 30px;
-          h2 {
-            text-align: center;
-            text-transform: capitalize;
-            font-weight: $bold;
-            font-family: $fontfamily;
-            font-size: 1.5em;
-            color: $red;
-          } // h2
-        } // title 
-     } // breakpoint
+          .title {
+            margin: 20px 0 30px;
+            h2 {
+              text-align: center;
+              text-transform: capitalize;
+              font-weight: $bold;
+              font-family: $fontfamily;
+              font-size: 1.5em;
+              color: $red;
+            } // h2
+          } // title 
+       } // breakpoint
 
-     @include breakpoint(max-width $extraSm) {
-        width: 80%;
-        margin: 0 auto;
+       @include breakpoint(max-width $small) {
+          width: 80%;
+          margin: 0 auto;
 
-        .title {
-          margin: 10px 0 15px;
-          border-bottom: 1px solid $red;
-          h2 {
-            text-align: center;
-            text-transform: capitalize;
-            font-weight: $bold;
-            font-family: $fontfamily;
-            font-size: 1em;
-            color: $red;
-            padding-bottom: 8px;
-          } // h2
-        } // title 
-     } // breakpoint
-} // wrapper
+          .title {
+            margin: 10px 0 15px;
+            border-bottom: 1px solid $red;
+            h2 {
+              text-align: center;
+              text-transform: capitalize;
+              font-weight: $bold;
+              font-family: $fontfamily;
+              font-size: 1em;
+              color: $red;
+              padding-bottom: 8px;
+            } // h2
+          } // title 
+       } // breakpoint
+    } // wrapper
 
 .product_grid {
-  @include breakpoint($small $large) {
-    @include container(60em);
+    @include breakpoint($medium $extraLg) {
+      @include container(60em);
 
-    .product_item {
-       @include span(3);
-       margin-bottom: 10px;
+      .product_item {
+         @include span(3);
+         margin-bottom: 10px;
 
-       .product_details {
-          position: relative;
-          &:hover {
-             border: 1px solid $lightblue;
-             @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
-
-             img {
-                @include scale(0.98, 0.98);
-             } //img
-
-             .shopnow img {
-                @include translateX(0px);
-                @include single-transition(all, 0.3s, ease-in-out);
-                opacity: 1;
-             } // shopnow img
-
-             .hover {
-               white-space: normal;
-             } // hover
-
-             &:before {
-                 background: transparent;
-                 z-index: 10;
-                 content: url('../images/products/logo_s.png');
-                 position: absolute;
-                 top: 5px;
-                 left: 5px;                   
-              } // product details hover before
-          } // product details hover
-          a {
-            opacity: 0.8;
-            &:hover {
-              opacity: 1;
-            } // a hover
-
-            img {
-              margin-bottom: 10px;
-              @include transition-duration(0.5s);
-            }
-
-            .product_info {
-               width: 90%;
-               margin: 0 auto;
-               padding-top: 8px;
-               border-top: 1px dotted $lightblue;
-
-               h3 {
-                  font-family: $fontfamily;
-                  font-size: 0.9em;
-                  color: lighten($blue, 10);
-                  white-space: nowrap;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  line-height: 1.3em;
-                  margin-top: 3px;
-               } // h3
-
-               h4 {
-                  font-family: $fontfamily;
-                  font-size: 0.7em;
-                  color: lighten($red, 10);
-                  margin-top: -4px;
-               } // h4
-
-               p {
-                  font-family: $fontfamily;
-                  font-size: 0.8em;
-                  color: lighten($dark, 40);
-                  padding-bottom: 5px;
-               } // h3
-
-               .discount {
-                  color: darken($red, 5);
-                  padding-right: 5px;
-                  font-size: 0.9em;
-               } // discount
-
-               .original {
-                  text-decoration: line-through;
-               } // original
-            } // product info
-
-            .shopnow img {
-                position: absolute;
-                top: 23%;
-                left: 35%;
-                opacity: 0;
-                @include translateX(-83px);
-            } // shop img
-          } // a
-       } // product details
-    } //product item
-  } // breakpoint
-
-  @include breakpoint($extraSm $small) {
-    @include container(34.56em);
-    .product_item {
-        @include span(6);
-        margin-bottom: 10px;
-        float: left;
-        .product_details {
-            width: 226px;
-            margin: 0 auto;
+         .product_details {
             position: relative;
             &:hover {
                border: 1px solid $lightblue;
                @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
-               .hover {
-                 white-space: normal;
-               } // hover
+
+               img {
+                  @include scale(0.98, 0.98);
+               } //img
 
                .shopnow img {
                   @include translateX(0px);
@@ -177,9 +77,9 @@
                   opacity: 1;
                } // shopnow img
 
-               img {
-                  @include scale(0.98, 0.98);
-               } // img
+               .hover {
+                 white-space: normal;
+               } // hover
 
                &:before {
                    background: transparent;
@@ -190,7 +90,6 @@
                    left: 5px;                   
                 } // product details hover before
             } // product details hover
-
             a {
               opacity: 0.8;
               &:hover {
@@ -199,6 +98,7 @@
 
               img {
                 margin-bottom: 10px;
+                @include transition-duration(0.5s);
               }
 
               .product_info {
@@ -222,7 +122,7 @@
                     font-family: $fontfamily;
                     font-size: 0.7em;
                     color: lighten($red, 10);
-                    margin-top: -4px
+                    margin-top: -4px;
                  } // h4
 
                  p {
@@ -251,106 +151,207 @@
                   @include translateX(-83px);
               } // shop img
             } // a
-        } // product details
-    } //product item
-  } // breakpoint
+         } // product details
+      } //product item
+    } // breakpoint
 
-  @include breakpoint(max-width $extraSm) {
-    .product_item {
-       margin-bottom: 10px;
-    } // product item
+    @include breakpoint($small $medium) {
+      @include container(34.56em);
+      .product_item {
+          @include span(6);
+          margin-bottom: 10px;
+          float: left;
+          .product_details {
+              width: 226px;
+              margin: 0 auto;
+              position: relative;
+              &:hover {
+                 border: 1px solid $lightblue;
+                 @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
+                 .hover {
+                   white-space: normal;
+                 } // hover
 
-    .product_details {
-        width: 226px;
-        margin: 0 auto;
-        position: relative;
-        &:hover {
-           border: 1px solid $lightblue;
-           @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
-           .hover {
-             white-space: normal;
-           } // hover
-          
-          .shopnow img {
-              @include translateX(0px);
-              @include single-transition(all, 0.3s, ease-in-out);
-              opacity: 1;
-          } // shopnow img
+                 .shopnow img {
+                    @include translateX(0px);
+                    @include single-transition(all, 0.3s, ease-in-out);
+                    opacity: 1;
+                 } // shopnow img
 
-          img {
-            @include scale(0.98, 0.98);
-          } img
+                 img {
+                    @include scale(0.98, 0.98);
+                 } // img
 
-           &:before {
-               background: transparent;
-               z-index: 10;
-               content: url('../images/products/logo_s.png');
-               position: absolute;
-               top: 5px;
-               left: 5px;                   
-            } // product details hover before
-        } // product details hover
-        a {
-          opacity: 0.8;
+                 &:before {
+                     background: transparent;
+                     z-index: 10;
+                     content: url('../images/products/logo_s.png');
+                     position: absolute;
+                     top: 5px;
+                     left: 5px;                   
+                  } // product details hover before
+              } // product details hover
+
+              a {
+                opacity: 0.8;
+                &:hover {
+                  opacity: 1;
+                } // a hover
+
+                img {
+                  margin-bottom: 10px;
+                }
+
+                .product_info {
+                   width: 90%;
+                   margin: 0 auto;
+                   padding-top: 8px;
+                   border-top: 1px dotted $lightblue;
+
+                   h3 {
+                      font-family: $fontfamily;
+                      font-size: 0.9em;
+                      color: lighten($blue, 10);
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      line-height: 1.3em;
+                      margin-top: 3px;
+                   } // h3
+
+                   h4 {
+                      font-family: $fontfamily;
+                      font-size: 0.7em;
+                      color: lighten($red, 10);
+                      margin-top: -4px
+                   } // h4
+
+                   p {
+                      font-family: $fontfamily;
+                      font-size: 0.8em;
+                      color: lighten($dark, 40);
+                      padding-bottom: 5px;
+                   } // h3
+
+                   .discount {
+                      color: darken($red, 5);
+                      padding-right: 5px;
+                      font-size: 0.9em;
+                   } // discount
+
+                   .original {
+                      text-decoration: line-through;
+                   } // original
+                } // product info
+
+                .shopnow img {
+                    position: absolute;
+                    top: 23%;
+                    left: 35%;
+                    opacity: 0;
+                    @include translateX(-83px);
+                } // shop img
+              } // a
+          } // product details
+      } //product item
+    } // breakpoint
+
+    @include breakpoint(max-width $small) {
+      .product_item {
+         margin-bottom: 10px;
+      } // product item
+
+      .product_details {
+          width: 226px;
+          margin: 0 auto;
+          position: relative;
           &:hover {
-            opacity: 1;
-          } // a hover
+             border: 1px solid $lightblue;
+             @include box-shadow(0px 0px 10px -2px darken($lightblue, 30));
+             .hover {
+               white-space: normal;
+             } // hover
+            
+            .shopnow img {
+                @include translateX(0px);
+                @include single-transition(all, 0.3s, ease-in-out);
+                opacity: 1;
+            } // shopnow img
 
-          img {
-            margin-bottom: 10px;
-          } // img
+            img {
+              @include scale(0.98, 0.98);
+            } img
 
-          .product_info {
-             width: 90%;
-             margin: 0 auto;
-             padding-top: 8px;
-             border-top: 1px dotted $lightblue;
+             &:before {
+                 background: transparent;
+                 z-index: 10;
+                 content: url('../images/products/logo_s.png');
+                 position: absolute;
+                 top: 5px;
+                 left: 5px;                   
+              } // product details hover before
+          } // product details hover
+          a {
+            opacity: 0.8;
+            &:hover {
+              opacity: 1;
+            } // a hover
 
-             h3 {
-                font-family: $fontfamily;
-                font-size: 0.9em;
-                color: lighten($blue, 10);
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                line-height: 1.3em;
-                margin-top: 3px;
-             } // h3
+            img {
+              margin-bottom: 10px;
+            } // img
 
-             h4 {
-                font-family: $fontfamily;
-                font-size: 0.7em;
-                color: lighten($red, 10);
-                margin-top: -4px
-             } // h4
+            .product_info {
+               width: 90%;
+               margin: 0 auto;
+               padding-top: 8px;
+               border-top: 1px dotted $lightblue;
 
-             p {
-                font-family: $fontfamily;
-                font-size: 0.8em;
-                color: lighten($dark, 40);
-                padding-bottom: 5px;
-             } // h3
+               h3 {
+                  font-family: $fontfamily;
+                  font-size: 0.9em;
+                  color: lighten($blue, 10);
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  line-height: 1.3em;
+                  margin-top: 3px;
+               } // h3
 
-             .discount {
-                color: darken($red, 5);
-                padding-right: 5px;
-                font-size: 0.9em;
-             } // discount
+               h4 {
+                  font-family: $fontfamily;
+                  font-size: 0.7em;
+                  color: lighten($red, 10);
+                  margin-top: -4px
+               } // h4
 
-             .original {
-                text-decoration: line-through;
-             } // original
-          } // product info
+               p {
+                  font-family: $fontfamily;
+                  font-size: 0.8em;
+                  color: lighten($dark, 40);
+                  padding-bottom: 5px;
+               } // h3
 
-          .shopnow img {
-              position: absolute;
-              top: 23%;
-              left: 35%;
-              opacity: 0;
-              @include translateX(-83px);
-          } // shop img
-        } // a
-    } // product details
-  } // breakpoint
-} // product grid
-}
+               .discount {
+                  color: darken($red, 5);
+                  padding-right: 5px;
+                  font-size: 0.9em;
+               } // discount
+
+               .original {
+                  text-decoration: line-through;
+               } // original
+            } // product info
+
+            .shopnow img {
+                position: absolute;
+                top: 23%;
+                left: 35%;
+                opacity: 0;
+                @include translateX(-83px);
+            } // shop img
+          } // a
+      } // product details
+    } // breakpoint
+  } // product grid
+} // dj-main-content
