@@ -1,11 +1,18 @@
-/**
-* product content
-*/
+// ==========================================================
+// Category Page Styles
+// ==========================================================
 
-.products_content {
+.dj-main-content {
 	.wrapper {
 	   width: 95%;
-	   margin: 0 auto;
+	   margin-left: auto;
+	   margin-right: auto;
+	   margin-top: 100px;
+	   margin-bottom: 30px;
+
+	   @include breakpoint(max-width $large) {
+	   	  margin-top: 70px;
+	   }
 
 	   .container {
 	      @include container(72em);
@@ -29,7 +36,7 @@
                  color: lighten($red, 20);
 
                  span {
-                   color: darken($grey, 20);
+                   color: darken($lightyellow, 20);
                    font-size: 0.8em;
                  } // span
               } // h3
@@ -58,18 +65,13 @@
 	           font-size: 0.8em;
 	           padding: 10px 0 4px;
 
-	           &:after {
-				  font-family: "icomoon";
-				  content: "\e60d";
-				  float: right;
-				  font-size: 0.7em;
-				  padding-right: 5px;
-				} // h3 after
-	         } // h3
+	           .fa-plus, .fa-minus {
+	           	  float: right;
+	           	  padding-top: 5px;
+	           	  padding-right: 5px;
+	           }
 
-	         h3.special:after {
-				content: "\e60e";
-			 } // h3 special after
+	         } // h3
 
 			 .filter_box {
                 position: relative;
@@ -118,9 +120,9 @@
 			    span {
 			      font-size: 0.65em;
 			      font-weight: $bold;
-			      font-color: lighten($dark, 50);
+			      color: lighten($dark, 50);
 			      opacity: 0.9;
-			      margin-left: 8px;
+			      margin-left: 3px;
 			    } // span
 			 } // filter_box
 
@@ -314,7 +316,7 @@
 		                 border-top: 1px dotted $lightblue;
 
 		                 h3 {
-		                    font-family: $productfamily;
+		                    font-family: $fontfamily;
 		                    font-size: 0.9em;
 		                    color: lighten($blue, 10);
 		                    white-space: nowrap;
@@ -325,14 +327,14 @@
 		                 } // h3
 
 		                 h4 {
-		                    font-family: $productfamily;
+		                    font-family: $fontfamily;
 		                    font-size: 0.7em;
 		                    color: lighten($red, 10);
 		                    margin-top: -4px;
 		                 } // h4
 
 		                 p {
-		                    font-family: $productfamily;
+		                    font-family: $fontfamily;
 		                    font-size: 0.8em;
 		                    color: lighten($dark, 40);
 		                    padding-bottom: 5px;
@@ -416,7 +418,7 @@
               } // product ist
           }          
 
-          @include breakpoint(max-width 480px) {
+          @include breakpoint(max-width $small) {
               .products_sum {
                  margin-bottom: 0;
                  p {

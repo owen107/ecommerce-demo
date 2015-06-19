@@ -13,8 +13,11 @@
 </head>
 
 <body class="nav-is-fixed nav-on-left">
+	
 	<header class="dj-main-header">
-		<a class="dj-logo" href="#0"><img src="../images/icons/d&amp;j-logo.png" alt="Logo for D&amp;J"></a>
+		<a class="dj-logo" href="index.html">
+			<img src="../images/icons/d&amp;j-logo.png" alt="Logo for D&amp;J">
+		</a>
 
 		<ul class="dj-header-buttons">
 			<li><a class="dj-search-trigger" href="#dj-search">Search<span></span></a></li>
@@ -29,126 +32,170 @@
 				</a>
 				<ul>
 					<li>Hello, Owen!</li>
-					<li><a href="#">Login In</a></li>
-					<li><a href="#">Sign Up</a></li>
+					<li><a href="login.html">Login In</a></li>
+					<li><a href="signup.html">Sign Up</a></li>
 					<li><a href="#">My Account</a></li>
 					<li><a href="#">Logout</a></li>
 				</ul>
 			</li>
 			<li>
-				<a class="fa fa-shopping-cart" href="#">
+				<a class="fa fa-shopping-cart" href="cart.html">
 					<span class="item-number">8</span>
 				</a>
 			</li>
 		</ul>
 	</header> <!-- end header -->
 
-	<main class="dj-main-content">
-		<!-- your content here -->
-		<div class="dj-slides">
-			<div class="dj-slide s-red">
-                <div class="dj-summer-sale">
-                  <p class="dj-promo">
-                  	The &nbsp;<span>D&amp;J</span>&nbsp; SUMMER &nbsp;<span>SALE</span>
-                  </p>
-                  <div class="dj-promo-tablet">
-                  	<p>the D&amp;J</p>
-                  	<p>summer sale</p>
-                  </div>
-                  <p class="deal-lg">50-70% OFF ALL CLEARANCE</p>
-                  <div class="deal-sm">
-                  	<div class="summer-discount">50-70
-                  		<span class="percentbox">%</span> 
-                  		<span class="percentoff">OFF</span>
-                  	</div> 
-                  </div>
-                  <div class="deal-sm">
-                  	<p class="clearance">ALL CLEARANCE</p>
-                  </div>
-                  <p class="online">ONLINE PRICE REFLECTS DISCOUNT</p>
-                  <div class="promo-buttons">
-                  	<a href="#" class="reg-button">shop mens</a>
-                  	<a href="#" class="reg-button">shop womens</a>
-                  </div>
-                  <p class="promo-code">
-                  	Online only. Off original prices. <span>Promo code: WeilaD&amp;J</span>
-                  </p>
-                </div>
-            </div><!--Slide 1-->
+ 	<div class="dj-main-content">
+ 		<div class="wrapper">
+ 			<div class="product_index">
+	 			<p>
+	    			<a href="index.html">Home</a><span> / </span>
+	    			<a href="index.html">Men</a><span> / </span>
+	    			<a href="index.html">Clothing</a><span> / </span>
+	    			<a id="product_name" href="index.html">H&M Collarless Shirt</a>
+	    		</p>
+	    	</div>
+    		<div id="product_content">
+    			<div class="image_container">
+    				<div class="image_list">
+    					<div class="thumbnail_list">
+	    					<ul id="image_tn">
+	    						<!-- <li><a href="images/details/hmlb.jpeg"><img src="images/details/hmlb_tn.jpeg" class="gallery"/></a></li>
+	    						<li><a href="images/details/hmlb2.jpeg"><img src="images/details/hmlb2_tn.jpeg" class="gallery"/></a></li>
+	    						<li><a href="images/details/hmlb3.jpeg"><img src="images/details/hmlb3_tn.jpeg" class="gallery"/></a></li> -->
 
-            <div class="dj-slide s-white">
-            </div><!--Slide 2-->
+	    						<li><img src="images/details/hm1_lightblue_tn.jpeg" class="gallery selectedImg"/></li>
+	    						<li><img src="images/details/hm2_lightblue_tn.jpeg" class="gallery"/></li>
+	    						<li><img src="images/details/hm3_lightblue_tn.jpeg" class="gallery"/></li>
+	    					</ul>
+	    				</div>
+    				</div>
+    				<div class="image_gallery">
+    					<div class="big_img">
+    						<div class="easyzoom easyzoom--overlay">
+	    						<a href="#" id="zoomImage">
+		    					   <img id="large_image" src="images/details/hm1_lightblue.jpeg" />
+		    					</a>
+		    				</div>
+	    					<img id="logo" src="images/products/logo_s.png" />
+	    					<img id="zoomin" src="images/details/zoom.png" />
+    				    </div>
+    					<div id="full_screen">
+    						<i class="fa fa-arrows-alt"></i>
+    						<a href="images/details/hm1_lightblue.jpeg">  view full screen</a>
+    					</div>
+    					<div id="overlay"><a class="close"></a></div>
+    				</div>
+    			</div>
 
-            <div class="dj-slide s-blue">
-            </div><!--Slide 3-->
-		</div> <!-- dj-slides -->
+    			<div class="purchase_block">
+    				<section id="purchase_info">
+    					<h2>H&M Collarless Shirt</h2>
+    					<h4>men's clothing</h4>
+    					<h3>$14.99<span>$24.95</span></h3>
+    				</section>
+    				<section id="color_options">
+    					<div id="color_selected">&nbsp;color: <span>lightblue</span></div>
+                        <ul class="color_list">
+							<li><a href="#"><div class="lightblue"></div></a></li>
+							<li><a href="#"><div class="blue"></div></a></li>
+							<li><a href="#"><div class="grey"></div></a></li>
+    				</section>
+    				<section id="dropdown">
+    					<div class="size">
+				            <select id="size">
+				            	<option selected="selected" value="ss">Select size</option>
+			                    <option value="s">small (s)</option>
+			                    <option value="m">medium (m)</option>
+			                    <option value="l">large (l)</option>
+			                    <option value="xl">xlarge (xl)</option>
+			                    <option value="xll">xllarge (xll)</option>
+				            </select>
+		                </div>
+		                <div class="quantity">
+				            <select id="quantity">
+				            	<option selected="selected" value="1">1</option>
+			                    <option value="2">2</option>
+			                    <option value="3">3</option>
+			                    <option value="4">4</option>
+			                    <option value="4">5</option>
+			                    <option value="10">10</option>
+				            </select>
+		                </div>
+    				</section>
+    				<section id="add_to_bag">
+    					<div id="size_chart"><a href="images/details/sizechart.png">size chart</a></div>
+    					<div id="overLay"></div>
+    					<button id="buy_button">add to bag&nbsp;&nbsp;<span class="fa fa-shopping-cart"></span></button>
+    				</section>
+    				<section class="product_specifc">
+    					<div id="product_desc">
+						  <h3>product description</h3>
+						  <div id="product_cont">
+						  	<div id="description">
+							  	<h4>description</h4>
+							  	<p>Classic, long-sleeved shirt with an easy-iron finish. Slim-fit.</p>
+							</div>
+							<div id="details">
+						  	    <h4>details</h4>
+							  	<ul>
+							  		<li>35% cotton, 65% polyester. Machine wash warm</li>
+							  		<li>Imported</li>
+							  		<li>Art.No. 49-4726</li>
+							  	</ul>
+							</div>
+						  </div>
+						</div>
 
-		<div class="wrapper">
-     		<div class="title">
-	     		<h2>trending products</h2>
-	     	</div>
-	     	<div class="product_grid">
-	     		<div class="product_item">
-	     			<div class="product_details"><a href="#">
-     					<img src="images/products/hm1.jpg" alt="Image for H&M"/>
-     					<div class="product_info">
-     						<h3>Collarless Shirt</h3>
-	     		    	    <h4>H&M - Men</h4>
-	     		    	    <p>$24.95</p>
-     					</div>
-	     				<div class="shopnow">
-		     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
-		     		    </div></a>			     				
-	     			</div>
-	     		</div>
+						<div id="share">
+						  <h3>share</h3>
+						  <div id="social_media">
+						  	<ul>
+						  		<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+						  		<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+						  		<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+						  		<li><a href="#"><span class="fa fa-pinterest-square"></span></a></li>
+						  		<li><a href="#"><span class="fa fa-tumblr"></span></a></li>
+						  	</ul>
+						  </div>
+						</div>
+    				</section>
+    			</div>
+    		</div>
 
-	     		<div class="product_item">
-	     			<div class="product_details"><a href="#">
-	     				<img src="images/products/af1.jpg" alt="Image for A&F"/>
-	     				<div class="product_info">
-		     				<h3>Tupper Lake Shirt - Class Fit</h3>
-		     		    	<h4>A&F - Men</h4>
-		     		    	<p>$49</p>
-	     		        </div>
-		     		    <div class="shopnow">
-		     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
-		     		    </div></a>
-	     			</div>
-	     		</div>
+    		<div id="recommendation">
+    			<h2>you may also like</h2>
+    			<div id="recommend_wrapper">
+    				<ul id="recommend_products">
+						<li><a href="#">
+							<img src="images/products/af1.jpg" alt="Image for A&F"/><div class="item_info"><h3>A&F Tupper Lake Shirt - Class Fit</h3><p>$49</p></div></a>
+						</li>
+						<li><a href="#">
+							<img src="images/products/nike1.jpg" alt="Image for Nike"/><div class="item_info"><h3>Nike Legend V-Neck Training T-Shirt</h3><p>$22</p></div></a>
+						</li>
+						<li><a href="#">
+							<img src="images/products/adidas1.jpg" alt="Image for Adidas"/><div class="item_info"><h3>Adidas Climachill Running Tee</h3><p>$30.99</p></div></a>
+						</li>
+						<li><a href="#">
+							<img src="images/products/af1.jpg" alt="Image for A&F"/><div class="item_info"><h3>A&F Tupper Lake Shirt - Class Fit</h3><p>$49</p></div></a>
+						</li>
+						<li><a href="#">
+							<img src="images/products/nike1.jpg" alt="Image for Nike"/><div class="item_info"><h3>Nike Legend V-Neck Training T-Shirt</h3><p>$22</p></div></a>
+						</li>
+						<li><a href="#">
+							<img src="images/products/adidas1.jpg" alt="Image for Adidas"/><div class="item_info"><h3>Adidas Climachill Running Tee</h3><p>$30.99</p></div></a>
+						</li>
+					 </ul>
 
-	     		<div class="product_item">
-	     			<div class="product_details"><a href="#">
-	     				<img src="images/products/nike1.jpg" alt="Image for Nike"/>
-	     				<div class="product_info">
-		     				<h3>Legend V-Neck Training T-Shirt</h3>
-		     		    	<h4>Nike - Men</h4>
-		     		    	<p>$22</p>
-	     		        </div>
-	     		        <div class="shopnow">
-		     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
-		     		    </div></a>
-	     			</div>
-	     		    
-	     		</div>
-	     		
-	     		<div class="product_item">
-	     			<div class="product_details"><a href="#">
-	     				<img src="images/products/adidas1.jpg" alt="Image for Adidas"/>
-	     				<div class="product_info">
-		     				<h3>Climachill Running Tee</h3>
-		     		    	<h4>Adidas - Men</h4>
-		     		    	<p><span class="discount">$30.99</span><span class="original">$45</span></p>
-	     		        </div>
-		     		    <div class="shopnow">
-		     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
-		     		    </div></a>
-	     			</div> 
-	     		</div>
-	     	</div>
-     	</div>
-	</main>
+    				
+    			</div>
+    		</div>
+ 		</div>
+ 	</div>
+ 	<!-- //End product details -->
 
-	<div class="dj-overlay"></div> <!-- end overlay -->
+    <div class="dj-overlay"></div> <!-- end overlay -->
 
 	<nav class="dj-nav">
 		<ul id="dj-primary-nav" class="dj-primary-nav is-fixed">
@@ -492,5 +539,9 @@
 	<script src="js/slick/slick.min.js"></script>
 	<script src="js/newnav/jquery.mobile.custom.min.js"></script>
 	<script src="js/newnav/main.js"></script> <!-- Resource jQuery -->
+	<script src="js/script.js"></script>
+    
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 </body>
+
 </html>

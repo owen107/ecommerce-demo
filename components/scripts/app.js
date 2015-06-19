@@ -12,18 +12,18 @@ var jQuery = $;
 })();
 	
 // initiate the moveToTop jQuery plugin
-(function(){
+// (function(){
 			
-	var defaults = {
-		containerID: 'toTop', // fading element id
-		containerHoverID: 'toTopHover', // fading element hover id
-		scrollSpeed: 1200,
-		easingType: 'linear' 
-	};
+// 	var defaults = {
+// 		containerID: 'toTop', // fading element id
+// 		containerHoverID: 'toTopHover', // fading element hover id
+// 		scrollSpeed: 1200,
+// 		easingType: 'linear' 
+// 	};
 	
-	$().UItoTop({ easingType: 'easeOutQuart' });
+// 	$().UItoTop({ easingType: 'easeOutQuart' });
 	
-})();
+// })();
 
 // set up the jQuery filters accordion 
 (function() {
@@ -53,7 +53,13 @@ var jQuery = $;
 
     // callback function
     function filterAccordion() {
-    	$(this).toggleClass('special');
+
+    	if ($(this).parent().find('.fa-minus')) {
+    		$(this).parent().find('span').removeClass('fa-minus').addClass('fa-plus');
+    	} else {
+    		$(this).parent().find('span').removeClass('fa-plus').addClass('fa-minus');
+    	}
+    	
     	$(this).next().toggle(800, 'swing');
     	return false;
     }

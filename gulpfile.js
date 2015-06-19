@@ -7,13 +7,9 @@ var gulp = require('gulp'),
 
 var jsSources = [
    'components/scripts/app.js',
-   'components/scripts/jquery.wmuSlider.js',
-   "components/scripts/jquery-ui.js",
-   "components/scripts/jquery.easy-ticker.js",
    "components/scripts/jquery.easing.js",
    "components/scripts/move-top.js",
-   "components/scripts/jquery.flexisel.js",
-   "components/scripts/megamenu.js"
+   "components/scripts/jquery.flexisel.js"
 ];
 
 var sassSources = ['components/sass/application.scss'];
@@ -58,7 +54,9 @@ gulp.task('watch', function() {
     'components/sass/modules/home/*.scss',
     'components/sass/modules/auth/*.scss',
     'components/sass/modules/footer/*.scss',
-    'components/sass/modules/cart/*.scss'
+    'components/sass/modules/cart/*.scss',
+    'components/sass/modules/category/*.scss',
+    'components/sass/modules/product/*.scss'
   ], ['compass']);
   gulp.watch(htmlSources, ['html']);
 });

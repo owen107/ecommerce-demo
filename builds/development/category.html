@@ -1,0 +1,801 @@
+<html lang="end" class="no-js">
+<head>
+	<title>D&amp;J</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="js/slick/slick.css">
+	<link rel="stylesheet" href="js/slick/slick-theme.css">
+	<link rel="stylesheet" href="css/application.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/newnav/modernizr.js"></script>
+</head>
+
+<body class="nav-is-fixed nav-on-left"> 
+
+	<header class="dj-main-header">
+		<a class="dj-logo" href="index.html"><img src="../images/icons/d&amp;j-logo.png" alt="Logo for D&amp;J"></a>
+
+		<ul class="dj-header-buttons">
+			<li><a class="dj-search-trigger" href="#dj-search">Search<span></span></a></li>
+			<li><a class="dj-nav-trigger" href="#dj-primary-nav">Menu<span></span></a></li>
+		</ul> <!-- dj-header-buttons -->
+
+		<ul class="dj-right-section">
+			<li class="user-account">
+				<a class="fa fa-user" href="#">
+					<span class="fa fa-caret-down"></span>
+					<span class="fa fa-close"></span>
+				</a>
+				<ul>
+					<li>Hello, Owen!</li>
+					<li><a href="login.html">Login In</a></li>
+					<li><a href="signup.html">Sign Up</a></li>
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</li>
+			<li>
+				<a class="fa fa-shopping-cart" href="cart.html">
+					<span class="item-number">8</span>
+				</a>
+			</li>
+		</ul>
+	</header> <!-- header -->
+
+    <div class="dj-main-content">
+    	<div class="wrapper">
+    		<div class="container">
+	    		<div class="products_sum">
+		    		<p>
+		    			<a href="index.html">Home</a><span> / </span><a href="index.html">Men</a><span> / </span><a href="index.html">Clothing</a>
+		    		</p>
+		    		<h3>Men - Clothing <span>(222 products)</span></h3>
+	    		</div>
+	    		<div class="filters" id="hide_filters">
+	    			<h2>refine</h2>
+	    			<div class="filter_accordions">
+	    				<div id="department">
+						  <h3>department <span class="fa fa-minus"></h3>
+						  <div class="options">
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="men"> 
+							   <label for="men" class="checkbox"></label>
+							   <span>Men (48)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="women">
+							   <label for="women"class="checkbox"></label>
+							   <span>Women (45)</span><br/>
+						    </div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="new arrivals">
+							   <label for="new arrivals" class="checkbox"></label>
+							   <span>New Arrivals (45)</span>
+						    </div>
+						  </div>
+						</div>
+
+						<div id="category">
+						  <h3>category <span class="fa fa-minus"></h3>
+						  <div class="options">
+						    <div class="filter_box">
+						       <input type="checkbox" name="checkbox" id="clothing">
+							   <label for="clothing" class="checkbox"></label>
+							   <span>Clothing (48)</span><br/>
+						    </div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="shoes">
+							   <label for="shoes" class="checkbox"></label>
+							   <span>Shoes (45)</span><br/>
+						    </div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="accessories">
+							   <label for="accessories" class="checkbox"></label>
+							   <span>Accessories (45)</span>
+						    </div>
+						  </div>
+						</div>
+
+						<div id="brand">
+						  <h3>brand <span class="fa fa-minus"></h3>
+						  <div class="options">
+						    <div class="filter_box">
+						       <input type="checkbox" name="checkbox" id="adidas">
+							   <label for="adidas" class="checkbox"></label>
+							   <span>Adidas(48)</span><br/>
+						    </div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="a&f">
+							   <label for="a&f" class="checkbox"></label>
+							   <span>A&F (45)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="h&m">
+							   <label for="h&m" class="checkbox"></label>
+							   <span>H&M (45)</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="nike">
+							   <label for="nike" class="checkbox"></label>
+							   <span>Nike (45)</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="forever21">
+							   <label for="forever21" class="checkbox"></label>
+							   <span>Forever 21 (45)</span></div>
+						  </div>
+						</div>
+
+						<div id="price">
+						  <h3>price <span class="fa fa-minus"></h3>
+						  <div class="options">
+						    <div class="filter_box"> 
+							   <input type="checkbox" name="checkbox" id="25">
+							   <label for="25" class="checkbox"></label>
+							   <span>0 - $50(48)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="75">
+							   <label for="75" class="checkbox"></label>
+							   <span>$51 - $100 (45)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="125">
+							   <label for="125" class="checkbox"></label>
+							   <span>$101 - $ (150)</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="175">
+							   <label for="175" class="checkbox"></label>
+							   <span>$151 - $200</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="225">
+							   <label for="225" class="checkbox"></label>
+							   <span>201 - $250 (45)</span>
+							</div>
+						  </div>
+						</div>
+
+						<div id="size">
+						  <h3>size <span class="fa fa-minus"></h3>
+						  <div class="options">
+						    <div class="filter_box"> 
+							   <input type="checkbox" name="checkbox" id="small">
+							   <label for="small" class="checkbox"></label>
+							   <span>Small (48)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="medium">
+							   <label for="medium" class="checkbox"></label>
+							   <span>Medium(45)</span><br/>
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="large">
+							   <label for="large" class="checkbox"></label>
+							   <span>Large (45)</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="xlarge">
+							   <label for="xlarge" class="checkbox"></label>
+							   <span>X Large(45)</span><br />
+							</div>
+							<div class="filter_box">
+							   <input type="checkbox" name="checkbox" id="xxlarge">
+							   <label for="xxlarge" class="checkbox"></label>
+							   <span>XX Large (45)</span>
+							</div>
+						  </div>
+						</div>
+
+						<div id="color">
+							<h3>color <span class="fa fa-minus"></h3>
+							<div class="options">
+								<ul class="color-list">
+									<li><a href="#"><div class="red"></div></a></li>
+									<li><a href="#"><div class="green"></div></a></li>
+									<li><a href="#"><div class="blue"></div></a></li>
+									<li><a href="#"><div class="yellow"></div></a></li>
+									<li><a href="#"><div class="violet"></div></a></li>
+									<li><a href="#"><div class="orange"></div></a></li>
+									<li><a href="#"><div class="grey"></div></a></li>
+									<li><a href="#"><div class="black"></div></a></li>
+									<li><a href="#"><div class="brown"></div></a></li>
+									<li><a href="#"><div class="gold"></div></a></li>
+									<li><a href="#"><div class="silver"></div></a></li>
+							   </ul>
+							</div>
+						</div>
+	    			</div>
+	    		</div>
+	    		<div class="products_list">
+	    			<div class="wrapper">
+		    			<div class="top_toolbar">
+		    				<div class="sort">
+				               	<div class="sort_by">
+						            <label>Sort By</label>
+						            <select>
+						            	<option value="sy">Sort By:</option>
+					                    <option value="bm">Best match</option>
+					                    <option value="h2l">Price : High to Low</option>
+					                    <option value="l2h">Price : Low to High</option>
+						            </select>
+				                </div>
+				    		</div>
+
+				    		<div class="paginatoin medium" id="hide_pagi">
+				               	<div class="page">
+						            <label>Page</label>
+						            <select>
+					                    <option value="1">1</option>
+					                    <option value="2">2</option>
+					                    <option value="3">3</option>
+					                    <option value="4">4</option>
+					                    <option value="5">5</option>
+					                    <option value="6">6</option>
+						            </select>
+						            <a href=""><span>&lt;&lt;</span></a>
+						            <a href=""><span>&gt;&gt;</span></a>
+				                </div>
+				    		</div>
+		    			</div>
+
+		    			<div class="product_grid">
+		    				<div class="product_item">
+				     			<div class="product_details"><a href="product.html">
+			     					<img src="images/products/hm1.jpg" alt="Image for H&M"/>
+			     					<div class="product_info">
+			     						<h3>Collarless Shirt</h3>
+				     		    	    <h4>H&M - Men</h4>
+				     		    	    <p>$24.95</p>
+			     					</div>
+				     				<div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>			     				
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/af1.jpg" alt="Image for A&F"/>
+				     				<div class="product_info">
+					     				<h3>Tupper Lake Shirt - Class Fit</h3>
+					     		    	<h4>A&F - Men</h4>
+					     		    	<p>$49</p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/nike1.jpg" alt="Image for Nike"/>
+				     				<div class="product_info">
+					     				<h3>Legend V-Neck Training T-Shirt</h3>
+					     		    	<h4>Nike - Men</h4>
+					     		    	<p>$22</p>
+				     		        </div>
+				     		        <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/adidas1.jpg" alt="Image for Adidas"/>
+				     				<div class="product_info">
+					     				<h3>Climachill Running Tee</h3>
+					     		    	<h4>Adidas - Men</h4>
+					     		    	<p><span class="discount">$30.99</span><span class="original">$45</span></p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div> 
+				     		</div>
+		    			</div>
+
+		    			<div class="product_grid">
+		    				<div class="product_item">
+				     			<div class="product_details"><a href="product.html">
+			     					<img src="images/products/hm1.jpg" alt="Image for H&M"/>
+			     					<div class="product_info">
+			     						<h3>Collarless Shirt</h3>
+				     		    	    <h4>H&M - Men</h4>
+				     		    	    <p>$24.95</p>
+			     					</div>
+				     				<div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>			     				
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/af1.jpg" alt="Image for A&F"/>
+				     				<div class="product_info">
+					     				<h3>Tupper Lake Shirt - Class Fit</h3>
+					     		    	<h4>A&F - Men</h4>
+					     		    	<p>$49</p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/nike1.jpg" alt="Image for Nike"/>
+				     				<div class="product_info">
+					     				<h3>Legend V-Neck Training T-Shirt</h3>
+					     		    	<h4>Nike - Men</h4>
+					     		    	<p>$22</p>
+				     		        </div>
+				     		        <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/adidas1.jpg" alt="Image for Adidas"/>
+				     				<div class="product_info">
+					     				<h3>Climachill Running Tee</h3>
+					     		    	<h4>Adidas - Men</h4>
+					     		    	<p><span class="discount">$30.99</span><span class="original">$45</span></p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div> 
+				     		</div>
+		    			</div>
+
+		    			<div class="product_grid">
+		    				<div class="product_item">
+				     			<div class="product_details"><a href="product.html">
+			     					<img src="images/products/hm1.jpg" alt="Image for H&M"/>
+			     					<div class="product_info">
+			     						<h3>Collarless Shirt</h3>
+				     		    	    <h4>H&M - Men</h4>
+				     		    	    <p>$24.95</p>
+			     					</div>
+				     				<div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>			     				
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/af1.jpg" alt="Image for A&F"/>
+				     				<div class="product_info">
+					     				<h3>Tupper Lake Shirt - Class Fit</h3>
+					     		    	<h4>A&F - Men</h4>
+					     		    	<p>$49</p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/nike1.jpg" alt="Image for Nike"/>
+				     				<div class="product_info">
+					     				<h3>Legend V-Neck Training T-Shirt</h3>
+					     		    	<h4>Nike - Men</h4>
+					     		    	<p>$22</p>
+				     		        </div>
+				     		        <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div>
+				     		</div>
+
+				     		<div class="product_item">
+				     			<div class="product_details"><a href="#">
+				     				<img src="images/products/adidas1.jpg" alt="Image for Adidas"/>
+				     				<div class="product_info">
+					     				<h3>Climachill Running Tee</h3>
+					     		    	<h4>Adidas - Men</h4>
+					     		    	<p><span class="discount">$30.99</span><span class="original">$45</span></p>
+				     		        </div>
+					     		    <div class="shopnow">
+					     		    	<img src="images/products/shopnow.png" alt="shopping bag" />
+					     		    </div></a>
+				     			</div> 
+				     		</div>
+				     	</div>
+
+				     	<div class="bottom_toolbar">
+		    				<div class="sort medium" id="hide_sort">
+				               	<div class="sort_by">
+						            <label>Sort By</label>
+						            <select>
+						            	<option value="sy">Sort By:</option>
+					                    <option value="bm">Best match</option>
+					                    <option value="h2l">Price : High to Low</option>
+					                    <option value="l2h">Price : Low to High</option>
+						            </select>
+				                </div>
+				    		</div>
+
+				    		<div class="paginatoin">
+				               	<div class="page">
+						            <label>Page</label>
+						            <select>
+					                    <option value="1">1</option>
+					                    <option value="2">2</option>
+					                    <option value="3">3</option>
+					                    <option value="4">4</option>
+					                    <option value="5">5</option>
+					                    <option value="6">6</option>
+						            </select>
+						            <a href=""><span>&lt;&lt;</span></a>
+						            <a href=""><span>&gt;&gt;</span></a>
+				                </div>
+				    		</div>
+		    			</div>
+	    			</div>
+	    		</div> <!-- top toolbar-->
+	    	</div>	
+    	</div>
+    </div> <!-- dj-main-content -->
+
+    <div class="dj-overlay"></div> <!-- end overlay -->
+
+	<nav class="dj-nav">
+		<ul id="dj-primary-nav" class="dj-primary-nav is-fixed">
+			<li class="has-children">
+				<a href="http://codyhouse.co/?p=409">Men</a>
+
+				<ul class="dj-secondary-nav is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all">
+						<a href="http://codyhouse.co/?p=409">
+							Shop All Men's
+							<span class="fa fa-caret-right"></span>
+						</a>
+					</li>
+					<li class="has-children">
+						<span>Accessories</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
+							<li><a href="#0">Beanies</a></li>
+							<li><a href="#0">Caps &amp; Hats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Bottoms</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
+							<li><a href="#0">Jeans</a></li>
+							<li><a href="#0">Leggings</a></li>
+							<li><a href="#0">Shorts</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Jackets</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Tops</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
+							<li><a href="#0">T-Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+			<li class="has-children">
+				<a href="http://codyhouse.co/?p=409">Women</a>
+
+				<ul class="dj-secondary-nav is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all">
+						<a href="http://codyhouse.co/?p=409">
+							Shop All Women's
+							<span class="fa fa-caret-right"></span>
+						</a>
+					</li>
+					<li class="has-children">
+						<span>Accessories</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
+							<li><a href="#0">Beanies</a></li>
+							<li><a href="#0">Caps &amp; Hats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Bottoms</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
+							<li><a href="#0">Jeans</a></li>
+							<li><a href="#0">Leggings</a></li>
+							<li><a href="#0">Shorts</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Jackets</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Tops</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
+							<li class="has-children"><a href="#0">T-Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
+						</ul>
+					</li>
+				</ul>				
+			</li>
+
+			<li class="has-children">
+				<a href="http://codyhouse.co/?p=409">Kids</a>
+
+				<ul class="dj-secondary-nav is-hidden">
+					<li class="go-back"><a href="#0">Menu</a></li>
+					<li class="see-all">
+						<a href="http://codyhouse.co/?p=409">
+							Shop All Youth &amp; Children
+						<span class="fa fa-caret-right"></span>
+					</a>	
+					</li>
+					<li class="has-children">
+						<span>Accessories</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
+							<li><a href="#0">Beanies</a></li>
+							<li><a href="#0">Caps &amp; Hats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Bottoms</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
+							<li><a href="#0">Jeans</a></li>
+							<li><a href="#0">Leggings</a></li>
+							<li><a href="#0">Shorts</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Jackets</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
+						</ul>
+					</li>
+
+					<li class="has-children">
+						<span>Tops</span>
+
+						<ul class="is-hidden">
+							<li class="go-back"><a href="#0">Clothing</a></li>
+							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
+							<li><a href="#0">T-Shirts</a></li>
+							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+			<li><a href="http://codyhouse.co/?p=409">Contact</a></li>
+		</ul> <!-- primary-nav -->
+	</nav> <!-- dj-nav -->
+
+    <div id="dj-search" class="dj-search">
+		<form class="search-form">
+			<input type="search" placeholder="What are you looking for?">
+		</form>
+	</div>
+
+	<footer class="dj-footer">
+		<div class="top-footer">
+			<div class="footer-container">
+
+				<div class="social">
+					<p>connect with us: </p>
+					<a href="#" class="icon"><span class="fa fa-facebook"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-twitter"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-google-plus"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-pinterest-p"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-youtube"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-instagram"></span></a>
+			        <a href="#" class="icon"><span class="fa fa-rss"></span></a>
+				</div>
+
+				<div class="payment-methods">
+					Accept Payment Types: 
+					<img src="images/footer/payment-methods.gif" />
+				</div>
+
+			</div>		
+		</div> <!-- top-footer -->
+
+		<div class="bottom-footer">
+			<div class="footer-container">
+
+				<div class="top-section">
+					<div class="info-list">
+						<h3 id="weila" class="shop-title">shop</h3>
+						<ul>
+							<h4>men</h4>
+						    <li><a href="products.html">Men's Shoes</a></li>
+				            <li><a href="products.html">Men's Clothing</a></li>
+				            <li><a href="products.html">Men's Accessories</a></li>
+				        </ul>
+				        <ul>
+							<h4>women</h4>
+						    <li><a href="products.html">Women's Shoes</a></li>
+				            <li><a href="products.html">Women's Clothing</a></li>
+				            <li><a href="products.html">Women's Accessories</a></li>
+				        </ul>
+				    </div>
+
+				    <div class="info-list">
+						<h3>featured</h3>
+						<ul>
+						    <li><a href="products.html">New Arrivals</a></li>
+				            <li><a href="products.html">Top Sellers</a></li>
+				            <li><a href="products.html">Best Rated</a></li>
+				        </ul>
+				        <h3 class="list-title">mobile</h3>
+						<ul>
+						    <li><a href="products.html">D&amp;J iPhone App</a></li>
+						    <li><a href="products.html">D&amp;J iPad App</a></li>
+				            <li><a href="products.html">D&amp;J Android App</a></li>
+				        </ul>
+					</div>
+
+					<div class="info-list">
+						<h3>About Us</h3>
+						<ul class="social">
+						    <li><a href="products.html">Our Company</a></li>
+				            <li><a href="products.html">Careers</a></li>
+				            <li><a href="products.html">Investor Relation</a></li>
+				            <li><a href="products.html">Supply Chain</a></li>
+				            <li><a href="products.html">Newsroom</a></li>
+				            <li><a href="products.html">Store Locator</a></li>
+				        </ul>
+				    </div>
+
+				    <div class="info-list">
+						<h3>get help</h3>
+						<ul>
+						    <li><a href="products.html">My Account</a></li>
+				            <li><a href="products.html">Shipping &amp; Delivery</a></li>
+				            <li><a href="products.html">Returns &amp; Exchanges</a></li>
+				            <li><a href="products.html">Customer Service</a></li>
+				            <li><a href="products.html">Contact Us</a></li>
+				            <li><a href="products.html">Payment Options</a></li>
+				        </ul>
+				    </div>
+				</div> <!-- top-section -->
+				
+				<div class="bottom-section">
+					<div class="dj-copyright">
+						&copy; 2015 D&amp;J, Inc. All right reserved.
+					</div>
+
+					<div class="dj-policy">
+						<ul class="policy">
+		 					<li>guides</li>
+		 					<li>term &amp; conditions</li>
+		 					<li>privacy policy</li>
+		 				</ul>
+					</div>
+				</div> <!-- bottom-section -->
+			</div>
+			
+		</div> <!-- bottom-footer -->
+	</footer> <!-- dj-footer -->
+
+	<script src="js/newnav/jquery-2.1.1.js"></script>
+	<script src="js/slick/slick.min.js"></script>
+	<script src="js/newnav/jquery.mobile.custom.min.js"></script>
+	<script src="js/newnav/main.js"></script> <!-- Resource jQuery -->
+	<script src="js/script.js"></script>
+
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+</body>
+
+</html>

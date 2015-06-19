@@ -2,7 +2,7 @@
 * Details page - Media Queries
 */
 
-#product_details {
+.dj-main-content {
     @include breakpoint(1522px $largeDesktop) {
         #recommendation {
            .nbs-flexisel-item {
@@ -36,7 +36,7 @@
        }
     } // breakpoint
 
-	@include breakpoint($medium 1279px) {
+	@include breakpoint($large 1279px) {
 		.wrapper {
 		   width: 86%;
 		} // wrapper
@@ -72,7 +72,7 @@
 		} // product content
 	} // breakpoint 
 
-	@include breakpoint(max-width $medium) {
+	@include breakpoint(max-width $large) {
        .wrapper {
           width: 90%;
        } // wrapper
